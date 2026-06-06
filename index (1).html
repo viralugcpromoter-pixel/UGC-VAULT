@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dell AI Creators Vault — Ready-Made AI Experts</title>
+<meta name="description" content="Access Ready-Made AI Experts That Do The Work For You." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0A0A;
+    --yellow:#FFC107;
+    --white:#FFFFFF;
+    --surface:#121212;
+    --surface-2:#171717;
+    --surface-3:#1d1d1d;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,193,7,.35);
+    --muted:#9a9a9a;
+    --muted-2:#6e6e6e;
+    --gold-soft:rgba(255,193,7,.12);
+    --radius:20px;
+    --radius-sm:14px;
+    --maxw:1200px;
+    --display:'Bricolage Grotesque',serif;
+    --body:'Manrope',sans-serif;
+    --shadow:0 24px 60px -20px rgba(0,0,0,.7);
+    --glow:0 0 0 1px var(--line-strong), 0 18px 50px -18px rgba(255,193,7,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:var(--body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+  /* atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 80% -10%, rgba(255,193,7,.10), transparent 60%),
+      radial-gradient(700px 500px at -10% 20%, rgba(255,193,7,.06), transparent 55%),
+      linear-gradient(180deg,#0A0A0A 0%,#0c0c0c 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:
+      linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+    background-size:54px 54px;
+    mask-image:radial-gradient(circle at 50% 0,#000,transparent 75%);
+  }
+  #app{position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ::selection{background:var(--yellow);color:#000}
+  img{max-width:100%;display:block}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    padding:.85rem 1.5rem;border-radius:999px;font-weight:700;font-size:.95rem;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,color .25s;
+    white-space:nowrap;
+  }
+  .btn:active{transform:translateY(1px) scale(.99)}
+  .btn-primary{background:var(--yellow);color:#0A0A0A;box-shadow:0 10px 30px -8px rgba(255,193,7,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px -10px rgba(255,193,7,.65)}
+  .btn-ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1.5px var(--line-strong)}
+  .btn-ghost:hover{background:var(--gold-soft);transform:translateY(-2px)}
+  .btn-dark{background:var(--surface-3);color:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+  .btn-dark:hover{background:#242424}
+  .btn-sm{padding:.5rem 1rem;font-size:.82rem}
+  .btn-block{width:100%}
+
+  /* ---------- top nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(10,10,10,.72);border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.65rem;font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:1.12rem;cursor:pointer}
+  .brand .mark{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--yellow),#ffdd66);color:#0A0A0A;font-weight:800;font-family:var(--display);
+    box-shadow:0 6px 18px -6px rgba(255,193,7,.7)
+  }
+  .brand b{color:var(--yellow)}
+  .nav-links{display:flex;align-items:center;gap:.4rem}
+  .nav-links a, .nav-links button.link{
+    padding:.55rem .85rem;border-radius:999px;font-size:.9rem;font-weight:600;color:var(--muted);transition:.2s
+  }
+  .nav-links a:hover,.nav-links button.link:hover{color:#fff;background:rgba(255,255,255,.05)}
+  .nav-toggle{display:none}
+
+  /* ---------- layout ---------- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+  section{position:relative}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--yellow);padding:.4rem .8rem;border-radius:999px;background:var(--gold-soft);border:1px solid var(--line-strong)
+  }
+  h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;line-height:1.05;font-weight:700}
+  .view{display:none;animation:fade .5s ease both}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.in-view{opacity:1;transform:none}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:5.5rem 0 4rem;text-align:center}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:16ch;margin:1.4rem auto 0}
+  .hero h1 .hl{color:var(--yellow)}
+  .hero p.sub{max-width:62ch;margin:1.3rem auto 0;color:var(--muted);font-size:clamp(1rem,2vw,1.18rem)}
+  .hero-cta{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem}
+  .audience-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:2.6rem}
+  .pill{font-size:.8rem;font-weight:600;color:var(--muted);padding:.45rem .9rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .pill::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--yellow);margin-right:.5rem;vertical-align:middle}
+
+  .hero-stagger>*{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+  .hero-stagger>*:nth-child(1){animation-delay:.05s}
+  .hero-stagger>*:nth-child(2){animation-delay:.18s}
+  .hero-stagger>*:nth-child(3){animation-delay:.31s}
+  .hero-stagger>*:nth-child(4){animation-delay:.44s}
+  .hero-stagger>*:nth-child(5){animation-delay:.57s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- STATS ---------- */
+  .stats{padding:1rem 0 4.5rem}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .stat{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.4rem;text-align:center;
+    transition:.3s;position:relative;overflow:hidden
+  }
+  .stat::after{content:"";position:absolute;inset:0;background:radial-gradient(120px 80px at 50% 0,rgba(255,193,7,.18),transparent 70%);opacity:0;transition:.3s}
+  .stat:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+  .stat:hover::after{opacity:1}
+  .stat .num{font-family:var(--display);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;color:var(--yellow);line-height:1}
+  .stat .lbl{margin-top:.5rem;color:var(--muted);font-size:.92rem;font-weight:600}
+
+  /* ---------- section heading ---------- */
+  .sec-head{text-align:center;max-width:60ch;margin:0 auto 2.6rem}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-top:1rem}
+  .sec-head p{color:var(--muted);margin-top:.8rem}
+  .section-pad{padding:4rem 0}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;transition:.3s}
+  .tcard:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:var(--shadow)}
+  .stars{color:var(--yellow);font-size:.95rem;letter-spacing:2px}
+  .tcard p{margin:.9rem 0 1.2rem;color:#dcdcdc}
+  .tperson{display:flex;align-items:center;gap:.8rem}
+  .avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-family:var(--display);background:linear-gradient(135deg,var(--yellow),#ffdd66);color:#0A0A0A}
+  .tperson .nm{font-weight:700;font-size:.92rem}
+  .tperson .rl{font-size:.8rem;color:var(--muted)}
+
+  /* ---------- BENEFITS ---------- */
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .bcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem;transition:.3s}
+  .bcard:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+  .bico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--gold-soft);border:1px solid var(--line-strong);margin-bottom:1rem}
+  .bcard h3{font-size:1.15rem;margin-bottom:.4rem}
+  .bcard p{color:var(--muted);font-size:.94rem}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);margin-top:3rem;background:rgba(0,0,0,.4)}
+  .foot{max-width:var(--maxw);margin:0 auto;padding:2.6rem 1.25rem;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
+  .foot .col h4{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:.8rem}
+  .foot .col a{display:block;color:var(--muted);font-size:.9rem;padding:.25rem 0;transition:.2s}
+  .foot .col a:hover{color:var(--yellow)}
+  .foot-bottom{border-top:1px solid var(--line);padding:1.2rem;text-align:center;color:var(--muted-2);font-size:.82rem}
+
+  /* ---------- LOGIN ---------- */
+  .auth-wrap{min-height:calc(100vh - 70px);display:grid;place-items:center;padding:2.5rem 1.25rem}
+  .auth-card{
+    width:100%;max-width:430px;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:2.4rem;box-shadow:var(--shadow);position:relative;overflow:hidden
+  }
+  .auth-card::before{content:"";position:absolute;top:-40%;left:-20%;width:140%;height:120%;background:radial-gradient(closest-side,rgba(255,193,7,.14),transparent);pointer-events:none}
+  .auth-card h2{font-size:1.7rem;margin-top:1rem}
+  .auth-card .lead{color:var(--muted);font-size:.92rem;margin-top:.35rem;margin-bottom:1.6rem}
+  .field{margin-bottom:1.05rem;position:relative;z-index:1}
+  .field label{display:block;font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:.45rem}
+  .input{
+    width:100%;background:#0e0e0e;border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;color:#fff;font-size:.95rem;font-family:inherit;transition:.2s
+  }
+  .input:focus{outline:none;border-color:var(--yellow);box-shadow:0 0 0 3px var(--gold-soft)}
+  textarea.input{resize:vertical;min-height:80px}
+  select.input{appearance:none}
+  .auth-msg{font-size:.85rem;margin-top:.4rem;min-height:1.1em}
+  .auth-msg.err{color:#ff6b6b}
+  .auth-msg.ok{color:#5ad17e}
+  .auth-switch{margin-top:1.3rem;text-align:center;font-size:.85rem;color:var(--muted)}
+  .auth-switch button{color:var(--yellow);font-weight:700}
+  .hint{margin-top:1.3rem;font-size:.78rem;color:var(--muted-2);background:#0e0e0e;border:1px dashed var(--line);border-radius:12px;padding:.8rem .9rem;position:relative;z-index:1}
+
+  /* ---------- DASHBOARD ---------- */
+  .dash{padding:2.2rem 0 4rem}
+  .dash-top{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.8rem}
+  .dash-top h1{font-size:clamp(1.7rem,4vw,2.4rem)}
+  .dash-top .hi{color:var(--muted);margin-top:.3rem}
+  .plan-badge{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.82rem;padding:.45rem .9rem;border-radius:999px;background:var(--gold-soft);border:1px solid var(--line-strong);color:var(--yellow)}
+
+  .dash-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:1.1rem;margin-bottom:1.6rem}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+  .featured{position:relative;overflow:hidden;background:linear-gradient(120deg,#161310,#121212);border-color:var(--line-strong)}
+  .featured::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,193,7,.22),transparent)}
+  .featured .tag{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}
+  .featured h3{font-size:1.5rem;margin:.5rem 0 .4rem;position:relative;z-index:1}
+  .featured p{color:var(--muted);max-width:48ch;position:relative;z-index:1}
+  .featured .ft-meta{display:flex;gap:.5rem;margin:1rem 0 1.2rem;position:relative;z-index:1;flex-wrap:wrap}
+  .mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .mini{background:#0f0f0f;border:1px solid var(--line);border-radius:14px;padding:1rem}
+  .mini .n{font-family:var(--display);font-size:1.7rem;font-weight:800;color:var(--yellow);line-height:1}
+  .mini .t{font-size:.8rem;color:var(--muted);margin-top:.3rem}
+  .updates h4{font-size:.95rem;margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem}
+  .upd{display:flex;gap:.7rem;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.86rem}
+  .upd:last-child{border-bottom:none}
+  .upd .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);margin-top:.45rem;flex-shrink:0}
+  .upd .when{color:var(--muted-2);font-size:.74rem}
+
+  /* toolbar */
+  .toolbar{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-bottom:1.3rem}
+  .search{flex:1;min-width:220px;position:relative}
+  .search .input{padding-left:2.6rem}
+  .search svg{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);opacity:.5}
+  .cats{display:flex;gap:.5rem;flex-wrap:wrap}
+  .chip{padding:.5rem .95rem;border-radius:999px;font-size:.84rem;font-weight:600;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.02);transition:.2s}
+  .chip:hover{color:#fff;border-color:var(--line-strong)}
+  .chip.active{background:var(--yellow);color:#0A0A0A;border-color:var(--yellow)}
+
+  /* agent grid */
+  .agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem}
+  .acard{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;display:flex;flex-direction:column;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s;position:relative;overflow:hidden
+  }
+  .acard:hover{transform:translateY(-6px);border-color:var(--line-strong);box-shadow:var(--glow)}
+  .acard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+  .aicon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--gold-soft);border:1px solid var(--line-strong);color:var(--yellow);flex-shrink:0;transition:transform .3s,background .3s,color .3s}
+  .aicon svg{width:24px;height:24px}
+  .acard:hover .aicon{background:var(--yellow);color:#0A0A0A;transform:scale(1.06) rotate(-3deg)}
+  .acard .cat-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);background:var(--gold-soft);border:1px solid var(--line-strong);padding:.28rem .6rem;border-radius:999px;margin-top:.1rem}
+  .acard .cat{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);background:var(--gold-soft);border:1px solid var(--line-strong);padding:.3rem .6rem;border-radius:999px}
+  .fav{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--muted);border:1px solid var(--line);transition:.2s;flex-shrink:0}
+  .fav:hover{color:var(--yellow);border-color:var(--line-strong)}
+  .fav.on{color:var(--yellow)}
+  .acard h3{font-size:1.18rem;margin:1rem 0 .5rem}
+  .acard .desc{color:var(--muted);font-size:.9rem;flex:1}
+  .acard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:1.2rem;gap:.6rem}
+  .access{font-size:.76rem;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem}
+  .access .lock{color:var(--yellow)}
+
+  .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:3rem 1rem;border:1px dashed var(--line);border-radius:var(--radius)}
+
+  /* VIP */
+  .vip-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:3.2rem 0 1.4rem}
+  .vip-head h2{font-size:1.7rem;display:flex;align-items:center;gap:.6rem}
+  .vip-banner{
+    background:linear-gradient(120deg,#161310,#0f0f0f);border:1px solid var(--line-strong);border-radius:var(--radius);
+    padding:1.6rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.3rem
+  }
+  .vip-banner .vt{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--yellow)}
+  .vip-banner p{color:var(--muted);font-size:.9rem;margin-top:.2rem}
+  .acard.locked{cursor:pointer}
+  .acard.locked .lockface{
+    position:absolute;inset:0;background:rgba(10,10,10,.55);backdrop-filter:blur(2px);display:grid;place-items:center;z-index:2;
+    opacity:0;transition:.25s
+  }
+  .acard.locked:hover .lockface{opacity:1}
+  .acard.locked .lockface .lk{display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--yellow);font-weight:700;font-size:.85rem}
+  .acard.locked .blur{filter:blur(.5px);opacity:.75}
+
+  /* resources / future */
+  .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+  .rcard{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);padding:1.2rem;text-align:center;transition:.3s;position:relative}
+  .rcard:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+  .rcard .ri{width:42px;height:42px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--line-strong);display:grid;place-items:center;margin:0 auto .7rem}
+  .rcard .rn{font-weight:700;font-size:.95rem}
+  .rcard .rs{font-size:.72rem;color:var(--muted-2);margin-top:.3rem;text-transform:uppercase;letter-spacing:.1em}
+
+  /* ---------- UPGRADE PAGE ---------- */
+  .up-wrap{padding:4rem 0;text-align:center}
+  .up-card{max-width:680px;margin:0 auto;background:linear-gradient(140deg,#171310,#101010);border:1px solid var(--line-strong);border-radius:28px;padding:3rem 2.2rem;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .up-card::after{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(closest-side,rgba(255,193,7,.18),transparent);pointer-events:none}
+  .up-card .crown{font-size:2.4rem}
+  .up-card h2{font-size:2.1rem;margin:1rem 0 .6rem;position:relative}
+  .up-card p{color:var(--muted);max-width:50ch;margin:0 auto;position:relative}
+  .up-feats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;max-width:480px;margin:2rem auto;text-align:left;position:relative}
+  .up-feat{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;color:#ddd}
+  .up-feat svg{color:var(--yellow);flex-shrink:0;margin-top:.15rem}
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);display:none;place-items:center;padding:1.25rem}
+  .modal-overlay.show{display:grid;animation:fade .25s ease}
+  .modal{
+    width:100%;max-width:520px;background:var(--surface);border:1px solid var(--line-strong);border-radius:22px;padding:2rem;box-shadow:var(--shadow);
+    animation:pop .3s cubic-bezier(.2,.8,.2,1);position:relative;max-height:90vh;overflow:auto
+  }
+  @keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}to{opacity:1;transform:none}}
+  .modal .close{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--muted);border:1px solid var(--line)}
+  .modal .close:hover{color:#fff;border-color:var(--line-strong)}
+  .modal .crown{font-size:2rem;text-align:center}
+  .modal h3{text-align:center;font-size:1.5rem;margin:.6rem 0}
+  .modal .mtext{text-align:center;color:var(--muted);font-size:.95rem;margin-bottom:1.6rem}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+
+  /* ---------- ADMIN ---------- */
+  .admin{padding:2.2rem 0 4rem}
+  .admin-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+  .admin-tabs{display:flex;gap:.5rem;margin-bottom:1.6rem;flex-wrap:wrap}
+  .atab{padding:.6rem 1.1rem;border-radius:999px;font-weight:700;font-size:.88rem;color:var(--muted);border:1px solid var(--line);transition:.2s}
+  .atab.active{background:var(--yellow);color:#0A0A0A;border-color:var(--yellow)}
+  .apanel{display:none}
+  .apanel.active{display:block;animation:fade .3s}
+  .arow{
+    display:grid;grid-template-columns:1.5fr .9fr .8fr auto;gap:.8rem;align-items:center;
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem 1.1rem;margin-bottom:.7rem
+  }
+  .arow .anm{font-weight:700;font-size:.95rem}
+  .arow .au{font-size:.78rem;color:var(--muted);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .arow .badge{font-size:.72rem;font-weight:700;padding:.25rem .6rem;border-radius:999px;display:inline-block}
+  .badge.student{background:var(--gold-soft);color:var(--yellow);border:1px solid var(--line-strong)}
+  .badge.vip{background:rgba(255,255,255,.07);color:#fff;border:1px solid var(--line)}
+  .arow .acts{display:flex;gap:.4rem;justify-content:flex-end}
+  .icon-btn{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--line);color:var(--muted);transition:.2s}
+  .icon-btn:hover{color:#fff;border-color:var(--line-strong)}
+  .icon-btn.danger:hover{color:#ff6b6b;border-color:rgba(255,107,107,.4)}
+  .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+
+  .toast{position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%) translateY(120%);z-index:200;background:var(--yellow);color:#0A0A0A;font-weight:700;font-size:.9rem;padding:.8rem 1.3rem;border-radius:999px;box-shadow:0 14px 40px -10px rgba(255,193,7,.6);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .tgrid,.bgrid{grid-template-columns:1fr 1fr}
+    .dash-grid{grid-template-columns:1fr}
+    .cred-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:680px){
+    .nav-links{position:fixed;top:62px;right:0;left:0;flex-direction:column;align-items:stretch;background:rgba(10,10,10,.97);border-bottom:1px solid var(--line);padding:.8rem 1.25rem;gap:.2rem;display:none}
+    .nav-links.open{display:flex}
+    .nav-links a,.nav-links button.link{padding:.8rem .85rem}
+    .nav-toggle{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line)}
+    .tgrid,.bgrid,.up-feats,.form-row{grid-template-columns:1fr}
+    .arow{grid-template-columns:1fr;gap:.4rem}
+    .arow .acts{justify-content:flex-start}
+    .hero{padding:3.5rem 0 2.5rem}
+    .up-card{padding:2.2rem 1.4rem}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand" onclick="go('home')">
+        <span class="mark">D</span><span>Dell&nbsp;AI <b>Creators&nbsp;Vault</b></span>
+      </div>
+      <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="nav-links" id="navlinks"></div>
+    </div>
+  </nav>
+
+  <!-- ===== HOME ===== -->
+  <div class="view active" id="view-home">
+    <section class="hero wrap">
+      <div class="hero-stagger">
+        <div><span class="eyebrow">★ Premium AI Agent Membership</span></div>
+        <h1>Access Ready-Made AI Experts That <span class="hl">Do The Work For You</span></h1>
+        <p class="sub">Stop spending hours writing prompts from scratch. Launch specialized AI agents built for content creators, freelancers, marketers, agencies, and business owners.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
+          <button class="btn btn-ghost" onclick="go('upgrade')">👑 Upgrade To VIP</button>
+        </div>
+        <div class="audience-row">
+          <span class="pill">Business Owners</span>
+          <span class="pill">Freelancers</span>
+          <span class="pill">Content Creators</span>
+          <span class="pill">Agencies</span>
+          <span class="pill">Affiliate Marketers</span>
+          <span class="pill">UGC Creators</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats wrap">
+      <div class="stats-grid">
+        <div class="stat reveal"><div class="num" data-count="13" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
+        <div class="stat reveal"><div class="num" data-count="100" data-suffix="+">0</div><div class="lbl">VIP Agents Coming Soon</div></div>
+        <div class="stat reveal"><div class="num" data-static="∞">∞</div><div class="lbl">Lifetime Updates</div></div>
+        <div class="stat reveal"><div class="num" data-static="1">1</div><div class="lbl">Dashboard Access</div></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section-pad wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Loved by creators</span>
+        <h2>Real Workflows, Real Results</h2>
+        <p>Members across six creator types use the Vault to ship faster every single day.</p>
+      </div>
+      <div class="tgrid" id="testimonials"></div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section-pad wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Why the Vault</span>
+        <h2>Everything You Need In One Place</h2>
+        <p>No more prompt hunting, no more guesswork. Just open, launch, and create.</p>
+      </div>
+      <div class="bgrid" id="benefits"></div>
+    </section>
+
+    <section class="section-pad wrap" style="text-align:center">
+      <div class="up-card reveal" style="max-width:760px">
+        <span class="eyebrow">Ready to start?</span>
+        <h2 style="font-size:2rem;margin:1rem 0 .6rem;position:relative">Your AI Team Is Waiting</h2>
+        <p>Log in to your dashboard and launch 13+ ready-made AI experts — or upgrade to VIP for 100+ premium systems.</p>
+        <div class="hero-cta" style="margin-top:1.8rem">
+          <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
+          <button class="btn btn-ghost" onclick="go('upgrade')">👑 Upgrade To VIP</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div class="col" style="max-width:280px">
+          <div class="brand" style="margin-bottom:.8rem"><span class="mark">D</span><span>Dell&nbsp;AI <b>Vault</b></span></div>
+          <p style="color:var(--muted);font-size:.9rem">Access ready-made AI experts that do the work for you. Built for the modern creator economy.</p>
+        </div>
+        <div class="col">
+          <h4>Vault</h4>
+          <a onclick="launchAgentsCTA()">Dashboard</a>
+          <a onclick="go('upgrade')">Upgrade to VIP</a>
+          <a onclick="go('login')">Member Login</a>
+        </div>
+        <div class="col">
+          <h4>Categories</h4>
+          <a onclick="launchAgentsCTA()">Video Creation</a>
+          <a onclick="launchAgentsCTA()">Image Creation</a>
+          <a onclick="launchAgentsCTA()">Marketing</a>
+          <a onclick="launchAgentsCTA()">Prompt Tools</a>
+        </div>
+        <div class="col">
+          <h4>Connect</h4>
+          <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">Facebook</a>
+          <a onclick="go('upgrade')">Become VIP</a>
+        </div>
+      </div>
+      <div class="foot-bottom">© <span id="yr"></span> Dell AI Creators Vault. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <!-- ===== LOGIN ===== -->
+  <div class="view" id="view-login">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <span class="eyebrow">Member Access</span>
+        <h2 id="login-title">Welcome Back</h2>
+        <p class="lead" id="login-lead">Sign in with the credentials provided by your admin.</p>
+        <div class="field">
+          <label>Username</label>
+          <input class="input" id="login-user" placeholder="Enter username" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input class="input" id="login-pass" type="password" placeholder="Enter password" autocomplete="off" onkeydown="if(event.key==='Enter')doLogin()" />
+        </div>
+        <div class="auth-msg" id="login-msg"></div>
+        <button class="btn btn-primary btn-block" style="margin-top:.4rem" onclick="doLogin()">Sign In →</button>
+        <div class="auth-switch">
+          <span id="login-switch-text">Are you the admin?</span>
+          <button onclick="toggleLoginMode()" id="login-switch-btn">Admin Login</button>
+        </div>
+        <div class="hint" id="login-hint"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DASHBOARD ===== -->
+  <div class="view" id="view-dashboard">
+    <div class="dash wrap">
+      <div class="dash-top">
+        <div>
+          <h1>Welcome back, <span id="dash-user" style="color:var(--yellow)">Creator</span> 👋</h1>
+          <p class="hi">Your AI team is ready. Pick an expert and start creating.</p>
+        </div>
+        <span class="plan-badge" id="dash-plan">★ Student Plan</span>
+      </div>
+
+      <!-- featured + side -->
+      <div class="dash-grid">
+        <div class="panel featured" id="featured-panel"></div>
+        <div>
+          <div class="mini-stats" style="margin-bottom:1.1rem">
+            <div class="mini"><div class="n" id="ms-count">13</div><div class="t">Agents Available</div></div>
+            <div class="mini"><div class="n" id="ms-fav">0</div><div class="t">Your Favorites</div></div>
+          </div>
+          <div class="panel updates">
+            <h4>🔔 Recent Updates</h4>
+            <div id="updates-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- toolbar -->
+      <div class="toolbar">
+        <div class="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="input" id="agent-search" placeholder="Search AI agents..." oninput="renderAgents()" />
+        </div>
+      </div>
+      <div class="cats" id="cat-chips" style="margin-bottom:1.4rem"></div>
+
+      <div class="agrid" id="agent-grid"></div>
+
+      <!-- VIP AREA -->
+      <div class="vip-head">
+        <h2>👑 VIP Vault</h2>
+      </div>
+      <div class="vip-banner">
+        <div>
+          <div class="vt">100+ Premium AI Agents Coming Soon</div>
+          <p>Advanced workflows, exclusive systems, and future releases — reserved for VIP members.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openUpgradeModal()">Unlock VIP Access</button>
+      </div>
+      <div class="agrid" id="vip-grid"></div>
+
+      <!-- FUTURE RESOURCES -->
+      <div class="vip-head">
+        <h2>📦 Vault Resources</h2>
+        <span class="access"><span class="lock">●</span> Expanding soon</span>
+      </div>
+      <div class="rgrid" id="resource-grid"></div>
+    </div>
+  </div>
+
+  <!-- ===== UPGRADE ===== -->
+  <div class="view" id="view-upgrade">
+    <div class="up-wrap wrap">
+      <div class="up-card">
+        <div class="crown">👑</div>
+        <h2 id="up-title">Upgrade To VIP</h2>
+        <p id="up-message">Unlock premium AI systems, advanced workflows, future releases, and exclusive AI agents available only to VIP members.</p>
+        <div class="up-feats">
+          <div class="up-feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100+ Premium AI Agents</div>
+          <div class="up-feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Advanced Workflows</div>
+          <div class="up-feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Exclusive AI Agents</div>
+          <div class="up-feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> All Future Releases</div>
+          <div class="up-feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Prompt Packs & Templates</div>
+          <div class="up-feat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SOP Systems & Swipe Files</div>
+        </div>
+        <a class="btn btn-primary" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="margin-top:.5rem">Upgrade Now →</a>
+        <div style="margin-top:1.2rem"><button class="btn btn-dark btn-sm" onclick="go('home')">← Back to Home</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN ===== -->
+  <div class="view" id="view-admin">
+    <div class="admin wrap">
+      <div class="admin-head">
+        <div>
+          <span class="eyebrow">Admin Console</span>
+          <h1 style="font-size:1.9rem;margin-top:.7rem">Manage Your Vault</h1>
+        </div>
+        <button class="btn btn-primary" onclick="openAgentModal()">+ Add New Agent</button>
+      </div>
+      <div class="admin-tabs">
+        <button class="atab active" data-atab="agents" onclick="switchAdminTab('agents')">🤖 Agents</button>
+        <button class="atab" data-atab="creds" onclick="switchAdminTab('creds')">🔑 Credentials</button>
+      </div>
+
+      <div class="apanel active" id="apanel-agents">
+        <div id="admin-agents"></div>
+      </div>
+
+      <div class="apanel" id="apanel-creds">
+        <div class="cred-grid">
+          <div class="panel">
+            <h3 style="font-size:1.2rem;margin-bottom:.3rem">Student Login</h3>
+            <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.2rem">Rotate these monthly. Share the new password with active members.</p>
+            <div class="field"><label>Username</label><input class="input" id="c-suser" /></div>
+            <div class="field"><label>Password</label><input class="input" id="c-spass" /></div>
+            <div class="field">
+              <label>Access Expires On</label>
+              <input class="input" id="c-expiry" type="date" />
+              <p style="font-size:.76rem;color:var(--muted-2);margin-top:.4rem">After this date, members are redirected to the Upgrade page.</p>
+            </div>
+            <button class="btn btn-dark btn-sm" style="margin-bottom:.8rem" onclick="autoRotate()">↻ Auto-generate next month's password</button>
+            <button class="btn btn-primary btn-block" onclick="saveStudentCreds()">Save Student Credentials</button>
+          </div>
+          <div class="panel">
+            <h3 style="font-size:1.2rem;margin-bottom:.3rem">Admin Login</h3>
+            <p style="color:var(--muted);font-size:.85rem;margin-bottom:1.2rem">Your private access to this console. Keep it secret.</p>
+            <div class="field"><label>Admin Username</label><input class="input" id="c-auser" /></div>
+            <div class="field"><label>Admin Password</label><input class="input" id="c-apass" /></div>
+            <button class="btn btn-primary btn-block" style="margin-top:.4rem" onclick="saveAdminCreds()">Save Admin Credentials</button>
+            <div class="hint" style="margin-top:1.4rem">Tip: Changing credentials logs out current sessions on their next visit, so members always need the latest password.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== UPGRADE MODAL ===== -->
+<div class="modal-overlay" id="upgrade-modal" onclick="if(event.target===this)closeModal('upgrade-modal')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('upgrade-modal')">✕</button>
+    <div class="crown">🔒</div>
+    <h3>VIP Members Only</h3>
+    <p class="mtext">Unlock premium AI systems, advanced workflows, future releases, and exclusive AI agents available only to VIP members.</p>
+    <a class="btn btn-primary btn-block" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">👑 Upgrade To VIP</a>
+    <button class="btn btn-dark btn-block" style="margin-top:.7rem" onclick="closeModal('upgrade-modal')">Maybe later</button>
+  </div>
+</div>
+
+<!-- ===== AGENT EDIT MODAL ===== -->
+<div class="modal-overlay" id="agent-modal" onclick="if(event.target===this)closeModal('agent-modal')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('agent-modal')">✕</button>
+    <h3 id="agent-modal-title">Add New Agent</h3>
+    <input type="hidden" id="f-id" />
+    <div class="field"><label>Agent Name</label><input class="input" id="f-name" placeholder="e.g. ContentMaster Bot" /></div>
+    <div class="form-row">
+      <div class="field"><label>Category</label>
+        <select class="input" id="f-cat">
+          <option>Video Creation</option>
+          <option>Image Creation</option>
+          <option>Marketing</option>
+          <option>Prompt Tools</option>
+        </select>
+      </div>
+      <div class="field"><label>Access Level</label>
+        <select class="input" id="f-access">
+          <option value="Student">Student</option>
+          <option value="VIP">VIP</option>
+        </select>
+      </div>
+    </div>
+    <div class="field"><label>Description</label><textarea class="input" id="f-desc" placeholder="What does this agent do?"></textarea></div>
+    <div class="field"><label>GPT Link (URL)</label><input class="input" id="f-url" placeholder="https://chatgpt.com/g/..." /></div>
+    <div class="auth-msg err" id="f-msg"></div>
+    <button class="btn btn-primary btn-block" onclick="saveAgent()">Save Agent</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   STORAGE (safe — falls back to memory when localStorage blocked)
+   ============================================================ */
+const _mem = {};
+const store = {
+  get(k, fb){ try{ const v=localStorage.getItem(k); return v?JSON.parse(v):(k in _mem?_mem[k]:fb);}catch(e){ return (k in _mem)?_mem[k]:fb; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ _mem[k]=v; } _mem[k]=v; }
+};
+
+/* ============================================================
+   DEFAULT DATA
+   ============================================================ */
+const DEFAULT_AGENTS = [
+  {id:'a1', name:'UGC Affiliate Marketing Prompt Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-69c6a37582e48191b4422b41a58bc6a6-ugc-affiliate-marketing-prompt-bot', desc:'Generate scroll-stopping UGC affiliate scripts, hooks, and promo angles that convert browsers into buyers.'},
+  {id:'a2', name:'ContentMaster Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-69ad0593b6b881918b4c5208720cf916-contentmaster-bot', desc:'Your all-in-one content engine — captions, carousels, and posts tailored to your niche and brand voice.'},
+  {id:'a3', name:'Photo Shoot and Video Shoot Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-69b7885c3f148191aa66682d3d3428bf-photo-shoot-and-video-shoot-bot', desc:'Plan pro-level photo and video shoots — concepts, shot lists, lighting, and direction in minutes.'},
+  {id:'a4', name:'2D and 3D Animator Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-69a287d5ffc48191bd43b7c82af1dc24-2d-3d-animator-bot', desc:'Turn ideas into animation-ready prompts and storyboards for 2D and 3D motion projects.'},
+  {id:'a5', name:'CineDirector AI', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-699ee384035881919546c89d41f9147e-cinedirector-ai', desc:'A cinematic director in your pocket — scenes, camera moves, and storytelling beats for stunning video.'},
+  {id:'a6', name:'RealUGC Model AI Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-699afc95dec08191b4c99f0bff848ecb-realugc-model-ai-bot', desc:'Create realistic AI UGC models and lifestyle visuals for ads, product shots, and social content.'},
+  {id:'a7', name:'3D Talking Object Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-699948d67e50819195bb7317854c817d-3d-talking-object-bot', desc:'Bring products and objects to life with talking 3D character concepts and prompts.'},
+  {id:'a8', name:'Ad Captions Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6981b5bcf1fc81919680ae84fd8882d5-ad-captions-bot', desc:'Punchy, high-converting ad captions and hooks for Meta, TikTok, and beyond — on demand.'},
+  {id:'a9', name:'ShotForge AI', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-699ab1b75fa08191939a46a9fe4e8171-shotforge-ai', desc:'Forge perfect image prompts with composition, lighting, and style baked in for jaw-dropping shots.'},
+  {id:'a10', name:'Creative Expert Dell', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-693d5f165b748191b83087445f3147a6-creative-expert-dell', desc:'Dell\'s signature creative strategist — campaign ideas, angles, and creative direction that sells.'},
+  {id:'a11', name:'Script Writer Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6982f53125588191aacac87862fb76d5-script-writer-bo', desc:'Write magnetic video and reel scripts with proven hooks, story flow, and strong calls-to-action.'},
+  {id:'a12', name:'PromptPolish PH', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a0eac6b156081918c90c352fd081caa-promptpolish-ph', desc:'Refine rough ideas into clean, powerful prompts — polished for sharper, more reliable AI output.'},
+  {id:'a13', name:'AI Creatives System Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a12e89f8cb0819199c7bda986742f50-ai-creatives-system-bot', desc:'A full creative production system — ideate, script, and assemble winning ad creatives end-to-end.', featured:true},
+];
+
+const DEFAULT_CREDS = {
+  studentUser:'creator',
+  studentPass:'VAULT-2026',
+  adminUser:'admin',
+  adminPass:'dellvault2026',
+  expiry:'' // ISO yyyy-mm-dd, empty = never expires
+};
+
+const UPDATES = [
+  {t:'AI Creatives System Bot added to the vault', w:'New'},
+  {t:'PromptPolish PH now live for all members', w:'New'},
+  {t:'VIP Vault unlocked — 100+ agents incoming', w:'Soon'},
+  {t:'Dashboard redesign & faster launch', w:'Update'},
+];
+
+const RESOURCES = [
+  {n:'Prompt Packs', i:'📝'},
+  {n:'Templates', i:'🧩'},
+  {n:'Swipe Files', i:'🗂️'},
+  {n:'SOP Systems', i:'⚙️'},
+  {n:'Downloads', i:'⬇️'},
+  {n:'Training Materials', i:'🎓'},
+];
+
+const TESTIMONIALS = [
+  {q:'I stopped writing prompts from scratch. I just open the vault, launch an agent, and my content is done before my coffee.', n:'Maria S.', r:'Content Creator', a:'M'},
+  {q:'As an agency, this saves my team hours every day. One dashboard, every AI expert we need. Game changer.', n:'James R.', r:'Agency Owner', a:'J'},
+  {q:'The UGC and ad caption bots alone paid for themselves in my first week of affiliate promos.', n:'Aira P.', r:'Affiliate Marketer', a:'A'},
+  {q:'I run a small business and don\'t have time to learn AI. These ready-made experts just do the work for me.', n:'Carlo D.', r:'Business Owner', a:'C'},
+  {q:'CineDirector and ShotForge completely upgraded my video shoots. Clients think I hired a whole crew.', n:'Nina V.', r:'UGC Creator', a:'N'},
+  {q:'As a freelancer, having specialized agents on tap makes me look like a 10-person studio.', n:'Leo M.', r:'Freelancer', a:'L'},
+];
+
+const BENEFITS = [
+  {i:'⚡', h:'Launch In One Click', p:'No setup, no prompt engineering. Open an agent and start creating instantly.'},
+  {i:'🎯', h:'Built For Your Niche', p:'Specialized experts for video, images, marketing, and prompts — not generic chatbots.'},
+  {i:'🗂️', h:'One Dashboard', p:'Every AI agent organized, searchable, and favoritable in a single premium hub.'},
+  {i:'🔄', h:'Lifetime Updates', p:'New agents and systems added continuously — your vault keeps growing.'},
+  {i:'👑', h:'VIP Expansion', p:'100+ premium agents, workflows, and exclusive systems on the way.'},
+  {i:'📦', h:'More Than Agents', p:'Prompt packs, templates, swipe files, and SOPs — all coming to your vault.'},
+];
+
+/* ============================================================
+   ICONS — a unique line icon for every GPT
+   ============================================================ */
+const ICONS = {
+  a1:'<path d="M3 10v4a1 1 0 0 0 1 1h2l3 4V5L6 9H4a1 1 0 0 0-1 1z"/><path d="M11 6l7-3v18l-7-3"/><path d="M20 9a3 3 0 0 1 0 6"/>',              /* megaphone */
+  a2:'<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/>',                                                  /* layers */
+  a3:'<path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L17 6h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/><circle cx="12" cy="12.5" r="3.2"/>',   /* camera */
+  a4:'<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 3v18M4 7.5l8 4.5 8-4.5"/>',                                                 /* 3d cube */
+  a5:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 4v5M12 4v5M17 4v5"/><path d="M10 13l4 2.4-4 2.4v-4.8z"/>',          /* clapper/play */
+  a6:'<circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/>',                                                                       /* model/portrait */
+  a7:'<path d="M4 5h13a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3a2 2 0 0 1-1-2V7a2 2 0 0 1 2-2z"/><circle cx="8.5" cy="10" r="1"/><circle cx="12.5" cy="10" r="1"/>', /* talking */
+  a8:'<path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/>',              /* captions/chat */
+  a9:'<circle cx="12" cy="12" r="9"/><path d="M14.4 3.3l-4.7 8.1M21 13.6l-9.3.4M9.6 20.7l4.7-8.1M3 10.4l9.3-.4"/>',                           /* aperture */
+  a10:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',                    /* lightbulb */
+  a11:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>',                                                  /* pen/script */
+  a12:'<path d="M5 3v4M3 5h4M6 16v4M4 18h4"/><path d="M13 4l2.4 6.4L22 13l-6.6 2.6L13 22l-2.4-6.4L4 13l6.6-2.6L13 4z"/>',                      /* sparkle/polish */
+  a13:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>' /* system/grid */
+};
+const CAT_ICONS = {
+  'Video Creation':'<circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5L10 15.5v-7z"/>',
+  'Image Creation':'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M21 16l-5-5L5 20"/>',
+  'Marketing':'<path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/>',
+  'Prompt Tools':'<path d="M13 3l2.4 6.6L22 12l-6.6 2.4L13 21l-2.4-6.6L4 12l6.6-2.4L13 3z"/>'
+};
+const DEFAULT_ICON = '<rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 8V5M9 5h6M9 14h.01M15 14h.01"/>';
+function svgWrap(inner){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'+inner+'</svg>'; }
+function agentIcon(a){ return svgWrap(ICONS[a.id] || CAT_ICONS[a.cat] || DEFAULT_ICON); }
+const LOCK_ICON = svgWrap('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>');
+
+/* ============================================================
+   STATE
+   ============================================================ */
+let agents = store.get('vault_agents', null) || JSON.parse(JSON.stringify(DEFAULT_AGENTS));
+let creds  = Object.assign({}, DEFAULT_CREDS, store.get('vault_creds', {}));
+let favs   = store.get('vault_favs', []);
+let session= store.get('vault_session', null); // {role:'student'|'admin', user}
+let activeCat = 'All';
+let loginMode = 'student'; // or 'admin'
+let editingId = null;
+
+function persist(){ store.set('vault_agents', agents); store.set('vault_creds', creds); store.set('vault_favs', favs); }
+
+/* ============================================================
+   ROUTING
+   ============================================================ */
+const VIEWS = ['home','login','dashboard','upgrade','admin'];
+function go(view){
+  // gates
+  if(view==='dashboard' && !session){ loginMode='student'; renderLogin(); view='login'; }
+  if(view==='dashboard' && session && isExpired()){ view='upgrade'; }
+  if(view==='admin' && (!session || session.role!=='admin')){ loginMode='admin'; renderLogin(); view='login'; }
+
+  VIEWS.forEach(v=>{
+    const el=document.getElementById('view-'+v);
+    el.classList.toggle('active', v===view);
+  });
+  document.getElementById('navlinks').classList.remove('open');
+  if(view==='dashboard') renderDashboard();
+  if(view==='login') renderLogin();
+  if(view==='admin') renderAdmin();
+  renderNav(view);
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+function launchAgentsCTA(){
+  if(session && !isExpired()) go('dashboard');
+  else if(session && isExpired()) go('upgrade');
+  else { loginMode='student'; go('login'); }
+}
+
+function isExpired(){
+  if(!creds.expiry) return false;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const exp = new Date(creds.expiry+'T23:59:59');
+  return today > exp;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+function renderNav(view){
+  const el=document.getElementById('navlinks');
+  let html='';
+  if(session){
+    html += `<button class="link" onclick="go('home')">Home</button>`;
+    html += `<button class="link" onclick="go('dashboard')">Dashboard</button>`;
+    if(session.role==='admin') html += `<button class="link" onclick="go('admin')">Admin</button>`;
+    html += `<button class="link" onclick="go('upgrade')">VIP</button>`;
+    html += `<button class="btn btn-dark btn-sm" onclick="logout()">Logout</button>`;
+  } else {
+    html += `<button class="link" onclick="go('home')">Home</button>`;
+    html += `<button class="link" onclick="go('upgrade')">Upgrade</button>`;
+    html += `<button class="btn btn-primary btn-sm" onclick="loginMode='student';go('login')">Member Login</button>`;
+  }
+  el.innerHTML=html;
+}
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+function renderLogin(){
+  const title=document.getElementById('login-title');
+  const lead=document.getElementById('login-lead');
+  const sw=document.getElementById('login-switch-text');
+  const swb=document.getElementById('login-switch-btn');
+  const hint=document.getElementById('login-hint');
+  document.getElementById('login-msg').textContent='';
+  document.getElementById('login-user').value='';
+  document.getElementById('login-pass').value='';
+  if(loginMode==='admin'){
+    title.textContent='Admin Console';
+    lead.textContent='Sign in to manage agents and credentials.';
+    sw.textContent='Not the admin?';
+    swb.textContent='Member Login';
+    hint.innerHTML='🔑 Admin access only. Use your private admin credentials.';
+  } else {
+    title.textContent='Welcome Back';
+    lead.textContent='Sign in with the credentials provided by your admin.';
+    sw.textContent='Are you the admin?';
+    swb.textContent='Admin Login';
+    hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join →</a>';
+  }
+}
+function toggleLoginMode(){ loginMode = loginMode==='admin'?'student':'admin'; renderLogin(); }
+
+function doLogin(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pass').value;
+  const msg=document.getElementById('login-msg');
+  msg.className='auth-msg';
+  if(loginMode==='admin'){
+    if(u===creds.adminUser && p===creds.adminPass){
+      session={role:'admin', user:u}; store.set('vault_session',session);
+      msg.className='auth-msg ok'; msg.textContent='Welcome, admin!';
+      setTimeout(()=>go('admin'),350);
+    } else { msg.className='auth-msg err'; msg.textContent='Invalid admin credentials.'; }
+    return;
+  }
+  // student
+  if(u===creds.studentUser && p===creds.studentPass){
+    if(isExpired()){
+      msg.className='auth-msg err'; msg.textContent='Your access has expired. Redirecting to upgrade…';
+      setTimeout(()=>go('upgrade'),900); return;
+    }
+    session={role:'student', user:u}; store.set('vault_session',session);
+    msg.className='auth-msg ok'; msg.textContent='Access granted! Loading your vault…';
+    setTimeout(()=>go('dashboard'),350);
+  } else { msg.className='auth-msg err'; msg.textContent='Incorrect username or password.'; }
+}
+function logout(){ session=null; store.set('vault_session',null); go('home'); toast('Logged out'); }
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+function renderDashboard(){
+  document.getElementById('dash-user').textContent = session ? session.user : 'Creator';
+  document.getElementById('dash-plan').innerHTML = session && session.role==='admin' ? '⚙️ Admin Access' : '★ Student Plan';
+  const studentAgents = agents.filter(a=>a.access==='Student');
+  document.getElementById('ms-count').textContent = studentAgents.length;
+  document.getElementById('ms-fav').textContent = favs.length;
+
+  // featured
+  let f = agents.find(a=>a.featured) || studentAgents[0];
+  const fp=document.getElementById('featured-panel');
+  if(f){
+    fp.innerHTML = `
+      <div style="display:flex;align-items:center;gap:.9rem;position:relative;z-index:1">
+        <div class="aicon" style="width:56px;height:56px;border-radius:16px">${agentIcon(f)}</div>
+        <span class="tag">★ Featured Agent</span>
+      </div>
+      <h3>${esc(f.name)}</h3>
+      <p>${esc(f.desc)}</p>
+      <div class="ft-meta">
+        <span class="cat" style="position:relative;z-index:1">${esc(f.cat)}</span>
+        <span class="access" style="position:relative;z-index:1"><span class="lock">●</span> ${esc(f.access)}</span>
+      </div>
+      <a class="btn btn-primary" href="${esc(f.url)}" target="_blank" rel="noopener" style="position:relative;z-index:1">⚡ Launch Agent</a>`;
+  }
+
+  // updates
+  document.getElementById('updates-list').innerHTML = UPDATES.map(u=>`
+    <div class="upd"><span class="dot"></span><div>${esc(u.t)}<div class="when">${esc(u.w)}</div></div></div>`).join('');
+
+  // category chips
+  const cats=['All','Video Creation','Image Creation','Marketing','Prompt Tools','★ Favorites'];
+  document.getElementById('cat-chips').innerHTML = cats.map(c=>
+    `<button class="chip ${ (c==='★ Favorites'? activeCat==='Favorites' : activeCat===c) ?'active':''}" onclick="setCat('${c==='★ Favorites'?'Favorites':c}')">${c}</button>`
+  ).join('');
+
+  renderAgents();
+  renderVIP();
+  renderResources();
+}
+
+function setCat(c){ activeCat=c; renderDashboard(); }
+
+function renderAgents(){
+  const q=(document.getElementById('agent-search').value||'').toLowerCase().trim();
+  let list = agents.filter(a=>a.access==='Student');
+  if(activeCat==='Favorites') list=list.filter(a=>favs.includes(a.id));
+  else if(activeCat!=='All') list=list.filter(a=>a.cat===activeCat);
+  if(q) list=list.filter(a=>a.name.toLowerCase().includes(q)||a.desc.toLowerCase().includes(q)||a.cat.toLowerCase().includes(q));
+
+  const grid=document.getElementById('agent-grid');
+  if(!list.length){ grid.innerHTML=`<div class="empty">No agents match your filter${q?' "'+esc(q)+'"':''}. Try another category or search.</div>`; return; }
+  grid.innerHTML=list.map(a=>`
+    <div class="acard reveal in-view">
+      <div class="top">
+        <div class="aicon">${agentIcon(a)}</div>
+        <button class="fav ${favs.includes(a.id)?'on':''}" onclick="toggleFav('${a.id}')" title="Favorite">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="${favs.includes(a.id)?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.9-10-9.3C.6 8.9 2 5.5 5.2 5.5c2 0 3.3 1.2 4 2.3 .7-1.1 2-2.3 4-2.3 3.2 0 4.6 3.4 3.2 6.2C19.5 16.1 12 21 12 21z"/></svg>
+        </button>
+      </div>
+      <h3>${esc(a.name)}</h3>
+      <span class="cat-tag">${esc(a.cat)}</span>
+      <p class="desc" style="margin-top:.7rem">${esc(a.desc)}</p>
+      <div class="foot">
+        <span class="access"><span class="lock">●</span> ${esc(a.access)}</span>
+        <a class="btn btn-primary btn-sm" href="${esc(a.url)}" target="_blank" rel="noopener">Launch →</a>
+      </div>
+    </div>`).join('');
+}
+
+function toggleFav(id){
+  const i=favs.indexOf(id);
+  if(i>-1) favs.splice(i,1); else favs.push(id);
+  store.set('vault_favs',favs);
+  document.getElementById('ms-fav').textContent=favs.length;
+  renderAgents();
+}
+
+/* VIP locked cards */
+function renderVIP(){
+  const vipTitles=[
+    {n:'AI Funnel Architect',c:'Marketing'},{n:'Viral Reel Machine',c:'Video Creation'},
+    {n:'Brand Identity Studio',c:'Image Creation'},{n:'Email Sequence Pro',c:'Marketing'},
+    {n:'Faceless Channel Engine',c:'Video Creation'},{n:'Product Photo Lab',c:'Image Creation'},
+  ];
+  const customVip = agents.filter(a=>a.access==='VIP').map(a=>({n:a.name,c:a.cat}));
+  const all=[...customVip, ...vipTitles].slice(0,8);
+  document.getElementById('vip-grid').innerHTML = all.map(v=>`
+    <div class="acard locked" onclick="openUpgradeModal()">
+      <div class="blur">
+        <div class="top"><div class="aicon" style="color:var(--muted)">${LOCK_ICON}</div><span class="fav">🔒</span></div>
+        <h3>${esc(v.n)}</h3>
+        <span class="cat-tag">${esc(v.c)}</span>
+        <p class="desc" style="margin-top:.7rem">Exclusive VIP system — advanced workflow available to VIP members only.</p>
+        <div class="foot"><span class="access"><span class="lock">🔒</span> VIP</span><span class="btn btn-dark btn-sm">Locked</span></div>
+      </div>
+      <div class="lockface"><div class="lk">🔒 Unlock with VIP</div></div>
+    </div>`).join('');
+}
+
+function renderResources(){
+  document.getElementById('resource-grid').innerHTML = RESOURCES.map(r=>`
+    <div class="rcard"><div class="ri">${r.i}</div><div class="rn">${esc(r.n)}</div><div class="rs">Coming Soon</div></div>`).join('');
+}
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+function openUpgradeModal(){ document.getElementById('upgrade-modal').classList.add('show'); }
+function closeModal(id){ document.getElementById(id).classList.remove('show'); }
+
+/* ============================================================
+   ADMIN
+   ============================================================ */
+function switchAdminTab(tab){
+  document.querySelectorAll('.atab').forEach(t=>t.classList.toggle('active', t.dataset.atab===tab));
+  document.getElementById('apanel-agents').classList.toggle('active', tab==='agents');
+  document.getElementById('apanel-creds').classList.toggle('active', tab==='creds');
+  if(tab==='creds') fillCredForm();
+}
+
+function renderAdmin(){
+  // agents list
+  document.getElementById('admin-agents').innerHTML = agents.map(a=>`
+    <div class="arow">
+      <div style="display:flex;align-items:center;gap:.7rem">
+        <div class="aicon" style="width:42px;height:42px;border-radius:12px">${agentIcon(a)}</div>
+        <div><div class="anm">${esc(a.name)}</div><div class="au">${esc(a.desc)}</div></div>
+      </div>
+      <div><span class="cat" style="font-size:.7rem">${esc(a.cat)}</span></div>
+      <div><span class="badge ${a.access==='VIP'?'vip':'student'}">${esc(a.access)}</span></div>
+      <div class="acts">
+        <button class="icon-btn" onclick="openAgentModal('${a.id}')" title="Edit">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </button>
+        <button class="icon-btn danger" onclick="deleteAgent('${a.id}')" title="Delete">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </button>
+      </div>
+    </div>`).join('');
+  fillCredForm();
+}
+
+function fillCredForm(){
+  document.getElementById('c-suser').value=creds.studentUser;
+  document.getElementById('c-spass').value=creds.studentPass;
+  document.getElementById('c-expiry').value=creds.expiry||'';
+  document.getElementById('c-auser').value=creds.adminUser;
+  document.getElementById('c-apass').value=creds.adminPass;
+}
+
+function openAgentModal(id){
+  editingId = id||null;
+  document.getElementById('f-msg').textContent='';
+  document.getElementById('agent-modal-title').textContent = id?'Edit Agent':'Add New Agent';
+  const a = id ? agents.find(x=>x.id===id) : {name:'',cat:'Video Creation',access:'Student',desc:'',url:''};
+  document.getElementById('f-id').value=id||'';
+  document.getElementById('f-name').value=a.name;
+  document.getElementById('f-cat').value=a.cat;
+  document.getElementById('f-access').value=a.access;
+  document.getElementById('f-desc').value=a.desc;
+  document.getElementById('f-url').value=a.url;
+  document.getElementById('agent-modal').classList.add('show');
+}
+
+function saveAgent(){
+  const name=document.getElementById('f-name').value.trim();
+  const url=document.getElementById('f-url').value.trim();
+  const msg=document.getElementById('f-msg');
+  if(!name){ msg.textContent='Agent name is required.'; return; }
+  if(!url){ msg.textContent='GPT link is required.'; return; }
+  const data={
+    name, url,
+    cat:document.getElementById('f-cat').value,
+    access:document.getElementById('f-access').value,
+    desc:document.getElementById('f-desc').value.trim()||'Specialized AI agent ready to work for you.'
+  };
+  if(editingId){
+    const i=agents.findIndex(a=>a.id===editingId);
+    agents[i]=Object.assign(agents[i], data);
+    toast('Agent updated');
+  } else {
+    data.id='a'+Date.now();
+    agents.push(data);
+    toast('Agent added');
+  }
+  persist(); closeModal('agent-modal'); renderAdmin();
+}
+
+function deleteAgent(id){
+  const a=agents.find(x=>x.id===id);
+  if(!confirm('Delete "'+a.name+'"? This cannot be undone.')) return;
+  agents=agents.filter(x=>x.id!==id);
+  favs=favs.filter(f=>f!==id);
+  persist(); renderAdmin(); toast('Agent deleted');
+}
+
+function saveStudentCreds(){
+  creds.studentUser=document.getElementById('c-suser').value.trim()||'creator';
+  creds.studentPass=document.getElementById('c-spass').value.trim()||'VAULT-2026';
+  creds.expiry=document.getElementById('c-expiry').value||'';
+  store.set('vault_creds',creds);
+  // force re-login for students whose session predates change (simple approach: keep admin, drop student session if not matching)
+  toast('Student credentials saved');
+}
+function saveAdminCreds(){
+  creds.adminUser=document.getElementById('c-auser').value.trim()||'admin';
+  creds.adminPass=document.getElementById('c-apass').value.trim()||'dellvault2026';
+  store.set('vault_creds',creds);
+  if(session && session.role==='admin'){ session.user=creds.adminUser; store.set('vault_session',session); }
+  toast('Admin credentials saved');
+}
+function autoRotate(){
+  const months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const now=new Date(); const next=new Date(now.getFullYear(), now.getMonth()+1, 1);
+  const code='VAULT-'+months[next.getMonth()]+'-'+next.getFullYear();
+  // expiry = last day of next month
+  const last=new Date(next.getFullYear(), next.getMonth()+1, 0);
+  document.getElementById('c-spass').value=code;
+  document.getElementById('c-expiry').value=last.toISOString().slice(0,10);
+  toast('Generated '+code);
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function esc(s){ return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+let toastT;
+function toast(msg){
+  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+/* count-up + reveal */
+function initHomeFX(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // build dynamic home content
+  document.getElementById('testimonials').innerHTML = TESTIMONIALS.map(t=>`
+    <div class="tcard reveal">
+      <div class="stars">★★★★★</div>
+      <p>“${esc(t.q)}”</p>
+      <div class="tperson"><div class="avatar">${esc(t.a)}</div><div><div class="nm">${esc(t.n)}</div><div class="rl">${esc(t.r)}</div></div></div>
+    </div>`).join('');
+  document.getElementById('benefits').innerHTML = BENEFITS.map(b=>`
+    <div class="bcard reveal"><div class="bico" style="font-size:1.3rem">${b.i}</div><h3>${esc(b.h)}</h3><p>${esc(b.p)}</p></div>`).join('');
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in-view'); if(e.target.querySelector('[data-count]')||e.target.matches('.stat')) countUp(e.target); io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+function countUp(scope){
+  scope.querySelectorAll('[data-count]').forEach(el=>{
+    const target=+el.dataset.count, suf=el.dataset.suffix||''; let cur=0;
+    const step=Math.max(1, Math.round(target/40));
+    const tick=()=>{ cur=Math.min(target, cur+step); el.textContent=cur+suf; if(cur<target) requestAnimationFrame(tick); };
+    tick();
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+(function init(){
+  // resume session sensibly
+  if(session){
+    if(session.role==='student' && isExpired()){ go('upgrade'); }
+    renderNav('home');
+  } else { renderNav('home'); }
+  initHomeFX();
+  go('home');
+})();
+</script>
+</body>
+</html>
