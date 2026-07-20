@@ -361,7 +361,6 @@
         <p class="sub">Stop spending hours writing prompts from scratch. Launch specialized AI agents built for content creators, freelancers, marketers, agencies, and business owners.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
-          <button class="btn btn-ghost" onclick="go('upgrade')">👑 Upgrade To VIP</button>
         </div>
         <div class="audience-row">
           <span class="pill">Business Owners</span>
@@ -376,8 +375,8 @@
 
     <section class="stats wrap">
       <div class="stats-grid">
-        <div class="stat reveal"><div class="num" data-count="13" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
-        <div class="stat reveal"><div class="num" data-count="100" data-suffix="+">0</div><div class="lbl">VIP Agents Coming Soon</div></div>
+        <div class="stat reveal"><div class="num" data-count="135" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
+        <div class="stat reveal"><div class="num" data-static="100%">100%</div><div class="lbl">Free For All Members</div></div>
         <div class="stat reveal"><div class="num" data-static="∞">∞</div><div class="lbl">Lifetime Updates</div></div>
         <div class="stat reveal"><div class="num" data-static="1">1</div><div class="lbl">Dashboard Access</div></div>
       </div>
@@ -401,14 +400,47 @@
       <div class="bgrid" id="benefits"></div>
     </section>
 
+    <section class="section-pad wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">🤖 Done-For-You Service</span>
+        <h2>Want a Bot Built <span class="hl">For Your Brand?</span></h2>
+        <p>We build custom AI bots tailored specifically to your business — your voice, your products, your workflow. Better prompts, better output, better results.</p>
+      </div>
+      <div class="bgrid reveal" style="margin-bottom:2.5rem">
+        <div class="bcard">
+          <div class="bico" style="font-size:1.3rem">🎯</div>
+          <h3>Built For Your Brand</h3>
+          <p>Your custom bot learns your brand voice, product details, and target audience — outputs that feel 100% you.</p>
+        </div>
+        <div class="bcard">
+          <div class="bico" style="font-size:1.3rem">⚡</div>
+          <h3>Better Output, Faster</h3>
+          <p>No more tweaking generic prompts. Your bot delivers polished, on-brand content in one shot — every time.</p>
+        </div>
+        <div class="bcard">
+          <div class="bico" style="font-size:1.3rem">🔧</div>
+          <h3>Can Do A Lot</h3>
+          <p>Ad copy, scripts, captions, emails, SOPs, chatbots — whatever your business needs, we can build a bot for it.</p>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div class="up-card reveal" style="max-width:680px;margin:0 auto">
+          <div style="font-size:2rem">💬</div>
+          <h2 style="font-size:1.8rem;margin:.8rem 0 .5rem;position:relative">Let's Build Your Custom Bot</h2>
+          <p style="position:relative">PM us on Facebook and tell us about your brand. We'll take it from there — tailored, tested, and ready to work for you.</p>
+          <a class="btn btn-primary" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="margin-top:1.6rem;font-size:1rem;padding:1rem 2rem">📩 PM Us on Facebook</a>
+          <p style="color:var(--muted-2);font-size:.8rem;margin-top:1rem;position:relative">Dell AI Creators Vault • Custom Bot Services</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section-pad wrap" style="text-align:center">
       <div class="up-card reveal" style="max-width:760px">
         <span class="eyebrow">Ready to start?</span>
         <h2 style="font-size:2rem;margin:1rem 0 .6rem;position:relative">Your AI Team Is Waiting</h2>
-        <p>Log in to your dashboard and launch 13+ ready-made AI experts — or upgrade to VIP for 100+ premium systems.</p>
+        <p>Log in to your dashboard and launch 135+ ready-made AI experts — 100% free for all members.</p>
         <div class="hero-cta" style="margin-top:1.8rem">
           <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
-          <button class="btn btn-ghost" onclick="go('upgrade')">👑 Upgrade To VIP</button>
         </div>
       </div>
     </section>
@@ -422,7 +454,6 @@
         <div class="col">
           <h4>Vault</h4>
           <a onclick="launchAgentsCTA()">Dashboard</a>
-          <a onclick="go('upgrade')">Upgrade to VIP</a>
           <a onclick="go('login')">Member Login</a>
         </div>
         <div class="col">
@@ -435,7 +466,6 @@
         <div class="col">
           <h4>Connect</h4>
           <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">Facebook</a>
-          <a onclick="go('upgrade')">Become VIP</a>
         </div>
       </div>
       <div class="foot-bottom">© <span id="yr"></span> Dell AI Creators Vault. All rights reserved.</div>
@@ -458,11 +488,12 @@
         </div>
         <div class="auth-msg" id="login-msg"></div>
         <button class="btn btn-primary btn-block" style="margin-top:.4rem" onclick="doLogin()">Sign In →</button>
-        <div class="auth-switch">
+        <div class="auth-switch" id="login-switch-wrap" style="display:none">
           <span id="login-switch-text">Are you the admin?</span>
           <button onclick="toggleLoginMode()" id="login-switch-btn">Admin Login</button>
         </div>
         <div class="hint" id="login-hint"></div>
+        <div style="text-align:center;margin-top:.8rem"><span id="admin-tap" onclick="handleAdminTap()" style="color:transparent;font-size:.5rem;user-select:none">·</span></div>
       </div>
     </div>
   </div>
@@ -481,7 +512,7 @@
         <div class="panel featured" id="featured-panel"></div>
         <div>
           <div class="mini-stats" style="margin-bottom:1.1rem">
-            <div class="mini"><div class="n" id="ms-count">13</div><div class="t">Agents Available</div></div>
+            <div class="mini"><div class="n" id="ms-count">135</div><div class="t">Agents Available</div></div>
             <div class="mini"><div class="n" id="ms-fav">0</div><div class="t">Your Favorites</div></div>
           </div>
           <div class="panel updates">
@@ -501,22 +532,19 @@
 
       <div class="agrid" id="agent-grid"></div>
 
-      <div class="vip-head">
-        <h2>👑 VIP Vault</h2>
-      </div>
-      <div class="vip-banner">
-        <div>
-          <div class="vt">100+ Premium AI Agents Coming Soon</div>
-          <p>Advanced workflows, exclusive systems, and future releases — reserved for VIP members.</p>
+      <div style="margin:3rem 0 1rem">
+        <div class="vip-banner" style="background:linear-gradient(120deg,#0f1a0f,#0f0f0f);border-color:rgba(100,220,100,.25);gap:1.5rem;align-items:center">
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <div style="font-size:2rem">🤖</div>
+            <div>
+              <div class="vt" style="color:#6ddc6d;font-size:1.1rem">Want a Custom Bot Built For Your Brand?</div>
+              <p style="color:var(--muted);font-size:.9rem;margin-top:.3rem">We tailor AI bots to your exact business — your voice, your products, better output. Can do a LOT.</p>
+            </div>
+          </div>
+          <a class="btn btn-sm" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="background:#6ddc6d;color:#0A0A0A;font-weight:800;white-space:nowrap;flex-shrink:0">📩 PM Us Now</a>
         </div>
-        <button class="btn btn-primary" onclick="openUpgradeModal()">Unlock VIP Access</button>
       </div>
-      <div class="agrid" id="vip-grid"></div>
 
-      <div class="vip-head">
-        <h2>📦 Vault Resources</h2>
-        <span class="access"><span class="lock">●</span> Expanding soon</span>
-      </div>
       <div class="rgrid" id="resource-grid"></div>
     </div>
   </div>
@@ -592,11 +620,11 @@
 <div class="modal-overlay" id="upgrade-modal" onclick="if(event.target===this)closeModal('upgrade-modal')">
   <div class="modal">
     <button class="close" onclick="closeModal('upgrade-modal')">✕</button>
-    <div class="crown">🔒</div>
-    <h3>VIP Members Only</h3>
-    <p class="mtext">Unlock premium AI systems, advanced workflows, future releases, and exclusive AI agents available only to VIP members.</p>
-    <a class="btn btn-primary btn-block" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">👑 Upgrade To VIP</a>
-    <button class="btn btn-dark btn-block" style="margin-top:.7rem" onclick="closeModal('upgrade-modal')">Maybe later</button>
+    <div class="crown">✅</div>
+    <h3>All Agents Are Free!</h3>
+    <p class="mtext">Every AI agent in the vault is 100% free for all members. No upgrades needed — just log in and launch.</p>
+    <button class="btn btn-primary btn-block" onclick="closeModal('upgrade-modal');go('dashboard')">⚡ Launch Agents Now</button>
+    <button class="btn btn-dark btn-block" style="margin-top:.7rem" onclick="closeModal('upgrade-modal')">Close</button>
   </div>
 </div>
 
@@ -652,6 +680,128 @@ const DEFAULT_AGENTS = [
   {id:'a11', name:'Script Writer Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6982f53125588191aacac87862fb76d5-script-writer-bot', desc:'Write magnetic video and reel scripts with proven hooks, story flow, and strong calls-to-action.'},
   {id:'a12', name:'PromptPolish PH', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a0eac6b156081918c90c352fd081caa-promptpolish-ph', desc:'Refine rough ideas into clean, powerful prompts — polished for sharper, more reliable AI output.'},
   {id:'a13', name:'AI Creatives System Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a12e89f8cb0819199c7bda986742f50-ai-creatives-system-bot', desc:'A full creative production system — ideate, script, and assemble winning ad creatives end-to-end.', featured:true},
+  {id:'a14', name:'Omni Expert Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a5774b77c588191b76ca29d2957cb80-omni-expert-bot', desc:'The all-knowing marketing expert — strategy, copy, creatives, and campaigns in one powerful agent.'},
+  {id:'a15', name:'Veo AI Creative System Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-69f9f1afcf0c8191a52f0f6602da67d0-veo-ai-creative-system-bot', desc:'Build full AI video creative systems using Veo — prompts, storyboards, and production-ready concepts.'},
+  {id:'a16', name:'CloseBot — Sales Conversion Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f52edcc508191ad17f87352959b7c-closebot-sales-conversion-strategist', desc:'Turn leads into buyers with proven closing scripts, objection handlers, and conversion strategies.'},
+  {id:'a17', name:'SparkTok — TikTok Ads Creator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f53fe8510819190d5888b74ac773c-sparktok-tiktok-ads-creator', desc:'Create viral TikTok ads that stop scrolls — hooks, scripts, and concepts built for the FYP.'},
+  {id:'a18', name:'MetaForge — Facebook/Meta Ads Copywriter', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f73898aa081919b6302eb0e961d26-metaforge-facebook-meta-ads-copywriter', desc:'Write high-converting Meta ad copy — primary text, headlines, and CTAs that drive real results.'},
+  {id:'a19', name:'GlowGram — Instagram Ads Creator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f8d4c0b8081919092c57b17c33d21-glowgram-instagram-ads-creator', desc:'Craft Instagram ads that glow — visually compelling copy and concepts for Stories, Reels, and Feed.'},
+  {id:'a20', name:'RankFlow — Google Ads Copywriter', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f8e2f26a4819189d37793bbcc6f0c-rankflow-google-ads-copywriter', desc:'Write search and display ads that rank and convert — keywords, headlines, and descriptions optimized.'},
+  {id:'a21', name:'HookLab — Viral Hook Machine', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a2f8f13298881918d9bd9bb5623b5fb-hooklab-viral-hook-machine', desc:'Generate scroll-stopping hooks for ads, reels, and posts that grab attention in the first 3 seconds.'},
+  {id:'a22', name:'BrandVoice — Brand Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f900b8b98819190fffbb5207f4d93-brandvoice-brand-strategist', desc:'Define and lock in your brand voice, positioning, and messaging — consistent across every platform.'},
+  {id:'a23', name:'MailMint — Email Marketing Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f90d44c908191a28b651c0e8368b2-mailmint-email-marketing-engine', desc:'Write email sequences, broadcasts, and nurture campaigns that open, click, and convert.'},
+  {id:'a24', name:'FunnelForge — Funnel/Landing Page Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f91a6b70881918e1dae680058806b-funnelforge-funnel-landing-page-builder', desc:'Build high-converting funnels and landing pages — copy, structure, and flow from top to bottom.'},
+  {id:'a25', name:'TrendScout — Trend & Competitor Intel', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f926ed4a88191a050ad88d1dcbcf2-trendscout-trend-competitor-intel', desc:'Spy on trends and competitors — find what is working now and turn insights into your next winning campaign.'},
+  {id:'a26', name:'ScriptReel — Video/VSL Script Engine', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2f93d7ad6c8191b97fa5da941b1da5-scriptreel-video-vsl-script-engine', desc:'Write video sales letters and reel scripts with magnetic hooks, story arcs, and powerful closes.'},
+  {id:'a27', name:'ReplyRocket — DM/Comment Closer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f94ff75c88191ad3f23bda3d166e7-replyrocket-dm-comment-closer', desc:'Close sales in DMs and comments with proven reply scripts that feel natural and convert fast.'},
+  {id:'a28', name:'LaunchPad — Launch/Promo Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f95cde4a88191894b4c43143012d1-launchpad-launch-promo-strategist', desc:'Plan and execute product launches and promos — timelines, angles, and campaign structures that sell.'},
+  {id:'a29', name:'LoyalLoop — Retention/Loyalty Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f96ad65a881918068ff6cacb5db99-loyalloop-retention-loyalty-strategist', desc:'Keep customers coming back — loyalty systems, retention tactics, and re-engagement campaigns.'},
+  {id:'a30', name:'PennyWise — Budget/ROI Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f97cd5d1c8191bee9301eccbd11c5-pennywise-budget-roi-strategist', desc:'Maximize every peso — budget allocation, ROI tracking, and spend optimization for smarter ad campaigns.'},
+  {id:'a31', name:'PriceRight — Pricing/Quote Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9956eb40819189faf9101cf98dd1-priceright-pricing-quote-strategist', desc:'Price with confidence — positioning, packaging, and quoting strategies that win deals and protect margins.'},
+  {id:'a32', name:'ContentMill — Repurpose/Calendar Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9cc727a48191911e064e5237ce95-contentmill-repurpose-calendar-engine', desc:'Repurpose one piece of content into 10 — build a full calendar without starting from scratch.'},
+  {id:'a33', name:'BizNamer — Name/Tagline Lab', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9db4e8508191b287c532309ddecc-biznamer-name-tagline-lab', desc:'Find the perfect name and tagline for any brand, product, or offer — memorable, marketable, and on-brand.'},
+  {id:'a34', name:'WinBack — Follow-Up/Reactivation Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9e53e8188191adac34abda389e44-winback-follow-up-reactivation-engine', desc:'Reactivate cold leads and lost customers with follow-up sequences that reignite interest and drive action.'},
+  {id:'a35', name:'HookStorm — Caption/Hook Writer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a2f9f8152608191812a014007e6f317-hookstorm-caption-hook-writer', desc:'Storm through captions and hooks in seconds — punchy, platform-native copy for every post.'},
+  {id:'a36', name:'CarouselCraft — Carousel Builder', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2fa64ed85c819196417d56f8631afd-carouselcraft-carousel-builder', desc:'Design slide-by-slide carousel content — structure, copy, and flow for maximum swipes and saves.'},
+  {id:'a37', name:'ReelRecipe — Reel/Short-Form Idea Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2fa6f1dcc0819193bcbfe0568b87b9-reelrecipe-reel-short-form-idea-bot', desc:'Cook up reel ideas that perform — concepts, formats, and scripts built for short-form virality.'},
+  {id:'a38', name:'ThemeMonth — 30-Day Content Planner', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2fd90efe808191a906c19a29873627-thememonth-30-day-content-planner', desc:'Plan a full month of content in one go — themes, topics, and post ideas mapped out and ready to execute.'},
+  {id:'a39', name:'StoryBoard — Storytelling/Personal Brand Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301c5fd3bc8191ba909b8b52f4b50b-storyboard-storytelling-personal-brand-bot', desc:'Build your personal brand through story — frameworks, narratives, and content that makes people follow you.'},
+  {id:'a40', name:'AdImagine — Ad Creative Concept Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a301cb5f0408191a73c1ca7b70343c9-adimagine-ad-creative-concept-bot', desc:'Conceive scroll-stopping ad visuals — creative direction, concept briefs, and image prompts for any product.'},
+  {id:'a41', name:'PromoPunch — Promo/Offer Copy Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301cf7c8dc8191a941cbd2e95137ca-promopunch-promo-offer-copy-bot', desc:'Write irresistible promo copy — urgency, value stacking, and offer framing that moves product fast.'},
+  {id:'a42', name:'TestiMagic — Testimonial/Proof Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301d32d30481919888530deb7ca0c7-testimagic-testimonial-proof-bot', desc:'Extract and craft powerful testimonials and social proof — turn customer wins into conversion assets.'},
+  {id:'a43', name:'BioBuilder — Bio/Profile Optimizer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301d69f3d88191ab3194bc080285c7-biobuilder-bio-profile-optimizer', desc:'Optimize your bio and social profiles to attract the right audience and convert profile visits to followers.'},
+  {id:'a44', name:'NewsAngle — Newsletter/Long-Form Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301daeca1c8191badeb3bdfcbd5c1f-newsangle-newsletter-long-form-bot', desc:'Write newsletters and long-form content with sharp angles, strong openers, and high readability.'},
+  {id:'a45', name:'PromptForge — AI Prompt Engineer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301de603508191b6a7e2864abed742-promptforge-ai-prompt-engineer', desc:'Engineer precise, powerful prompts for any AI tool — get better outputs faster with structured prompt logic.'},
+  {id:'a46', name:'AutoFlow — Automation/Workflow Designer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301e32c8ac8191b2eac5b672e57db4-autoflow-automation-workflow-designer', desc:'Design smart automation workflows — map your processes and eliminate repetitive tasks with AI.'},
+  {id:'a47', name:'AIStack — AI Tool Advisor', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301e6dc3788191be1cc095c7663ccb-aistack-ai-tool-advisor', desc:'Find the right AI tool for every job — curated recommendations and stack advice for creators and marketers.'},
+  {id:'a48', name:'ChatCraft — Chatbot/Auto-Reply Builder', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301ea6c3d481918d1dec0431f4f271-chatcraft-chatbot-auto-reply-builder', desc:'Build chatbots and auto-reply systems that handle inquiries, qualify leads, and close sales on autopilot.'},
+  {id:'a49', name:'DataDecode — Analytics/Insights Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301eeec628819198998b9415d7a16c-datadecode-analytics-insights-bot', desc:'Decode your data into clear insights — metrics, performance analysis, and actionable next steps.'},
+  {id:'a50', name:'ListLaunch — Product Listing Optimizer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301f26c4cc81918685b97b9869c776-listlaunch-product-listing-optimizer', desc:'Optimize product listings for maximum visibility and conversions — titles, descriptions, and keywords.'},
+  {id:'a51', name:'PartnerPro — Affiliate/Partnership Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301f5dc6488191b47374279774e728-partnerpro-affiliate-partnership-strategist', desc:'Build affiliate programs and brand partnerships that generate passive revenue and expand your reach.'},
+  {id:'a52', name:'WebinarWin — Webinar/Event Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301f93ca848191ad2b9b9dc0c08ed3-webinarwin-webinar-event-strategist', desc:'Plan and execute webinars and live events that fill seats, engage audiences, and convert attendees.'},
+  {id:'a53', name:'PodPush — Podcast/Audio Marketing Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301fc8c26881918dd6f84d1389bac1-podpush-podcast-audio-marketing-bot', desc:'Grow and monetize your podcast — episode ideas, show notes, promo copy, and audience growth tactics.'},
+  {id:'a54', name:'TribeBuild — Community/Group Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302000d7f48191be79cf667edd8676-tribebuild-community-group-strategist', desc:'Build and grow an engaged community — onboarding, content rhythms, and member retention systems.'},
+  {id:'a55', name:'ReferRush — Referral/Word-of-Mouth Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a30203fbfec8191baa1f06870067908-referrush-referral-word-of-mouth-engine', desc:'Build referral systems that spread your brand — incentive structures and word-of-mouth campaigns.'},
+  {id:'a56', name:'SeasonSell — Seasonal/Holiday Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302072c29c8191b9f955a4cef685d3-seasonsell-seasonal-holiday-strategist', desc:'Capitalize on every season and holiday — campaign calendars, promo angles, and timely content.'},
+  {id:'a57', name:'OnboardEase — Onboarding/Education Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3020a7d6c081919c1e2557f2e6c1ee-onboardease-onboarding-education-bot', desc:'Create smooth onboarding experiences and educational content that turns new users into loyal fans.'},
+  {id:'a58', name:'EdgeFinder — Positioning/Differentiation Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3020d6c05481918faed9f06d0fe3b1-edgefinder-positioning-differentiation-bot', desc:'Find your competitive edge — positioning angles and differentiation strategies that make you the obvious choice.'},
+  {id:'a59', name:'AuditAce — Marketing Audit Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a30210be17c81919b6e202b86cb06c5-auditace-marketing-audit-bot', desc:'Audit your entire marketing setup — ads, copy, funnel, and profiles — and get a prioritized fix list.'},
+  {id:'a60', name:'PitchDeck — Pitch/Proposal Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302143bb588191a96ea93097ab4d80-pitchdeck-pitch-proposal-builder', desc:'Build winning pitches and proposals — structure, copy, and design direction that closes deals.'},
+  {id:'a61', name:'SEOSmith — SEO Content Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a30217b7ac48191a054d4e9fe382dbf-seosmith-seo-content-engine', desc:'Create SEO content that ranks — keyword strategy, optimized articles, and meta copy for organic growth.'},
+  {id:'a62', name:'CrisisCalm — Reputation/Crisis Manager', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3021a7e9588191ac4013d7c6fcb8d5-crisiscalm-reputation-crisis-manager', desc:'Handle brand crises and reputation issues calmly — response strategies and messaging that protect your image.'},
+  {id:'a63', name:'InfluMatch — Influencer/UGC Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3021d8d6108191bfddd4afc7473126-influmatch-influencer-ugc-strategist', desc:'Find and activate influencers and UGC creators — briefs, outreach scripts, and campaign management.'},
+  {id:'a64', name:'LocalLift — Local Marketing Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302209bc8c819190d1dea922e2a318-locallift-local-marketing-strategist', desc:'Dominate your local market — geo-targeted campaigns, local SEO, and community marketing strategies.'},
+  {id:'a65', name:'AvatarScript — AI Avatar Video Scriptwriter', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338e1319a88191b9f3a0a6a465eb39-avatarscript-ai-avatar-video-scriptwriter', desc:'Write scripts specifically for AI avatar videos — natural delivery, clear beats, and on-brand messaging.'},
+  {id:'a66', name:'VoiceOver — AI Voiceover Script/Delivery Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338e545e488191987d45154f36cd4d-voiceover-ai-voiceover-script-delivery-bot', desc:'Write and direct voiceover scripts — tone, pacing, and delivery notes for professional-sounding AI audio.'},
+  {id:'a67', name:'ImagePromptPro — AI Image Prompt Builder', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338eaa15a881918322ca909ac4c7c2-imagepromptpro-ai-image-prompt-builder', desc:'Build precise image prompts for any AI generator — style, lighting, composition, and subject all locked in.'},
+  {id:'a68', name:'VideoPromptPro — AI Video Prompt Builder', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338efc1a348191b867a477731f7913-videopromptpro-ai-video-prompt-builder', desc:'Engineer powerful video prompts for Veo, Kling, and more — motion, scene, and style perfectly described.'},
+  {id:'a69', name:'ThumbnailAI — Thumbnail Concept/Prompt Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338f3a1ee881918323d973a77bbde9-thumbnailai-thumbnail-concept-prompt-bot', desc:'Create click-worthy thumbnail concepts and prompts — composition, text, and visual hierarchy that gets clicks.'},
+  {id:'a70', name:'Faceless — No-Camera Content System', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338f81b5588191874572a4979eeca6-faceless-no-camera-content-system', desc:'Build a faceless content channel — scripts, visuals, and systems for growing without showing your face.'},
+  {id:'a71', name:'ProductShot — AI Product Photography Prompt Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338fc718bc8191bc27b83ec20ee3d8-productshot-ai-product-photography-prompt-bot', desc:'Create studio-quality product photography prompts — lighting, angles, and styling for any product.'},
+  {id:'a72', name:'AIPersona — AI Brand Spokesperson Builder', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33900d1fc8819188c60d58aa2ae5a3-aipersona-ai-brand-spokesperson-builder', desc:'Design your AI brand spokesperson — appearance, personality, voice, and visual consistency across content.'},
+  {id:'a73', name:'StyleMatch — Brand Voice Lock-In Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33904ee40881918c3fe1611a381645-stylematch-brand-voice-lock-in-bot', desc:'Lock in your brand voice and style — tone guides, writing rules, and consistency checks across all content.'},
+  {id:'a74', name:'ThreadWeaver — Thread/Long Post Writer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33908e22888191a1b30e0a7ac469c0-threadweaver-thread-long-post-writer', desc:'Write viral threads and long-form posts — structure, hooks, and momentum that keeps readers engaged.'},
+  {id:'a75', name:'QuoteCard — Quote Card Shareable Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a3390cc66408191835577c2f0c035dc-quotecard-quote-card-shareable-bot', desc:'Create shareable quote cards — compelling quotes, visual direction, and brand-consistent design prompts.'},
+  {id:'a76', name:'MemeMarketer — Meme/Trend-Jack Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a339104ea748191978896d0373c020c-mememarketer-meme-trend-jack-bot', desc:'Hijack trends and memes for your brand — timely, on-brand content that rides viral moments.'},
+  {id:'a77', name:'BlogToSocial — Long-Form to Social Repurposer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33915418ec8191a332b17f961a7fbf-blogtosocial-long-form-to-social-repurposer', desc:'Turn blog posts and long-form content into social media gold — captions, carousels, and clips.'},
+  {id:'a78', name:'SlideDeck — Educational Carousel/Deck Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33919212f88191abbfe6d731c619c6-slidedeck-educational-carousel-deck-bot', desc:'Build educational carousels and slide decks — structure, content, and design direction for teaching content.'},
+  {id:'a79', name:'ContentRemix — Winning Post Multiplier', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3391d31b6081919729ab6b3181ac44-contentremix-winning-post-multiplier', desc:'Take your best-performing posts and remix them into 10 more — maximize winners without extra effort.'},
+  {id:'a80', name:'AIWorkflow — AI Content Pipeline Builder', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33921710908191a9c5082068d19f11-aiworkflow-ai-content-pipeline-builder', desc:'Build end-to-end AI content pipelines — connect tools, automate steps, and ship content at scale.'},
+  {id:'a81', name:'OfferArchitect — Irresistible Offer Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33925c103c8191860655cff180cfe7-offerarchitect-irresistible-offer-builder', desc:'Build offers people cannot refuse — value stacking, bonuses, guarantees, and pricing that converts.'},
+  {id:'a82', name:'ToneTwister — Voice/Tone Rewriter', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33929713688191ab7ecce66c905573-tonetwister-voice-tone-rewriter', desc:'Rewrite any content in a new tone or voice — formal, casual, bold, playful — instantly on demand.'},
+  {id:'a83', name:'CTAForge — Call-to-Action Specialist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3392d70ce08191b8e0c170a29aa7a7-ctaforge-call-to-action-specialist', desc:'Forge CTAs that convert — button copy, closing lines, and action triggers for every stage of the funnel.'},
+  {id:'a84', name:'TrendSpark — Trend-to-Content Converter', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33931b07e48191b7f0020d8209255e-trendspark-trend-to-content-converter', desc:'Convert trending topics into branded content — timely angles and post ideas while the trend is hot.'},
+  {id:'a85', name:'SalesPage — Long-Form Sales Page Writer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3393601ac48191b022461a71b619da-salespage-long-form-sales-page-writer', desc:'Write full-length sales pages that convert — headline to close, every section crafted to sell.'},
+  {id:'a86', name:'EmailBlast — Broadcast/Promo Email Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33939b289c8191ac5bb1f57407c54b-emailblast-broadcast-promo-email-bot', desc:'Write promo email blasts that get opened and clicked — subject lines, preview text, and body copy.'},
+  {id:'a87', name:'HeadlineLab — Headline/Hook Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a3393d608f08191887dd8886329cc98-headlinelab-headline-hook-headline-bot', desc:'Lab-test your headlines and hooks — generate variations and identify the strongest angle for your offer.'},
+  {id:'a88', name:'ProofStack — Credibility/Trust Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33941709f48191902c6c157a594cff-proofstack-credibility-trust-builder', desc:'Stack social proof and credibility signals — testimonials, case studies, and trust-building content.'},
+  {id:'a89', name:'UpsellCraft — Upsell/Cross-Sell Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3394580e4c8191883222b73225079c-upsellcraft-upsell-cross-sell-bot', desc:'Craft upsell and cross-sell sequences that increase order value — timing, framing, and offer positioning.'},
+  {id:'a90', name:'RestyleAI — Image Restyle/Edit Prompt Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a3396a3867081919f13c8ea4c63cf7a-restyleai-image-restyle-edit-prompt-bot', desc:'Restyle and edit existing images with AI prompts — transform visuals into any style, mood, or aesthetic.'},
+  {id:'a91', name:'MotionPrompt — Animation/Motion Prompt Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a3397143a248191b99c42757e7e2dc0-motionprompt-animation-motion-prompt-bot', desc:'Create animation and motion design prompts — movement, transitions, and visual effects described precisely.'},
+  {id:'a92', name:'MusicMood — Audio/Music Direction Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a339758626c8191a341bf4eddad8a0c-musicmood-audio-music-direction-bot', desc:'Direct the audio and music for your videos — mood, genre, tempo, and cue descriptions for perfect sound.'},
+  {id:'a93', name:'CarouselAI — AI-Designed Carousel Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a339798f940819194d628b5c017310e-carouselai-ai-designed-carousel-bot', desc:'Design AI-powered carousels — visual layout, slide content, and design prompts for stunning multi-slides.'},
+  {id:'a94', name:'HookBank — Short-Form Hook Vault', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a3397dc64288191abbab501c45e2131-hookbank-short-form-hook-vault', desc:'Access a vault of proven short-form hooks — swipe, adapt, and deploy attention-grabbing openers instantly.'},
+  {id:'a95', name:'RetentionDoc — Watch-Time Retention Fixer', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33b87d259c8191834891f64de89fd4-retentiondoc-watch-time-retention-fixer', desc:'Fix your video watch time — pacing, re-engagement moments, and structure tweaks to keep viewers watching.'},
+  {id:'a96', name:'SeriesPlanner — Content Series Architect', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b8bc13d88191b540422bac994a4b-seriesplanner-content-series-architect', desc:'Architect multi-part content series — themes, episode structure, and release strategy for sustained growth.'},
+  {id:'a97', name:'ICPFinder — Ideal Customer Profile Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b8fd8bd08191a298dc01fb431847-icpfinder-ideal-customer-profile-builder', desc:'Define your ideal customer precisely — demographics, psychographics, pain points, and buying triggers.'},
+  {id:'a98', name:'FunnelMap — Customer Journey Mapper', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b9358ba081919bc0cf7a28d607cd-funnelmap-customer-journey-mapper', desc:'Map your customer journey from awareness to purchase — touchpoints, content, and conversion triggers.'},
+  {id:'a99', name:'ChannelPicker — Marketing Channel Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b96e570481918b7a6cdeed01381a-channelpicker-marketing-channel-strategist', desc:'Pick the right marketing channels for your offer and audience — focus your efforts where they convert most.'},
+  {id:'a100', name:'KPIBoard — Metrics/KPI Advisor', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b9af69c88191a6e38b83db04c437-kpiboard-metrics-kpi-advisor', desc:'Set and track the right KPIs for your campaigns — metrics that matter and dashboards that drive decisions.'},
+  {id:'a101', name:'CompetitorSwipe — Competitor Ad/Content Decoder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b9e9c9f48191b0380cc8f9e4ed35-competitorswipe-competitor-ad-content-decoder', desc:'Decode competitor ads and content — find what is working for them and adapt it for your brand.'},
+  {id:'a102', name:'PollPrompt — Engagement/Interaction Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33ba208ba4819197e5d12201fee0d2-pollprompt-engagement-interaction-bot', desc:'Create polls, quizzes, and interactive content that boosts engagement and learns from your audience.'},
+  {id:'a103', name:'GiveawayPlan — Contest/Giveaway Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33ba532618819186b458d7217aad7c-giveawayplan-contest-giveaway-strategist', desc:'Plan giveaways and contests that grow your audience — mechanics, prizes, and promo copy that drives entries.'},
+  {id:'a104', name:'StorySeller — Stories/Status Selling Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33ba885ca88191aa8de8703c7e1768-storyseller-stories-status-selling-bot', desc:'Sell through Stories and status updates — casual, native content that converts without feeling like an ad.'},
+  {id:'a105', name:'UGCBrief — UGC Creator Brief Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33baeb93d48191ab4cb40a3a4d61f5-ugcbrief-ugc-creator-brief-builder', desc:'Build detailed UGC creator briefs — clear direction, do\'s and don\'ts, and deliverables for authentic content.'},
+  {id:'a106', name:'SOPWriter — Standard Operating Procedure Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33bb2eb1a881919b8529b8f7512814-sopwriter-standard-operating-procedure-bot', desc:'Write clear SOPs for your team — step-by-step systems that make your processes repeatable and scalable.'},
+  {id:'a107', name:'BriefBuilder — Creative Brief Translator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bb668a208191b7d12cf35eeb28e2-briefbuilder-creative-brief-translator', desc:'Translate client info into clear creative briefs — aligned direction for designers, writers, and video teams.'},
+  {id:'a108', name:'BatchPlan — Content Batching Planner', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bb9f75dc8191b0561749a95ea4fc-batchplan-content-batching-planner', desc:'Plan content batching sessions that maximize output — shoot lists, scripts, and schedules for bulk creation.'},
+  {id:'a109', name:'RepurposeMatrix — Cross-Platform Repurpose Planner', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bbd128f881919f91f9001bd00fd5-repurposematrix-cross-platform-repurpose-planner', desc:'Repurpose one content piece across every platform — adapted formats and copy for maximum reach.'},
+  {id:'a110', name:'BrandKit — Brand Identity Starter Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33bc0997cc81918e2904bae38470bb-brandkit-brand-identity-starter-bot', desc:'Build a complete brand identity kit — colors, fonts, logo direction, and visual guidelines from scratch.'},
+  {id:'a111', name:'AdTestPlan — Ad Testing/Iteration Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bc42e6988191888e76f35b219f44-adtestplan-ad-testing-iteration-bot', desc:'Plan structured ad tests — hypothesis, variables, and iteration strategy to find winning creatives fast.'},
+  {id:'a112', name:'NicheFinder — Niche Validation Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bc8282308191b59b7ddd627e07f6-nichefinder-niche-validation-bot', desc:'Validate your niche before you commit — demand signals, competition analysis, and go-to-market fit.'},
+  {id:'a113', name:'GrowthPlan90 — 90-Day Marketing Roadmap Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bcb28514819187fa5d4c37bab8d4-growthplan90-90-day-marketing-roadmap-bot', desc:'Build a 90-day marketing roadmap — prioritized actions, milestones, and weekly focus areas for real growth.'},
+  {id:'a114', name:'ContentAudit — Content Performance Auditor', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bcfb282c8191bdb86acf26153da0-contentaudit-content-performance-auditor', desc:'Audit your content library — identify top performers, gaps, and opportunities to improve your strategy.'},
+  {id:'a115', name:'DevilsAdvocate — Pre-Launch Stress Tester', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bdf97bfc81919e58d38e30807779-devilsadvocate-pre-launch-stress-tester', desc:'Stress test your offer before launch — find the holes in your strategy before your audience does.'},
+  {id:'a116', name:'AngleHijack — Radical Positioning/Angle Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33be3487808191a2098a8393365add-anglehijack-radical-positioning-angle-bot', desc:'Find radical angles your competitors are missing — bold positioning that makes your brand impossible to ignore.'},
+  {id:'a117', name:'PriceWar — Competitive Pricing Tactician', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33be6c7c5881919de5f09742d115c4-pricewar-competitive-pricing-tactician', desc:'Win pricing battles strategically — competitive analysis and pricing tactics that protect value and market share.'},
+  {id:'a118', name:'MoatBuilder — Competitive Advantage Architect', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bea588c881919363f08f09d1b69b-moatbuilder-competitive-advantage-architect', desc:'Build defensible competitive advantages — identify and deepen the moats that protect your business long-term.'},
+  {id:'a119', name:'ObjectionKiller — Objection Pre-Emption Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bedd9a2081918b454529e626fcc2-objectionkiller-objection-pre-emption-bot', desc:'Kill objections before they kill the sale — anticipate, address, and neutralize every hesitation in your copy.'},
+  {id:'a120', name:'MindReader — Voice of Customer Decoder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bf3c8b448191beb21dc5d92ac7d9-mindreader-voice-of-customer-decoder', desc:'Decode your customer\'s exact language — extract VOC insights that make your copy feel like mind reading.'},
+  {id:'a121', name:'TriggerStack — Persuasion Trigger Layer Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bffc752081918d859fb2c53c7931-triggerstack-persuasion-trigger-layer-bot', desc:'Layer psychological persuasion triggers into your copy — scarcity, authority, reciprocity, and more.'},
+  {id:'a122', name:'PromptChain — Multi-Step Prompt System Builder', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c0378d90819182c91e83ff49e972-promptchain-multi-step-prompt-system-builder', desc:'Build multi-step prompt chains for complex AI tasks — sequential logic that produces consistent results.'},
+  {id:'a123', name:'GPTBuilder — Custom Bot Architect', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c06d8a288191ac945032b9dee09a-gptbuilder-custom-bot-architect', desc:'Design and build custom GPT bots from scratch — system prompts, personas, and instructions that work.'},
+  {id:'a124', name:'AIDetectorBeat — Natural Writing Humanizer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c0ad8374819182203115dc623595-aidetectorbeat-natural-writing-humanizer', desc:'Humanize AI-written content — natural phrasing, varied rhythm, and style that passes any AI detector.'},
+  {id:'a125', name:'OneClickCampaign — Instant Full Campaign Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c0e7706c8191a820c4a7c8493e4b-oneclickcampaign-instant-full-campaign-bot', desc:'Generate a complete marketing campaign in one go — strategy, copy, creative direction, and schedule.'},
+  {id:'a126', name:'SwipeVault — Proven Copy Framework Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c16c7d5c81919bc96df685b6f3da-swipevault-proven-copy-framework-bot', desc:'Access proven copy frameworks — AIDA, PAS, FAB, and more — applied to your specific offer instantly.'},
+  {id:'a127', name:'RapidResponse — Real-Time Reply Generator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c1aa8f848191bf6af5068736f934-rapidresponse-real-time-reply-generator', desc:'Generate fast, on-brand replies for comments, DMs, and reviews — maintain presence without burning time.'},
+  {id:'a128', name:'WhyItFlopped — Marketing Post-Mortem Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c1f3fa30819186f815ac4d640234-whyitflopped-marketing-post-mortem-bot', desc:'Analyze failed campaigns and content — find exactly why it flopped and what to do differently next time.'},
+  {id:'a129', name:'ScaleReady — Scaling Readiness Checker', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c23a726481919928e9189f51768a-scaleready-scaling-readiness-checker', desc:'Check if your business is ready to scale — systems, offers, and operations assessed before you go big.'},
+  {id:'a130', name:'HighTicket — Premium High-Ticket Sales Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c2a2dc5c8191963766297aafcfe2-highticket-premium-high-ticket-sales-bot', desc:'Close high-ticket deals with confidence — premium positioning, consultative scripts, and value communication.'},
+  {id:'a131', name:'FounderVoice — Thought Leadership Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c38b9088819182b506168f53166d-foundervoice-thought-leadership-bot', desc:'Build your founder thought leadership — opinions, insights, and content that positions you as the expert.'},
+  {id:'a132', name:'CommunityHooks — Membership/Retention Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c3c96dd48191b1ddcb576ba034ce-communityhooks-membership-retention-bot', desc:'Hook and retain community members — engagement content, re-activation triggers, and member milestones.'},
+  {id:'a133', name:'OfferLadder — Product Ecosystem Architect', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c40091f08191b83ac860b564c53a-offerladder-product-ecosystem-architect', desc:'Build a full product ladder — free to premium offers structured to maximize customer lifetime value.'},
+  {id:'a134', name:'BotStacker — AI Bot Workflow Orchestrator', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c43ec5bc81918a76f61e55b0e224-botstacker-ai-bot-workflow-orchestrator', desc:'Orchestrate multiple AI bots into a single workflow — stack tools and agents for full production pipelines.'},
+  {id:'a135', name:'Eleven Labs Expert', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-699bf011bf2c819191ca49aa762f75e8-eleven-labs-expert', desc:'Master ElevenLabs AI voice generation — voice selection, cloning tips, and scripts optimized for ultra-realistic audio output.'},
 ];
 
 const DEFAULT_CREDS = {
@@ -663,10 +813,10 @@ const DEFAULT_CREDS = {
 };
 
 const UPDATES = [
-  {t:'AI Creatives System Bot added to the vault', w:'New'},
-  {t:'PromptPolish PH now live for all members', w:'New'},
-  {t:'VIP Vault unlocked — 100+ agents incoming', w:'Soon'},
-  {t:'Dashboard redesign & faster launch', w:'Update'},
+  {t:'135+ AI agents now live — all 100% free for members', w:'New'},
+  {t:'Eleven Labs Expert added to the vault', w:'New'},
+  {t:'All agents now unlocked — no VIP required', w:'Update'},
+  {t:'More agents dropping soon — stay tuned', w:'Soon'},
 ];
 
 const RESOURCES = [
@@ -692,7 +842,7 @@ const BENEFITS = [
   {i:'🎯', h:'Built For Your Niche', p:'Specialized experts for video, images, marketing, and prompts — not generic chatbots.'},
   {i:'🗂️', h:'One Dashboard', p:'Every AI agent organized, searchable, and favoritable in a single premium hub.'},
   {i:'🔄', h:'Lifetime Updates', p:'New agents and systems added continuously — your vault keeps growing.'},
-  {i:'👑', h:'VIP Expansion', p:'100+ premium agents, workflows, and exclusive systems on the way.'},
+  {i:'🆓', h:'Totally Free', p:'Every single agent is 100% free for all members — no tiers, no paywalls, no limits.'},
   {i:'📦', h:'More Than Agents', p:'Prompt packs, templates, swipe files, and SOPs — all coming to your vault.'},
 ];
 
@@ -770,11 +920,9 @@ function renderNav(view){
     html += `<button class="link" onclick="go('home')">Home</button>`;
     html += `<button class="link" onclick="go('dashboard')">Dashboard</button>`;
     if(session.role==='admin') html += `<button class="link" onclick="go('admin')">Admin</button>`;
-    html += `<button class="link" onclick="go('upgrade')">VIP</button>`;
     html += `<button class="btn btn-dark btn-sm" onclick="logout()">Logout</button>`;
   } else {
     html += `<button class="link" onclick="go('home')">Home</button>`;
-    html += `<button class="link" onclick="go('upgrade')">Upgrade</button>`;
     html += `<button class="btn btn-primary btn-sm" onclick="loginMode='student';go('login')">Member Login</button>`;
   }
   el.innerHTML=html;
@@ -795,15 +943,24 @@ function renderLogin(){
     sw.textContent='Not the admin?';
     swb.textContent='Member Login';
     hint.innerHTML='🔑 Admin access only. Use your private admin credentials.';
+    document.getElementById('login-switch-wrap').style.display='block';
   } else {
     title.textContent='Welcome Back';
     lead.textContent='Sign in with the credentials provided by your admin.';
     sw.textContent='Are you the admin?';
     swb.textContent='Admin Login';
-    hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join →</a>';
+    hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join — it\'s free →</a>';
+    document.getElementById('login-switch-wrap').style.display='none';
   }
 }
 function toggleLoginMode(){ loginMode = loginMode==='admin'?'student':'admin'; renderLogin(); }
+let _adminTaps=0, _adminTimer;
+function handleAdminTap(){
+  _adminTaps++;
+  clearTimeout(_adminTimer);
+  _adminTimer=setTimeout(()=>_adminTaps=0,1500);
+  if(_adminTaps>=5){ _adminTaps=0; loginMode='admin'; renderLogin(); document.getElementById('login-switch-wrap').style.display='block'; }
+}
 
 function doLogin(){
   const u=document.getElementById('login-user').value.trim();
