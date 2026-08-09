@@ -489,12 +489,11 @@
         </div>
         <div class="auth-msg" id="login-msg"></div>
         <button class="btn btn-primary btn-block" style="margin-top:.4rem" onclick="doLogin()">Sign In →</button>
-        <div class="auth-switch" id="login-switch-wrap" style="display:none">
+        <div class="auth-switch" id="login-switch-wrap" style="margin-top:.8rem;text-align:center">
           <span id="login-switch-text">Are you the admin?</span>
-          <button onclick="toggleLoginMode()" id="login-switch-btn">Admin Login</button>
+          <button onclick="toggleLoginMode()" id="login-switch-btn" style="margin-left:.4rem;background:none;border:none;color:var(--yellow);font-weight:700;cursor:pointer;font-size:.85rem;text-decoration:underline">Admin Login</button>
         </div>
         <div class="hint" id="login-hint"></div>
-        <div style="text-align:center;margin-top:.8rem"><span id="admin-tap" onclick="handleAdminTap()" style="color:transparent;font-size:.5rem;user-select:none">·</span></div>
       </div>
     </div>
   </div>
@@ -1020,16 +1019,16 @@ function renderLogin(){
     title.textContent='Admin Console';
     lead.textContent='Sign in to manage agents and credentials.';
     sw.textContent='Not the admin?';
-    swb.textContent='Member Login';
+    swb.textContent='Switch to Member Login';
     hint.innerHTML='🔑 Admin access only. Use your private admin credentials.';
     document.getElementById('login-switch-wrap').style.display='block';
   } else {
     title.textContent='Welcome Back';
     lead.textContent='Sign in with the credentials provided by your admin.';
     sw.textContent='Are you the admin?';
-    swb.textContent='Admin Login';
+    swb.textContent='Switch to Admin Login';
     hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join — it\'s free →</a>';
-    document.getElementById('login-switch-wrap').style.display='none';
+    document.getElementById('login-switch-wrap').style.display='block';
   }
 }
 function toggleLoginMode(){ loginMode = loginMode==='admin'?'student':'admin'; renderLogin(); }
