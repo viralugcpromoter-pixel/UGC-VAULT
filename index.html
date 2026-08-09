@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dell AI Creators Vault — Ready-Made AI Experts</title>
+<title>AI Creative University Vault — Ready-Made AI Experts</title>
 <meta name="description" content="Access Ready-Made AI Experts That Do The Work For You." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -344,7 +344,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <div class="brand" onclick="go('home')">
-        <span class="mark">D</span><span>Dell&nbsp;AI <b>Creators&nbsp;Vault</b></span>
+        <span class="mark">A</span><span>AI Creative <b>University&nbsp;Vault</b></span>
       </div>
       <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -429,7 +429,7 @@
           <h2 style="font-size:1.8rem;margin:.8rem 0 .5rem;position:relative">Let's Build Your Custom Bot</h2>
           <p style="position:relative">PM us on Facebook and tell us about your brand. We'll take it from there — tailored, tested, and ready to work for you.</p>
           <a class="btn btn-primary" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="margin-top:1.6rem;font-size:1rem;padding:1rem 2rem">📩 PM Us on Facebook</a>
-          <p style="color:var(--muted-2);font-size:.8rem;margin-top:1rem;position:relative">Dell AI Creators Vault • Custom Bot Services</p>
+          <p style="color:var(--muted-2);font-size:.8rem;margin-top:1rem;position:relative">AI Creative University Vault • Custom Bot Services</p>
         </div>
       </div>
     </section>
@@ -448,7 +448,7 @@
     <footer>
       <div class="foot">
         <div class="col" style="max-width:280px">
-          <div class="brand" style="margin-bottom:.8rem"><span class="mark">D</span><span>Dell&nbsp;AI <b>Vault</b></span></div>
+          <div class="brand" style="margin-bottom:.8rem"><span class="mark">A</span><span>AI Creative <b>University Vault</b></span></div>
           <p style="color:var(--muted);font-size:.9rem">Access ready-made AI experts that do the work for you. Built for the modern creator economy.</p>
         </div>
         <div class="col">
@@ -468,7 +468,7 @@
           <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
-      <div class="foot-bottom">© <span id="yr"></span> Dell AI Creators Vault. All rights reserved.</div>
+      <div class="foot-bottom">© <span id="yr"></span> AI Creative University Vault. All rights reserved.</div>
     </footer>
   </div>
 
@@ -583,6 +583,7 @@
       <div class="admin-tabs">
         <button class="atab active" data-atab="agents" onclick="switchAdminTab('agents')">🤖 Agents</button>
         <button class="atab" data-atab="prompts" onclick="switchAdminTab('prompts')">📝 Prompts</button>
+        <button class="atab" data-atab="students" onclick="switchAdminTab('students')">👥 Students</button>
         <button class="atab" data-atab="creds" onclick="switchAdminTab('creds')">🔑 Credentials</button>
       </div>
 
@@ -592,6 +593,10 @@
 
       <div class="apanel" id="apanel-prompts">
         <div id="admin-prompts"></div>
+      </div>
+
+      <div class="apanel" id="apanel-students">
+        <div id="admin-students"></div>
       </div>
 
       <div class="apanel" id="apanel-creds">
@@ -622,6 +627,24 @@
     </div>
   </div>
 
+</div>
+
+<div class="modal-overlay" id="student-modal" onclick="if(event.target===this)closeModal('student-modal')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('student-modal')">✕</button>
+    <h3 id="student-modal-title">Add Student</h3>
+    <div class="field"><label>Full Name</label><input class="input" id="sm-name" placeholder="e.g. Juan dela Cruz"/></div>
+    <div class="field"><label>Username</label><input class="input" id="sm-user" placeholder="e.g. juandc (no spaces)"/></div>
+    <div class="field">
+      <label>Password</label>
+      <div style="display:flex;gap:.5rem">
+        <input class="input" id="sm-pass" placeholder="Set a password" style="flex:1"/>
+        <button class="btn btn-sm" onclick="genPass()" style="background:var(--surface-3);color:var(--white);white-space:nowrap">🎲 Generate</button>
+      </div>
+      <div style="color:var(--muted);font-size:.75rem;margin-top:.4rem">Tip: Share this password directly to the student via DM.</div>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="saveStudent()">Save Student</button>
+  </div>
 </div>
 
 <div class="modal-overlay" id="prompt-modal" onclick="if(event.target===this)closeModal('prompt-modal')">
@@ -846,6 +869,10 @@ const DEFAULT_AGENTS = [
   {id:'a150', name:'Concept Sheet Generator', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a772a3c78b881919bd5f823d1a1f292-reference-sheet-studio', desc:'Generate detailed concept and reference sheets for AI characters, products, and brand visuals — consistent style across every output.'},
 ];
 
+const DEFAULT_STUDENTS = [
+  {id:'s1', name:'Student 1', user:'creator', pass:'VAULT-2026', active:true},
+];
+
 const DEFAULT_CREDS = {
   studentUser:'creator',
   studentPass:'VAULT-2026',
@@ -916,6 +943,7 @@ const LOCK_ICON = svgWrap('<rect x="5" y="11" width="14" height="9" rx="2"/><pat
 
 let agents = store.get('vault_agents', null) || JSON.parse(JSON.stringify(DEFAULT_AGENTS));
 let creds  = Object.assign({}, DEFAULT_CREDS, store.get('vault_creds', {}));
+let students = store.get('vault_students', null) || JSON.parse(JSON.stringify(DEFAULT_STUDENTS));
 let favs   = store.get('vault_favs', []);
 let session= store.get('vault_session', null);
 let activeCat = 'All';
@@ -923,6 +951,7 @@ let loginMode = 'student';
 let editingId = null;
 
 function persist(){ store.set('vault_agents', agents); store.set('vault_creds', creds); store.set('vault_favs', favs); }
+function persistStudents(){ store.set('vault_students', students); }
 
 const VIEWS = ['home','login','dashboard','prompts','upgrade','admin'];
 function go(view){
@@ -1019,12 +1048,11 @@ function doLogin(){
     } else { msg.className='auth-msg err'; msg.textContent='Invalid admin credentials.'; }
     return;
   }
-  if(u===creds.studentUser && p===creds.studentPass){
-    if(isExpired()){
-      msg.className='auth-msg err'; msg.textContent='Your access has expired. Redirecting to upgrade…';
-      setTimeout(()=>go('upgrade'),900); return;
-    }
-    session={role:'student', user:u}; store.set('vault_session',session);
+  // Per-student credentials check
+  const matchStudent = students.find(s=>s.active && s.user===u && s.pass===p);
+  if(matchStudent){
+    session={role:'student', user:matchStudent.name||u, uid:matchStudent.id}; 
+    store.set('vault_session',session);
     msg.className='auth-msg ok'; msg.textContent='Access granted! Loading your vault…';
     setTimeout(()=>go('dashboard'),350);
   } else { msg.className='auth-msg err'; msg.textContent='Incorrect username or password.'; }
@@ -1969,12 +1997,17 @@ function renderPrompts(){
   const view = document.getElementById('view-prompts');
   if(!view) return;
 
-  let filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
-  if(promptSearchQ) filtered = filtered.filter(p=>
-    p.title.toLowerCase().includes(promptSearchQ) ||
-    p.prompt.toLowerCase().includes(promptSearchQ) ||
-    p.cat.toLowerCase().includes(promptSearchQ)
-  );
+  // When searching, always search ALL categories for full coverage
+  let filtered;
+  if(promptSearchQ){
+    filtered = prompts.filter(p=>
+      p.title.toLowerCase().includes(promptSearchQ) ||
+      p.prompt.toLowerCase().includes(promptSearchQ) ||
+      p.cat.toLowerCase().includes(promptSearchQ)
+    );
+  } else {
+    filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  }
 
   view.innerHTML = `
     <div class="dash-wrap">
@@ -2006,15 +2039,20 @@ function renderPrompts(){
 }
 
 function renderPromptGrid(){
-  let filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
-  if(promptSearchQ) filtered = filtered.filter(p=>
-    p.title.toLowerCase().includes(promptSearchQ) ||
-    p.prompt.toLowerCase().includes(promptSearchQ) ||
-    p.cat.toLowerCase().includes(promptSearchQ)
-  );
+  // When searching, search across ALL categories regardless of active tab
+  let filtered;
+  if(promptSearchQ){
+    filtered = prompts.filter(p=>
+      p.title.toLowerCase().includes(promptSearchQ) ||
+      p.prompt.toLowerCase().includes(promptSearchQ) ||
+      p.cat.toLowerCase().includes(promptSearchQ)
+    );
+  } else {
+    filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  }
   const grid = document.getElementById('prompt-grid');
   if(!grid) return;
-  grid.innerHTML = filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : `<div class="empty">No prompts found. Try a different keyword or category.</div>`;
+  grid.innerHTML = filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : `<div class="empty">No prompts found for "${esc(promptSearchQ)}" — try another keyword or clear the search.</div>`;
 }
 
 function renderPromptCard(p){
@@ -2162,8 +2200,97 @@ function switchAdminTab(tab){
   document.getElementById('apanel-agents').classList.toggle('active', tab==='agents');
   document.getElementById('apanel-creds').classList.toggle('active', tab==='creds');
   document.getElementById('apanel-prompts').classList.toggle('active', tab==='prompts');
+  document.getElementById('apanel-students').classList.toggle('active', tab==='students');
   if(tab==='creds') fillCredForm();
   if(tab==='prompts') renderAdminPrompts();
+  if(tab==='students') renderAdminStudents();
+}
+
+function renderAdminStudents(){
+  const el = document.getElementById('admin-students');
+  if(!el) return;
+  const active = students.filter(s=>s.active).length;
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700">👥 Students (${students.length} total · ${active} active)</h3>
+        <p style="color:var(--muted);font-size:.8rem;margin-top:.2rem">Each student has their own login. Revoke access anytime.</p>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="openStudentModal(null)">+ Add Student</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.6rem">
+      ${students.length ? students.map(s=>`
+        <div class="arow" style="align-items:center;gap:1rem">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--surface-3);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--yellow);font-size:.9rem;flex-shrink:0">${esc((s.name||s.user).charAt(0).toUpperCase())}</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:.95rem">${esc(s.name||s.user)}</div>
+            <div style="color:var(--muted);font-size:.8rem">@${esc(s.user)} · <span style="color:${s.active?'#22c55e':'#ef4444'}">${s.active?'● Active':'○ Revoked'}</span></div>
+          </div>
+          <div class="acts" style="gap:.4rem">
+            <button class="icon-btn" onclick="openStudentModal('${s.id}')" title="Edit">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="icon-btn ${s.active?'':'danger'}" onclick="toggleStudent('${s.id}')" title="${s.active?'Revoke Access':'Restore Access'}">
+              ${s.active
+                ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>'
+                : '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>'
+              }
+            </button>
+            <button class="icon-btn danger" onclick="deleteStudent('${s.id}')" title="Delete">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+            </button>
+          </div>
+        </div>`).join('') : '<div class="empty">No students yet. Add your first student above.</div>'}
+    </div>`;
+}
+
+let editingStudentId = null;
+function openStudentModal(id){
+  editingStudentId = id;
+  const s = id ? students.find(x=>x.id===id) : null;
+  document.getElementById('student-modal-title').textContent = id ? 'Edit Student' : 'Add Student';
+  document.getElementById('sm-name').value = s ? s.name||'' : '';
+  document.getElementById('sm-user').value = s ? s.user||'' : '';
+  document.getElementById('sm-pass').value = s ? s.pass||'' : '';
+  openModal('student-modal');
+}
+
+function saveStudent(){
+  const name = document.getElementById('sm-name').value.trim();
+  const user = document.getElementById('sm-user').value.trim().toLowerCase().replace(/\s+/g,'');
+  const pass = document.getElementById('sm-pass').value.trim();
+  if(!name||!user||!pass){ toast('All fields required'); return; }
+  // Check duplicate username
+  const dupe = students.find(s=>s.user===user && s.id!==editingStudentId);
+  if(dupe){ toast('Username already taken — choose another'); return; }
+  if(editingStudentId){
+    const i = students.findIndex(s=>s.id===editingStudentId);
+    if(i>-1) students[i] = {...students[i], name, user, pass};
+  } else {
+    students.push({id:'s'+Date.now(), name, user, pass, active:true});
+  }
+  persistStudents(); closeModal('student-modal'); renderAdminStudents(); toast('Student saved!');
+}
+
+function toggleStudent(id){
+  const s = students.find(x=>x.id===id);
+  if(!s) return;
+  s.active = !s.active;
+  persistStudents(); renderAdminStudents();
+  toast(s.active ? 'Access restored' : 'Access revoked');
+}
+
+function deleteStudent(id){
+  if(!confirm('Delete this student? They will lose access immediately.')) return;
+  students = students.filter(s=>s.id!==id);
+  persistStudents(); renderAdminStudents(); toast('Student deleted');
+}
+
+function genPass(){
+  const chars='ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+  let p='ACU-';
+  for(let i=0;i<8;i++) p+=chars[Math.floor(Math.random()*chars.length)];
+  document.getElementById('sm-pass').value=p;
 }
 
 function renderAdminPrompts(){
