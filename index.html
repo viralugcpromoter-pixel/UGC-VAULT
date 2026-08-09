@@ -1032,16 +1032,703 @@ function doLogin(){
 function logout(){ session=null; store.set('vault_session',null); go('home'); toast('Logged out'); }
 
 const DEFAULT_PROMPTS = [
-  {id:'p1', cat:'Image', title:'Luxury Skincare Product Shot', prompt:'A luxurious skincare serum bottle placed on a white marble surface with soft natural light streaming from the left. Bokeh background with gold and cream tones. Ultra-realistic, studio quality, 4K.', sampleImg:'', sampleVid:''},
-  {id:'p2', cat:'Image', title:'Food Hero Shot — Filipino Dish', prompt:'Overhead flat lay of sizzling sisig on a cast iron pan, garnished with calamansi and fresh chili. Dark moody background, dramatic lighting, food photography style, ultra-sharp, magazine quality.', sampleImg:'', sampleVid:''},
-  {id:'p3', cat:'Image', title:'E-commerce Fashion Model', prompt:'A confident Filipino woman wearing a white linen dress, standing in a minimalist studio with soft ring light. Clean white background, fashion editorial style, full body shot, 4K realism.', sampleImg:'', sampleVid:''},
-  {id:'p4', cat:'Video', title:'UGC Testimonial Hook', prompt:'A young Filipina woman looking directly at camera with surprised expression saying "Hindi ako makapaniwala na ganito kaganda ang result!" — natural lighting, handheld phone-camera feel, authentic UGC style, no filters.', sampleImg:'', sampleVid:''},
-  {id:'p5', cat:'Video', title:'Product Reveal Cinematic', prompt:'Slow motion cinematic reveal of a perfume bottle on a reflective black surface. Smoke wisps around the bottle, dramatic spotlight from above, dark luxury aesthetic, 4K, 24fps cinematic style.', sampleImg:'', sampleVid:''},
-  {id:'p6', cat:'Avatar', title:'AI Brand Spokesperson — Female', prompt:'A professional AI-generated Filipino female brand ambassador, 25-30 years old, wearing a branded polo shirt, warm confident smile, neutral studio background, photorealistic, 4K portrait.', sampleImg:'', sampleVid:''},
-  {id:'p7', cat:'Avatar', title:'AI Brand Spokesperson — Male', prompt:'A trustworthy AI-generated Filipino male spokesperson, 28-35 years old, business casual attire, clean professional studio background, direct eye contact, photorealistic, ultra-detailed, 4K.', sampleImg:'', sampleVid:''},
-  {id:'p8', cat:'Ads', title:'Facebook Ad — Pain/Solution Hook', prompt:'Split screen ad image: left side shows a tired woman with dark circles under eyes (labeled "Before"), right side shows same woman glowing with radiant skin (labeled "After"). Bold text overlay: "7 days. Real results." Clean, high contrast, mobile-optimized.', sampleImg:'', sampleVid:''},
-  {id:'p9', cat:'Ads', title:'TikTok Ad — Trending Format', prompt:'Vertical 9:16 video of a hand unboxing a skincare product with satisfying sounds, neon-colored packaging, fast cuts at 1-second intervals, trending TikTok music beat, text overlays with bold Gen Z typography, authentic phone camera quality.', sampleImg:'', sampleVid:''},
-  {id:'p10', cat:'Image', title:'AI Background — Premium Lifestyle', prompt:'A modern minimalist living room with floor-to-ceiling windows, golden hour sunlight, neutral beige tones, luxury furniture, empty center space for product placement. Ultra-realistic interior photography, 4K.', sampleImg:'', sampleVid:''},
+  {id:'p1', cat:'Ads', title:'Checking Data Prompt — 30 vs 14 Days', prompt:`Act as a Meta Ads performance strategist and analyst.
+Analyze our CURRENT ad account using real-time data.
+Main goal:
+Compare the last 30 days vs the last 14 days and identify:
+- winning campaigns
+- winning creatives
+- weak performers
+- scaling opportunities
+- the best next strategy for 7-day and 30-day campaign setups
+Focus only on practical, data-based insights. Avoid generic advice.
+Check these metrics when available:
+- Spend
+- Impressions
+- CPM
+- CTR
+- CPC
+- Link Clicks
+- Landing Page Views
+- Add to Cart
+- Initiate Checkout
+- Purchases or Leads
+- Messages
+- Cost per Message
+- Cost per Result / CPA
+- ROAS
+- Frequency
+Tasks:
+1. Compare last 30 days vs last 14 days
+2. Identify top campaigns and explain briefly why they are working
+3. Identify top creatives and explain briefly why they are working
+4. Identify weak campaigns and creatives, with likely reasons
+5. Decide what to keep, scale, pause, retest, or replace
+6. Recommend a practical 7-day campaign plan
+7. Recommend a practical 30-day campaign plan
+8. Recommend the highest win-rate campaign setup based on current data
+Return only this format:
+1. Executive Summary
+- overall account trend
+- key changes from 30 days vs 14 days
+2. Top Campaigns
+- best campaigns
+- supporting performance signals
+3. Top Creatives
+- best creatives
+- supporting performance signals
+- winning angle/message if visible
+4. Weak Areas
+- weak campaigns
+- weak creatives
+- likely reasons for underperformance
+5. Decisions
+- Keep Running
+- Scale
+- Pause
+- Retest
+- Replace
+6. 7-Day Campaign Plan
+Include:
+- campaign objective
+- campaign structure
+- ad set setup
+- audience direction
+- creative testing direction
+- budget suggestion
+- scaling logic
+- kill rules
+- success benchmark
+7. 30-Day Campaign Plan
+Include:
+- testing phase
+- optimization phase
+- scaling phase
+- campaign structure
+- audience expansion direction
+- creative rotation direction
+- budget allocation logic
+- scaling rules
+8. Best High Win-Rate Setup
+Give the most recommended setup based on current data:
+- objective
+- campaign type
+- ad set structure
+- audience type
+- number of creatives
+- budget approach
+- scaling approach
+9. Immediate Action Steps
+Give a simple step-by-step action plan the team can follow now.
+Rules:
+- Use actual current account data only
+- Be concise, direct, and practical
+- No generic advice
+- Base every recommendation on performance signals
+- If some data is missing, mention it briefly and continue with the best recommendation possible
+- Prioritize bullets, short tables, and direct decisions over long explanations`, sampleImg:'', sampleVid:''},
+
+  {id:'p2', cat:'Ads', title:'Audit Clients Prompt — 6 Month Full Audit', prompt:`Act as a Meta Ads performance auditor and strategist.
+Analyze our ad account using real data from the past 6 months.
+Main goal:
+Identify long-term winners, main winner creatives, consistent underperformers, performance patterns, wasted spend, benchmark ranges, and the best actionable next steps to improve future campaigns.
+Focus only on practical, data-based insights. Avoid generic advice.
+Check these metrics when available:
+- Spend
+- Impressions
+- CPM
+- CTR
+- CPC
+- Link Clicks
+- Landing Page Views
+- Add to Cart
+- Initiate Checkout
+- Purchases or Leads
+- Messages
+- Cost per Message
+- Cost per Result / CPA
+- ROAS
+- Frequency
+Tasks:
+1. Identify top-performing campaigns across the last 6 months
+2. Identify consistently underperforming campaigns
+3. Identify best-performing creatives
+4. Identify MAIN WINNER CREATIVES (core creatives strongest for scaling)
+5. Identify weak creatives and common failure patterns
+6. Detect trends over time, including improving performance, decline, fatigue, or seasonality if visible
+7. Identify audience patterns if visible, including broad, interest, lookalike, or retargeting
+8. Extract realistic benchmark ranges based on actual account data
+9. Identify scaling opportunities
+10. Identify wasted spend and where budget was inefficient
+11. Recommend what to continue, stop, retest, duplicate, or scale
+Return only this format:
+1. Executive Summary
+- overall 6-month account trend
+- key patterns observed
+- biggest opportunities
+- biggest risks
+2. Top Campaigns
+- best campaigns
+- supporting performance signals
+- short reason why they worked
+3. Main Winner Creatives
+- top 3 to 5 strongest creatives
+- key performance signals
+- why they are winning
+- winning hook, angle, message, or format if visible
+- recommendation: keep running, duplicate, expand, or scale
+4. Weak Performers
+- weak campaigns
+- weak creatives
+- common reasons for underperformance
+5. Patterns & Insights
+- winning hooks
+- winning angles
+- winning creative formats
+- losing patterns
+- fatigue signals
+- timing or seasonal trends if visible
+6. Benchmarks (Based on Our Data)
+Provide realistic good vs bad ranges for:
+- CTR
+- CPC
+- Cost per Result / CPA
+- Cost per Message
+- ROAS
+- Frequency
+7. Audience Insights
+- best audience types
+- weak audience types
+- audience patterns that should be repeated or avoided
+8. Scaling Opportunities
+- what to double down on
+- what to duplicate
+- what to expand
+- what has the highest chance to scale
+9. Wasted Spend
+- where budget was inefficient
+- what should have been stopped earlier
+- what setup or creative type wasted the most spend
+10. Actionable Recommendations
+- Continue
+- Stop
+- Retest
+- Duplicate
+- Scale
+- Test Next
+Rules:
+- Use actual account data only
+- Be concise, direct, and practical
+- No generic advice
+- Base all recommendations on performance signals and repeatable patterns
+- Prioritize bullets, short tables, and direct decisions over long explanations
+- If data is missing, mention it briefly and continue with the best recommendation possible
+- Focus on insights that improve decision-making, creative testing, and scaling`, sampleImg:'', sampleVid:''},
+
+  {id:'p3', cat:'Ads', title:'Competitor & Brand Audit Prompt', prompt:`Act as a direct response marketing strategist and competitor research analyst.
+Analyze our brand and competitors using available data, ads, creatives, messaging, and positioning.
+Main goal:
+Identify what is working in the market, what competitors are doing well or poorly, and how we can position our brand to win using better creatives, messaging, and strategy.
+Focus on practical, actionable insights. Avoid generic advice.
+Tasks:
+1. Own Brand Analysis
+- identify our current positioning
+- identify strengths and weaknesses
+- identify current messaging, offers, and angles
+- identify gaps or missed opportunities
+2. Competitor Analysis
+- identify top competitors in the same niche
+- analyze their ads, creatives, hooks, messaging, and offers
+- identify what they are doing well
+- identify what they are doing poorly
+- identify patterns across multiple competitors
+3. Creative Analysis (Market Level)
+- identify common winning hooks
+- identify common messaging angles
+- identify common visual styles and formats
+- identify overused or saturated approaches
+- identify opportunities for differentiation
+4. Offer & Positioning Analysis
+- compare our offer vs competitors
+- identify stronger offers in the market
+- identify weaknesses in competitor offers
+- identify gaps we can dominate
+5. Audience Targeting Insights (if visible)
+- identify who competitors are targeting
+- identify emotional triggers used
+- identify pain points being addressed
+6. Market Gaps & Opportunities
+- identify underserved angles
+- identify ignored audiences or segments
+- identify new creative directions we can test
+7. Winning Strategy Recommendations
+- how we should position our brand
+- what angles we should focus on
+- what creatives we should produce next
+- what offers we should improve or test
+- how we can outperform competitors
+Return only this format:
+1. Executive Summary
+- key insights about the market
+- biggest opportunities to win
+2. Own Brand Insights
+- strengths
+- weaknesses
+- missed opportunities
+3. Competitor Insights
+- what competitors are doing well
+- what competitors are doing poorly
+- key patterns across competitors
+4. Creative Insights (Market)
+- winning hooks
+- winning angles
+- winning formats
+- saturated patterns to avoid
+5. Offer & Positioning Insights
+- competitor offer strengths
+- competitor offer weaknesses
+- gaps we can dominate
+6. Audience Insights
+- target audience patterns
+- emotional triggers
+- key pain points used in messaging
+7. Market Gaps
+- underserved angles
+- new opportunities
+- differentiation ideas
+8. Action Plan
+- what to test next (creatives, angles, offers)
+- how to position our brand better
+- how to beat competitors
+Rules:
+- Be concise and practical
+- No generic advice
+- Focus on real patterns and strategic insights
+- Prioritize actionable recommendations over long explanations
+- Use bullets and short structured answers
+- If data is limited, use best logical inference based on market patterns`, sampleImg:'', sampleVid:''},
+
+  {id:'p4', cat:'Ads', title:'Market Research Prompt', prompt:`Act as a direct response marketing strategist and market research analyst.
+Analyze our target market to identify high-converting angles, creative directions, messaging, and offer improvements.
+Main goal:
+Understand the market deeply so we can create better ads, stronger angles, more effective creatives, and higher-converting offers.
+Focus on practical, actionable insights. Avoid generic advice.
+Tasks:
+1. Market Understanding
+- identify target audience segments
+- identify their goals, desires, and motivations
+- identify their main problems, frustrations, and pain points
+2. Emotional Drivers
+- identify key emotions driving buying decisions (fear, insecurity, desire, convenience, status, etc.)
+- identify triggers that push them to take action
+3. Current Market Messaging
+- identify common claims and promises in the market
+- identify common angles competitors are using
+- identify overused or saturated messaging
+4. Angle Discovery
+- identify high-potential angles we can use
+- identify unique or underused angles
+- identify angles that can differentiate us
+5. Creative Strategy
+- suggest types of creatives to produce (UGC, testimonial, POV, demo, before/after, story-based)
+- suggest hooks that can stop scrolling
+- suggest messaging style (soft sell, hard sell, educational, emotional)
+- suggest content formats that match the audience behavior
+6. Offer Improvement
+- identify what makes an offer attractive in this market
+- suggest ways to improve our offer (pricing, bundles, guarantees, bonuses)
+- identify risk-reversal or trust-building elements
+7. Objections & Barriers
+- identify common objections
+- suggest how to overcome them in ads and messaging
+8. Market Gaps
+- identify underserved segments or angles
+- identify opportunities competitors are missing
+Return only this format:
+1. Market Overview
+- target audience summary
+- key desires and problems
+2. Emotional Drivers
+- top emotions and triggers
+3. Market Messaging Insights
+- common angles
+- saturated messaging to avoid
+4. High-Potential Angles
+- list of angles we should test
+- short explanation for each
+5. Creative Strategy
+- recommended creative types
+- hook ideas
+- messaging style
+- content direction
+6. Offer Strategy
+- what makes offers work in this market
+- suggested improvements for our offer
+7. Objections & Solutions
+- common objections
+- how to address them in ads
+8. Market Gaps
+- opportunities to stand out
+9. Action Plan
+- what to test next (angles, creatives, offers)
+- how to position our brand for higher conversion
+Rules:
+- Be concise and practical
+- No generic advice
+- Focus on real market behavior and psychology
+- Prioritize actionable insights over long explanations
+- Use bullets and short structured answers
+- If data is limited, use best logical inference based on market patterns`, sampleImg:'', sampleVid:''},
+
+  {id:'p5', cat:'Ads', title:'7-30 Days Strategy Audit & Implementation', prompt:`Act as a Meta Ads performance strategist.
+Analyze our CURRENT ad account using real-time data.
+Main goal:
+Compare the last 7 days vs the last 30 days to identify:
+- current winners
+- declining or improving performance
+- weak campaigns and creatives
+- immediate scaling opportunities
+- best short-term strategy for the next 7–30 days
+Focus only on actionable, data-based insights.
+Check when available:
+- Spend
+- CPM
+- CTR
+- CPC
+- Link Clicks / LPV
+- Add to Cart
+- Initiate Checkout
+- Purchases or Leads
+- Messages
+- Cost per Message
+- CPA
+- ROAS
+- Frequency
+Tasks:
+1. Compare last 7 days vs last 30 days
+2. Identify current winning campaigns (recent performance)
+3. Identify current winning creatives (recent performance)
+4. Identify declining or fatigued campaigns/creatives
+5. Identify weak performers wasting budget
+6. Decide what to keep, scale, pause, or replace
+7. Recommend immediate next strategy for 7-day and 30-day execution
+Return only this format:
+1. Executive Summary
+- short-term trend (7d vs 30d)
+- key changes (improving, declining, stable)
+2. Current Winners
+- campaigns and creatives performing best in last 7 days
+- supporting signals
+3. Declining / Fatigue Signals
+- campaigns or creatives losing performance
+- possible reasons (frequency, drop in CTR, rising CPA)
+4. Weak Performers
+- campaigns or creatives wasting budget
+- likely issues
+5. Decisions
+- Keep
+- Scale
+- Pause
+- Replace
+6. 7-Day Action Plan
+- what to test now
+- what to scale now
+- creative direction
+- budget suggestion
+- kill rules
+- success benchmark
+7. 30-Day Direction
+- how to stabilize and scale
+- what to expand
+- creative rotation plan
+- audience expansion direction
+8. Best Current Win-Rate Setup
+- most effective setup based on recent data
+9. Immediate Action Steps
+- step-by-step actions to execute now
+Rules:
+- Use current data only
+- Be concise and direct
+- No generic advice
+- Base decisions on recent performance signals
+- Prioritize short-term optimization and scaling
+- Mention missing data briefly if needed`, sampleImg:'', sampleVid:''},
+
+  {id:'p6', cat:'Video', title:'UGC AI Prompt 1 — Scene Breakdown (Image)', prompt:`Act as a professional prompt engineer and Veo 3 expert.
+===========================
+SCRIPT INPUT
+============
+[PASTE FULL SCRIPT HERE]
+===========================
+Based on the SCRIPT INPUT above, break the script into 8-second scenes.
+Before generating the scenes, apply the selected UGC AI Video Strategy.
+UGC AI VIDEO STRATEGY (SELECT ONE)
+• Problem → Realization → Solution
+• Before vs After
+• Day-in-the-Life
+• Green Screen
+• Podcast
+• Testimonials
+• Product Review
+• Content Creator Style
+===========================
+OUTPUT FORMAT
+=============
+# SCENE 1
+🎯 Role:
+(Problem / Hook / Realization / Solution / Proof / CTA)
+🗣️ Script:
+(Exact script line assigned to this scene)
+📸 Image Prompt:
+(Create ONE complete image prompt only.)
+# SCENE 2
+🎯 Role:
+🗣️ Script:
+📸 Image Prompt:
+(Continue until script is completed.)
+===========================
+IMAGE PROMPT RULES
+==================
+Every Image Prompt should automatically include:
+• Same reference model throughout
+• Consistent appearance and outfit unless script requires changes
+• Ultra realistic
+• Natural lighting
+• Authentic UGC feel
+• Real-world environment
+• Cinematic composition
+• Natural facial expressions
+• Realistic body language
+• Smartphone photography realism
+• No AI look
+• Ad-ready quality
+Do NOT separately explain:
+• Subject
+• Environment
+• Action
+• Camera
+• Mood
+Instead, combine everything into ONE clean production-ready image prompt.
+===========================
+IMPORTANT RULES
+===============
+• No JSON
+• No code blocks
+• No unnecessary explanations
+• No repeated descriptions
+• Keep outputs concise but detailed
+• Maintain visual continuity across scenes
+• Every scene must feel connected
+• Every image prompt must be ready to paste directly into Flux, Seedream, Midjourney, Grok, ChatGPT Image, or other image generators`, sampleImg:'', sampleVid:''},
+
+  {id:'p7', cat:'Video', title:'UGC Prompt 2 — Veo 3 Cinematic Scene Breakdown', prompt:`Act as a professional prompt engineer and Veo 3 expert.
+=================================
+SCRIPT INPUT
+============
+[PASTE FULL SCRIPT HERE]
+=================================
+Based on the SCRIPT INPUT and reference image, break the script into 8-second scenes.
+Before generating the scenes, apply the selected UGC AI Framework.
+UGC AI FRAMEWORK (SELECT ONE)
+• Problem → Realization → Solution
+• Before vs After
+• Day-in-the-Life
+• Green Screen
+• Podcast
+• Testimonials
+• Product Review
+• Content Creator Style
+=================================
+GLOBAL RULES
+============
+• Same reference model throughout
+• Same face, hairstyle, age, and body type
+• Consistent outfit unless script requires changes
+• Consistent voice and personality
+• Natural UGC realism
+• Cinematic commercial quality
+• Natural lighting
+• Real-world environments
+• No subtitles
+• No captions
+• No on-screen text
+• No AI look
+• No visual inconsistencies
+=================================
+OUTPUT FORMAT
+=============
+# SCENE [NUMBER]
+🎯 Role:
+(Hook, Problem, Realization, Solution, Proof, CTA, etc.)
+🗣️ Script:
+(Exact script line for this scene)
+🎥 Veo 3 Video Prompt:
+(Create ONE complete Veo 3-ready video prompt that includes character, environment, action, camera movement, emotion, lighting, audio, and cinematic direction.)
+---
+# SCENE [NUMBER]
+🎯 Role:
+🗣️ Script:
+🎥 Veo 3 Video Prompt:
+=================================
+VIDEO PROMPT REQUIREMENTS
+=========================
+Every Veo 3 Video Prompt should automatically include:
+• Same reference model consistency
+• Environment and background
+• Character actions and behavior
+• Natural body language
+• Camera movement
+• Shot composition
+• Lighting direction
+• Emotional tone
+• Ambient sounds
+• Background music style
+• Cinematic realism
+• Authentic UGC feel
+• Commercial ad quality
+• Smooth motion
+• Natural facial expressions
+• RAW 4K realism
+=================================
+IMPORTANT RULES
+===============
+• No JSON
+• No code blocks
+• No long explanations
+• No repeated sections
+• No separate Subject / Camera / Mood / Lighting breakdowns
+• Output only Scene Role, Script, and Final Veo 3 Video Prompt
+• Keep prompts concise but highly detailed
+• Every prompt must be ready to paste directly into Veo 3`, sampleImg:'', sampleVid:''},
+
+  {id:'p8', cat:'Image', title:'UGC Model Holding Product — Realistic Edit', prompt:`Adjust the provided image while keeping the original model's face, identity, and overall appearance unchanged.
+
+The woman model should be naturally holding the product in a realistic way — either at chest level or slightly angled toward the camera, as if presenting or using it.
+
+Ensure her hand placement looks natural and anatomically correct (no distorted fingers). The grip should feel relaxed and believable, like a real product shoot.
+
+Maintain photorealistic quality with natural skin texture, proper lighting, and accurate shadows between the hand and the product.
+
+The product must remain unchanged (no alterations to shape, label, branding, or proportions).
+
+Match the lighting and color grading of the product with the environment so it blends seamlessly into the scene.
+
+Style: ultra-realistic, high-end commercial look, clean composition, shallow depth of field.
+
+Camera: eye-level or slight close-up framing, sharp focus on both the model and the product.
+
+Mood: confident, natural, and professional — like a premium ad.
+
+Negative instructions:
+no AI-looking hands, no extra fingers, no warped product, no label distortion, no floating objects, no unrealistic grip, no over-smoothing skin, no text overlays, no filters.`, sampleImg:'https://drive.google.com/uc?export=view&id=14-zU7xW9Torr-ZbcyQz-oR4xLQUdAJZ9', sampleVid:''},
+
+  {id:'p9', cat:'Image', title:'Affiliate Shot 1 — Front Standing Hero Shot', prompt:`front-facing standing pose, upper body to mid-body framing, model looking naturally at the camera, relaxed shoulders and neutral posture, wearing the exact uploaded shirt, shirt fully visible from collar to hem, detailed tropical print clearly shown, realistic cotton fabric texture, visible stitching and natural folds, clean indoor lifestyle setting, soft natural window light, balanced shadows on face and clothing, authentic smartphone camera look, social-native affiliate framing, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p10', cat:'Image', title:'Affiliate Shot 2 — 45-Degree Fashion Affiliate Shot', prompt:`45-degree body angle, model slightly turned to the side while keeping the shirt front mostly visible, natural relaxed expression, casual creator posture, chest to thigh framing, exact uploaded shirt visible with realistic drape across the torso, detailed black-and-white tropical print, visible button placket, collar structure and sleeve fall, soft indoor daylight, realistic highlights on the fabric, natural skin tone and facial texture, subtle depth from the background, premium lifestyle composition, handheld smartphone-style realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p11', cat:'Image', title:'Affiliate Shot 3 — Mirror Selfie UGC Shot', prompt:`mirror selfie shot, model holding phone naturally in front of the mirror, authentic bathroom setup, realistic indoor ambient light, slight reflections on the mirror, casual real-life creator vibe, exact uploaded shirt clearly visible from shoulders to waist, realistic print alignment, detailed collar and sleeves, natural wrinkles around the torso and arms, true-to-life skin texture, realistic arm tattoo details if present in the reference, everyday social-native framing, handheld phone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p12', cat:'Image', title:'Affiliate Shot 4 — Looking Away Candid Shot', prompt:`candid standing pose, model looking slightly away from the camera, relaxed jaw and calm expression, natural body angle, upper body framing, exact uploaded shirt fully visible in a soft-sell lifestyle composition, realistic fabric folds around the chest and sleeves, sharp print details, natural indoor light from one side, soft shadows on the face and shirt, realistic skin texture without AI smoothing, authentic creator-style image, premium but natural affiliate content look, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p13', cat:'Image', title:'Affiliate Shot 5 — Hands-in-Pocket Lifestyle Shot', prompt:`standing lifestyle pose with one or both hands in pockets, relaxed masculine posture, natural body balance, mid-body framing, exact uploaded shirt clearly visible and naturally draped over the torso, realistic sleeve shape and hem fall, sharp tropical print detail, subtle indoor background blur, soft natural daylight, realistic shadows under the arms and along the shirt folds, clean creator-style affiliate image, handheld smartphone realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic clothing folds, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p14', cat:'Image', title:'Affiliate Shot 6 — Sitting Pose Shot', prompt:`model sitting naturally on a chair or bed edge, relaxed posture, casual UGC creator vibe, torso and lap area visible, exact uploaded shirt clearly shown across the chest and waist, realistic folds forming naturally while seated, visible collar shape, sleeve drape and print consistency, natural indoor light from a nearby window, soft room shadows, realistic skin texture and body proportions, premium but relatable affiliate lifestyle feel, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p15', cat:'Image', title:'Affiliate Shot 7 — Fixing Collar Detail Shot', prompt:`mid-close fashion shot, model naturally adjusting the collar of the exact uploaded shirt, realistic finger placement, focus on collar structure, button placket, upper chest print and fabric quality, subtle creator-style expression, soft directional natural light, clear texture on the shirt material, realistic skin pores and hand details, clean premium social ad composition, handheld phone realism with sharp detail, ultra-realistic, photoreal, highly detailed, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p16', cat:'Image', title:'Affiliate Shot 8 — Sleeve Detail Close-Up', prompt:`close-up shot focused on the sleeve and upper arm area of the exact uploaded shirt, realistic stitching, clean print detail, visible natural fabric texture, realistic skin tone and arm detail, soft natural light with gentle falloff shadows, sharp macro-like clarity, premium product-focused affiliate composition, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p17', cat:'Image', title:'Affiliate Shot 9 — Fabric Texture Macro Shot', prompt:`macro close-up of the exact uploaded shirt fabric, highly detailed print texture, visible weave pattern, realistic stitching, natural folds and fabric depth, true-to-life shadows, premium material-focused composition, clean sharp macro detail, ultra-realistic, photoreal, highly detailed, premium 4K-quality look. Use the uploaded product/clothing image exactly if provided. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p18', cat:'Image', title:'Affiliate Shot 10 — Bird\'s-Eye Flat Lay Shot', prompt:`bird's-eye / top-down overhead shot, handheld phone feel, natural indoor light, realistic shadows, exact uploaded shirt neatly laid flat on a clean neutral surface, front design fully visible, detailed tropical print, realistic fabric folds, collar and sleeves arranged naturally, ecommerce-meets-UGC styling, crisp product visibility, ultra-realistic, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded product/clothing image exactly if provided. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.
+
+Negative add-on: impossible overhead perspective, floating product, warped hands, distorted labels.`, sampleImg:'', sampleVid:''},
+
+  {id:'p19', cat:'Image', title:'Affiliate Shot 11 — Mirror Selfie 45-Degree Shot', prompt:`45-degree mirror selfie shot, model slightly turned to one side while holding the phone naturally, relaxed shoulders, casual authentic creator pose, upper body to thigh framing, exact uploaded shirt clearly visible from collar to hem, detailed black-and-white tropical print shown with realistic alignment, natural fabric folds around the torso and sleeve area, bathroom or bedroom mirror setup with clean realistic reflections, soft indoor ambient lighting with natural shadow falloff, realistic skin texture, true-to-life facial proportions, authentic smartphone camera realism, social-native affiliate composition, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p20', cat:'Image', title:'Affiliate Shot 12 — Mirror Selfie Sitting Shot', prompt:`mirror selfie while seated naturally on a chair, stool, or bed edge, relaxed posture with a casual creator vibe, phone held naturally in one hand, torso and lap visible in frame, exact uploaded shirt clearly visible across the chest, waist, and sleeve area, realistic seated fabric folds and natural drape around the stomach and lap, detailed print and collar structure preserved, realistic indoor setting with mirror reflections that look natural and not overly polished, soft ambient indoor light, subtle natural shadows, authentic smartphone camera feel, realistic skin pores and body proportions, premium UGC-style affiliate image, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, plastic skin, beautify filter, unrealistic seated pose, stiff body posture, warped knees, broken legs, extra fingers, distorted phone, unrealistic mirror reflection, wrong shirt design, altered collar, fake fabric wrinkles, floating body, low-detail skin, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p21', cat:'Image', title:'Affiliate Shot 13 — Mirror Selfie Looking Down Shot', prompt:`mirror selfie shot with the model looking slightly downward toward the phone screen, relaxed jaw, natural candid expression, one shoulder slightly lowered for a casual non-posed look, upper body framing, exact uploaded shirt clearly visible with realistic collar shape, sleeve structure, and front print details, natural shirt folds forming around the chest and abdomen, real bathroom or bedroom mirror environment, soft indoor lighting with balanced highlights and shadows, realistic facial contours and skin texture without beauty filter effect, handheld smartphone realism, authentic creator-style affiliate framing, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, AI smoothing, beautify filter, fake chin angle, awkward neck bend, distorted mirror reflection, broken hands, extra fingers, duplicated phone, wrong shirt design, warped print, incorrect branding, blurry details, low realism, fake bathroom lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p22', cat:'Image', title:'Affiliate Shot 14 — Mirror Selfie Looking Away Shot', prompt:`mirror selfie composition, model holding phone naturally while looking slightly away from the mirror, relaxed and candid expression, natural creator posture, chest to thigh framing, exact uploaded shirt clearly visible with realistic front print placement and accurate button placket details, soft natural indoor lighting reflecting across the shirt fabric, realistic sleeve drape and hem line, true-to-life skin texture and facial structure, clean real-life UGC setup with believable mirror reflection and natural perspective, handheld phone camera realism, authentic affiliate content feel, ultra-realistic, photoreal, highly detailed, sharp focus, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face morphing, face swap artifacts, uncanny face, beautify filter, plastic skin, unrealistic head turn, broken shoulders, mirrored distortion, extra hands, wrong phone position, shirt redesign, wrong colorway, fake print alignment, product inconsistency, floating reflection, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p23', cat:'Image', title:'Affiliate Shot 15 — Mirror Selfie Phone Half-Face Shot', prompt:`mirror selfie shot with the phone partially covering half of the face, natural one-hand phone hold, aesthetic creator-style composition, relaxed posture, exact uploaded shirt visible from neckline to mid-body, clear emphasis on shirt print, collar, and front silhouette, realistic natural fabric folds, subtle indoor light with realistic reflections on the mirror surface, believable smartphone camera perspective, clean but authentic UGC visual style, detailed skin texture on visible facial areas, realistic hair texture, premium affiliate composition, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, face morphing, distorted visible eye, asymmetrical face, unrealistic phone size, broken fingers, fake mirror reflection, duplicate phone, wrong shirt design, wrong print, altered collar, low-detail skin, plastic texture, over-sharpened image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p24', cat:'Image', title:'Affiliate Shot 16 — Mirror Selfie Bathroom Setup Shot', prompt:`authentic bathroom mirror selfie, model standing naturally in front of the bathroom mirror, phone held at chest level, casual real-life creator vibe, upper body to mid-body framing, exact uploaded shirt clearly visible with accurate tropical print, collar shape, sleeve cut, and realistic cotton drape, bathroom tiles and background kept realistic and slightly soft to keep focus on the clothing, indoor ambient bathroom light balanced with natural tones, slight mirror imperfections and believable reflections, realistic skin texture and arm details, smartphone camera realism, social-native affiliate look, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face swap artifacts, uncanny face, beautify filter, plastic skin, fake tile reflections, incorrect mirror perspective, duplicate sink or wall details, broken arm anatomy, extra fingers, wrong clothing print, product redesign, wrong sleeve length, fake shadows, overexposed bathroom light, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p25', cat:'Image', title:'Affiliate Shot 17 — Mirror Selfie Bedroom Setup Shot', prompt:`mirror selfie in a bedroom setting, model standing casually near a full-length mirror, relaxed creator pose, phone held naturally, exact uploaded shirt clearly visible from shoulders to waist or thighs, realistic front print placement, natural collar fall, visible stitching and soft cotton texture, bedroom background kept simple and believable with natural daylight entering from a window, soft warm indoor tones, realistic floor and furniture elements, authentic lifestyle UGC feel, smartphone camera realism, skin texture and facial details kept natural and unretouched, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, beautify filter, AI smoothing, unrealistic bedroom layout, fake mirror angle, broken hands, extra fingers, warped furniture, wrong product details, altered pattern, inaccurate print scale, fake lighting, soft blurry image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p26', cat:'Image', title:'Affiliate Shot 18 — Mirror Selfie Hallway Setup Shot', prompt:`mirror selfie in a clean hallway or condo corridor, model standing naturally with relaxed posture, phone held naturally in front of the chest, exact uploaded shirt clearly shown from collar to lower hem, accurate black-and-white print detail, realistic sleeve and shoulder fit, minimal modern hallway background with soft depth, balanced indoor lighting with natural falloff, believable reflection and perspective, realistic skin tone, hair texture, and body proportions, authentic creator-style affiliate aesthetic, handheld smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, realistic shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, uncanny face, face morphing, beautify filter, plastic skin, unrealistic hallway geometry, warped walls, distorted mirror perspective, broken anatomy, extra fingers, duplicate limbs, wrong clothing design, wrong print density, fake folds, incorrect branding, floating body, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p27', cat:'Image', title:'Affiliate Shot 19 — Mirror Selfie One Hand in Pocket Shot', prompt:`mirror selfie shot with one hand holding the phone and the other hand casually placed inside the pocket, relaxed confident posture, slight weight shift on one leg, natural masculine creator vibe, chest to thigh framing, exact uploaded shirt clearly visible with realistic drape and front print, detailed collar, sleeves, and hem line preserved, natural indoor light with balanced highlights on the face and shirt, believable mirror reflection and realistic room depth, authentic UGC affiliate feel, true-to-life skin texture and proportions, sharp smartphone-style realism, ultra-realistic, photoreal, highly detailed, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, face swap artifacts, uncanny face, fake skin texture, unnatural body twist, broken elbow, extra fingers, distorted pocket hand, warped mirror reflection, wrong clothing fit, altered print, incorrect branding, floating shadows, blurred image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p28', cat:'Image', title:'Affiliate Shot 20 — Walking Forward Shot', prompt:`model walking naturally toward the camera, realistic mid-step body movement, relaxed face and confident casual expression, exact uploaded shirt clearly visible as the hero piece, realistic motion in the fabric with natural folds forming around the chest, shoulders, and lower hem, sharp print details still preserved during movement, upper body to knee framing or full-body framing depending on composition, realistic indoor or outdoor lifestyle setting, natural daylight or soft indoor light, believable motion without looking overly cinematic, authentic creator-style affiliate visual, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric movement, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, uncanny face, beautify filter, plastic skin, stiff walking pose, broken legs, unnatural stride, floating feet, motion blur covering product details, warped arms, extra fingers, wrong shirt print, altered design, unrealistic fabric movement, fake shadows, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p29', cat:'Image', title:'Affiliate Shot 21 — Walking Side Shot', prompt:`side-view walking shot, model captured mid-step from the left or right side, natural body movement and realistic stride, relaxed facial expression, exact uploaded shirt clearly visible from the side profile with accurate sleeve length, shoulder fit, and fabric drape, realistic motion folds forming around the torso and arms, clean lifestyle setting with natural daylight or soft indoor light, believable movement without excessive blur, realistic shadows under the arms and along the shirt hem, authentic creator-style affiliate composition, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, face swap artifacts, uncanny face, beautify filter, plastic skin, stiff walking pose, broken legs, floating feet, unrealistic side stride, warped arms, extra fingers, blurry clothing print, wrong sleeve cut, altered design, fake shadows, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p30', cat:'Image', title:'Affiliate Shot 22 — Walking Past Camera Shot', prompt:`candid walking past the camera shot, model moving naturally across the frame with relaxed posture and effortless creator energy, exact uploaded shirt visible as the main focus while the body is slightly angled during motion, realistic fabric movement around the chest, sleeves, and lower hem, accurate print alignment preserved even in motion, natural lifestyle background with realistic depth, soft daylight or indoor ambient light, subtle motion feel while keeping product details sharp and readable, smartphone camera realism, authentic affiliate visual style, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic clothing folds, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, uncanny face, face swap artifacts, beautify filter, AI smoothing, frozen unnatural movement, broken legs, unrealistic body angle, floating feet, excessive motion blur, wrong shirt print, altered pattern scale, distorted hem, fake lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p31', cat:'Image', title:'Affiliate Shot 23 — Looking Down Candid Shot', prompt:`natural candid standing pose, model looking slightly downward with a calm relaxed expression, shoulders relaxed and posture soft, chest to thigh framing, exact uploaded shirt fully visible with realistic front print, detailed collar structure, sleeve fit, and natural fabric drape across the torso, soft natural window light or balanced indoor ambient light, true-to-life shadows around the neck and under the sleeves, realistic skin pores and facial contours without retouching, authentic creator-style affiliate composition, handheld smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, uncanny face, fake skin smoothing, unrealistic chin angle, awkward neck bend, broken shoulders, warped hands, extra fingers, wrong shirt design, altered print placement, unrealistic folds, overexposed light, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p32', cat:'Image', title:'Affiliate Shot 24 — Looking Away Candid Shot', prompt:`standing candid pose, model looking off-camera naturally with a relaxed jaw and neutral creator expression, body slightly angled for a soft-sell lifestyle feel, exact uploaded shirt clearly visible from collar to hem, realistic cotton texture, visible stitching, natural folds around the chest and underarm area, clean indoor or outdoor environment with believable depth and balanced lighting, subtle natural highlights across the face and shirt, realistic skin texture and hair detail, authentic social-native affiliate framing, handheld smartphone realism, ultra-realistic, photoreal, highly detailed, sharp focus, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face morphing, uncanny face, beautify filter, plastic skin, unnatural head turn, broken neck proportions, extra arms, warped hands, wrong print density, altered collar shape, fake background depth, floating shadows, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p33', cat:'Image', title:'Affiliate Shot 28 — One Hand in Pocket Pose', prompt:`standing lifestyle pose with one hand inside the pocket and the other relaxed at the side or lightly positioned near the shirt, natural confident creator vibe, exact uploaded shirt clearly visible from collar to hem, realistic print detail, visible button placket, clean sleeve drape, balanced natural posture with slight body angle, soft indoor daylight or natural outdoor light, realistic shadows under the arm and along the side seams, true-to-life skin texture, hair detail, and body proportions, social-native affiliate framing with smartphone realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, uncanny face, beautify filter, AI smoothing, broken elbow, warped hand, extra fingers, awkward stance, wrong clothing design, changed pattern scale, fake fabric texture, floating body, fake light direction, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p34', cat:'Image', title:'Affiliate Shot 29 — Leaning Slightly on One Leg Pose', prompt:`casual standing pose with the model leaning slightly on one leg, relaxed asymmetrical posture, shoulders soft and natural, exact uploaded shirt clearly shown with realistic drape following the body angle, detailed print alignment, realistic fabric folds near the waist and underarm area, natural collar fall and sleeve shape, clean lifestyle environment with soft depth in the background, natural daylight or indoor ambient light, realistic skin tone and facial texture, authentic creator-style affiliate framing, handheld smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face swap artifacts, uncanny face, beautify filter, plastic skin, exaggerated hip tilt, broken legs, awkward balance, warped arms, extra fingers, wrong shirt fit, distorted print lines, unrealistic folds, poor lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p35', cat:'Image', title:'Affiliate Shot 31 — One Hand Touching Chest Pose', prompt:`standing pose with one hand lightly touching the chest area of the shirt, natural relaxed expression, body facing slightly toward the camera, exact uploaded shirt clearly visible with strong emphasis on the front print, collar structure, and chest area details, realistic finger placement gently pressing the fabric, natural folds forming around the hand contact point, visible stitching and true-to-life cotton texture, soft indoor daylight or natural window light, realistic shadows across the torso, authentic creator-style affiliate framing, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, uncanny face, beautify filter, plastic skin, broken fingers, warped hand placement, unnatural chest touch, wrong shirt print, altered collar, fake folds, incorrect branding, blurry image, overexposed light, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p36', cat:'Image', title:'Affiliate Shot 32 — Fixing Collar Pose', prompt:`mid-close fashion affiliate shot, model naturally adjusting the collar of the exact uploaded shirt, relaxed confident expression, realistic finger placement near the collar edge, strong focus on collar structure, neckline, upper chest print, and button placket, realistic tension in the fabric where the hand touches, visible stitching and natural material texture, soft directional natural light creating depth across the face and shirt, clean premium lifestyle background kept slightly soft, realistic skin pores and hand detail, social-native smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face swap artifacts, uncanny face, beautify filter, plastic skin, broken fingers, warped collar, wrong button placement, altered print, fake shirt tension, unrealistic hand pose, low-detail skin, fake lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p37', cat:'Image', title:'Affiliate Shot 33 — Fixing Sleeve Pose', prompt:`lifestyle fashion shot, model adjusting one sleeve of the exact uploaded shirt naturally, casual creator expression, body slightly angled for a dynamic affiliate look, sleeve area and stitching clearly visible, realistic hand placement pulling or straightening the cuff area, natural fabric bunching and folds where the sleeve is being adjusted, accurate print continuity across the sleeve and upper arm, soft natural indoor light or shaded daylight, believable shadows along the arm and torso, realistic skin texture and arm proportions, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic clothing texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, uncanny face, face morphing, plastic skin, beautify filter, broken wrist, warped fingers, unrealistic sleeve pull, wrong sleeve length, altered print alignment, fake fabric tension, extra fingers, stiff pose, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p38', cat:'Image', title:'Affiliate Shot 34 — Holding Shirt Hem Pose', prompt:`standing pose with one or both hands lightly holding the lower hem of the exact uploaded shirt, relaxed expression, natural creator-style posture, shirt front fully visible with emphasis on hem line, print continuity, and fabric fall, realistic fingers gently gripping the hem, natural folds forming downward from the grip points, visible stitching and realistic cotton drape, soft natural indoor lighting or outdoor shade light, true-to-life shadows near the waist and hands, realistic body proportions and skin texture, authentic affiliate fashion composition, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric detail, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, uncanny face, fake skin smoothing, broken fingers, unrealistic grip, warped hem, wrong shirt length, distorted print, altered stitching, floating fabric, fake wrinkles, flat lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p39', cat:'Image', title:'Affiliate Shot 38 — Sitting Elbow-on-Knee Pose', prompt:`model seated naturally with one elbow resting on one knee, relaxed masculine creator posture, calm and relatable expression, exact uploaded shirt clearly visible across the chest, waist, and sleeve area, realistic seated fabric folds forming around the abdomen and lap, accurate collar structure and front print maintained, indoor lifestyle setup such as a chair, sofa, or bed edge, soft natural window light or balanced indoor ambient light, realistic shadows under the arms and across the torso, true-to-life skin texture and body proportions, authentic affiliate content style with smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric detail, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, beautify filter, fake skin texture, broken seated anatomy, warped knee, unrealistic elbow placement, wrong shirt print, distorted folds, floating body, low-detail image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p40', cat:'Image', title:'Affiliate Shot 41 — Sitting Casual Slouch Pose', prompt:`model sitting in a relaxed casual slouch on a chair, sofa, or bed edge, natural everyday creator posture, calm candid expression, exact uploaded shirt clearly visible across the chest, waist, and lap area, realistic seated fabric folds forming naturally around the stomach, sides, and sleeves, accurate collar structure, button placket, and print alignment preserved, soft indoor ambient light or natural window light, realistic depth in the room with a clean lifestyle background, believable skin texture, hair detail, and body proportions, authentic trust-building affiliate composition with handheld smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, uncanny face, beautify filter, plastic skin, broken seated anatomy, warped back posture, floating body, extra fingers, distorted lap folds, wrong shirt print, altered collar, unrealistic chair angle, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
 ];
 
 let prompts = store.get('vault_prompts', null) || JSON.parse(JSON.stringify(DEFAULT_PROMPTS));
