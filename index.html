@@ -1114,6 +1114,8 @@ function copyPrompt(id, btn){
 }
 
 function setPromptCat(c){ activePromptCat=c; renderPrompts(); }
+
+function renderDashboard(){
   document.getElementById('dash-user').textContent = session ? session.user : 'Creator';
   document.getElementById('dash-plan').innerHTML = session && session.role==='admin' ? '⚙️ Admin Access' : '★ Student Plan';
   const studentAgents = agents.filter(a=>a.access==='Student');
@@ -1291,7 +1293,7 @@ function deletePrompt(id){
   persistPrompts(); renderAdminPrompts(); toast('Prompt deleted');
 }
 
-
+function renderAdmin(){
   document.getElementById('admin-agents').innerHTML = agents.map(a=>`
     <div class="arow">
       <div style="display:flex;align-items:center;gap:.7rem">
