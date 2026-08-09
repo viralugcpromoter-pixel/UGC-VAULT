@@ -1960,6 +1960,7 @@ FINAL RULES
 ];
 let prompts = store.get('vault_prompts', null) || JSON.parse(JSON.stringify(DEFAULT_PROMPTS));
 let activePromptCat = 'All';
+let promptSearchQ = '';
 
 function persistPrompts(){ store.set('vault_prompts', prompts); }
 
@@ -1968,7 +1969,12 @@ function renderPrompts(){
   const view = document.getElementById('view-prompts');
   if(!view) return;
 
-  const filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  let filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  if(promptSearchQ) filtered = filtered.filter(p=>
+    p.title.toLowerCase().includes(promptSearchQ) ||
+    p.prompt.toLowerCase().includes(promptSearchQ) ||
+    p.cat.toLowerCase().includes(promptSearchQ)
+  );
 
   view.innerHTML = `
     <div class="dash-wrap">
@@ -1982,14 +1988,33 @@ function renderPrompts(){
         </div>
       </div>
 
+      <div class="search-bar" style="margin-bottom:1rem;position:relative">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input class="input" id="prompt-search" placeholder="Search prompts..." value="${esc(promptSearchQ)}"
+          style="padding-left:2.4rem;width:100%;background:var(--surface-2);border:1px solid var(--line)"
+          oninput="promptSearchQ=this.value.toLowerCase().trim();renderPromptGrid()">
+      </div>
+
       <div class="chip-row" style="margin-bottom:1.5rem">
         ${cats.map(c=>`<button class="chip ${activePromptCat===c?'active':''}" onclick="setPromptCat('${c}')">${c}</button>`).join('')}
       </div>
 
       <div class="agrid" id="prompt-grid">
-        ${filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : '<div class="empty">No prompts in this category yet.</div>'}
+        ${filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : `<div class="empty">No prompts found. Try a different keyword or category.</div>`}
       </div>
     </div>`;
+}
+
+function renderPromptGrid(){
+  let filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  if(promptSearchQ) filtered = filtered.filter(p=>
+    p.title.toLowerCase().includes(promptSearchQ) ||
+    p.prompt.toLowerCase().includes(promptSearchQ) ||
+    p.cat.toLowerCase().includes(promptSearchQ)
+  );
+  const grid = document.getElementById('prompt-grid');
+  if(!grid) return;
+  grid.innerHTML = filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : `<div class="empty">No prompts found. Try a different keyword or category.</div>`;
 }
 
 function renderPromptCard(p){
