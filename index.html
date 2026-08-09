@@ -375,7 +375,7 @@
 
     <section class="stats wrap">
       <div class="stats-grid">
-        <div class="stat reveal"><div class="num" data-count="149" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
+        <div class="stat reveal"><div class="num" data-count="150" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
         <div class="stat reveal"><div class="num" data-static="100%">100%</div><div class="lbl">Free For All Members</div></div>
         <div class="stat reveal"><div class="num" data-static="∞">∞</div><div class="lbl">Lifetime Updates</div></div>
         <div class="stat reveal"><div class="num" data-static="1">1</div><div class="lbl">Dashboard Access</div></div>
@@ -438,7 +438,7 @@
       <div class="up-card reveal" style="max-width:760px">
         <span class="eyebrow">Ready to start?</span>
         <h2 style="font-size:2rem;margin:1rem 0 .6rem;position:relative">Your AI Team Is Waiting</h2>
-        <p>Log in to your dashboard and launch 149+ ready-made AI experts — 100% free for all members.</p>
+        <p>Log in to your dashboard and launch 150+ ready-made AI experts — 100% free for all members.</p>
         <div class="hero-cta" style="margin-top:1.8rem">
           <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
         </div>
@@ -512,7 +512,7 @@
         <div class="panel featured" id="featured-panel"></div>
         <div>
           <div class="mini-stats" style="margin-bottom:1.1rem">
-            <div class="mini"><div class="n" id="ms-count">149</div><div class="t">Agents Available</div></div>
+            <div class="mini"><div class="n" id="ms-count">150</div><div class="t">Agents Available</div></div>
             <div class="mini"><div class="n" id="ms-fav">0</div><div class="t">Your Favorites</div></div>
           </div>
           <div class="panel updates">
@@ -549,6 +549,8 @@
     </div>
   </div>
 
+  <div class="view" id="view-prompts"></div>
+
   <div class="view" id="view-upgrade">
     <div class="up-wrap wrap">
       <div class="up-card">
@@ -580,11 +582,16 @@
       </div>
       <div class="admin-tabs">
         <button class="atab active" data-atab="agents" onclick="switchAdminTab('agents')">🤖 Agents</button>
+        <button class="atab" data-atab="prompts" onclick="switchAdminTab('prompts')">📝 Prompts</button>
         <button class="atab" data-atab="creds" onclick="switchAdminTab('creds')">🔑 Credentials</button>
       </div>
 
       <div class="apanel active" id="apanel-agents">
         <div id="admin-agents"></div>
+      </div>
+
+      <div class="apanel" id="apanel-prompts">
+        <div id="admin-prompts"></div>
       </div>
 
       <div class="apanel" id="apanel-creds">
@@ -615,6 +622,26 @@
     </div>
   </div>
 
+</div>
+
+<div class="modal-overlay" id="prompt-modal" onclick="if(event.target===this)closeModal('prompt-modal')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('prompt-modal')">✕</button>
+    <h3 id="prompt-modal-title">Add Prompt</h3>
+    <div class="field"><label>Title</label><input class="input" id="pm-title" placeholder="e.g. Luxury Product Shot"/></div>
+    <div class="field"><label>Category</label>
+      <select class="input" id="pm-cat">
+        <option value="Image">Image</option>
+        <option value="Video">Video</option>
+        <option value="Avatar">Avatar</option>
+        <option value="Ads">Ads</option>
+      </select>
+    </div>
+    <div class="field"><label>Prompt Text</label><textarea class="input" id="pm-prompt" rows="5" placeholder="Paste your full prompt here..."></textarea></div>
+    <div class="field"><label>Sample Image URL <span style="color:var(--muted);font-size:.8rem">(optional)</span></label><input class="input" id="pm-img" placeholder="https://..."/></div>
+    <div class="field"><label>Sample Video <span style="color:var(--muted);font-size:.8rem">(YouTube URL, optional)</span></label><input class="input" id="pm-vid" placeholder="https://youtube.com/..."/></div>
+    <button class="btn btn-primary btn-block" onclick="savePrompt()">Save Prompt</button>
+  </div>
 </div>
 
 <div class="modal-overlay" id="upgrade-modal" onclick="if(event.target===this)closeModal('upgrade-modal')">
@@ -816,6 +843,7 @@ const DEFAULT_AGENTS = [
   {id:'a147', name:'Grok Custom Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a77244fbc448191b46b3d8134afea57-grok-custom-bot', desc:'Harness Grok AI for marketing and content — custom workflows, prompts, and strategies built around Grok\'s unique capabilities.'},
   {id:'a148', name:'Flow Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a7724c4188c8191839a1857635781b6-flow-bot', desc:'Create seamless AI video flows — smooth transitions, scene sequencing, and motion prompts for professional video production.'},
   {id:'a149', name:'Omni Flash Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a7727580604819192f976af10cc6f47-omni-flash-bot', desc:'Lightning-fast AI outputs across any task — copy, strategy, scripts, and ideas delivered instantly on demand.'},
+  {id:'a150', name:'Concept Sheet Generator', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a772a3c78b881919bd5f823d1a1f292-reference-sheet-studio', desc:'Generate detailed concept and reference sheets for AI characters, products, and brand visuals — consistent style across every output.'},
 ];
 
 const DEFAULT_CREDS = {
@@ -827,7 +855,7 @@ const DEFAULT_CREDS = {
 };
 
 const UPDATES = [
-  {t:'149+ AI agents now live — all 100% free for members', w:'New'},
+  {t:'150+ AI agents now live — all 100% free for members', w:'New'},
   {t:'Eleven Labs Expert added to the vault', w:'New'},
   {t:'All agents now unlocked — no VIP required', w:'Update'},
   {t:'More agents dropping soon — stay tuned', w:'Soon'},
@@ -896,18 +924,19 @@ let editingId = null;
 
 function persist(){ store.set('vault_agents', agents); store.set('vault_creds', creds); store.set('vault_favs', favs); }
 
-const VIEWS = ['home','login','dashboard','upgrade','admin'];
+const VIEWS = ['home','login','dashboard','prompts','upgrade','admin'];
 function go(view){
-  if(view==='dashboard' && !session){ loginMode='student'; renderLogin(); view='login'; }
-  if(view==='dashboard' && session && isExpired()){ view='upgrade'; }
+  if((view==='dashboard'||view==='prompts') && !session){ loginMode='student'; renderLogin(); view='login'; }
+  if((view==='dashboard'||view==='prompts') && session && isExpired()){ view='upgrade'; }
   if(view==='admin' && (!session || session.role!=='admin')){ loginMode='admin'; renderLogin(); view='login'; }
 
   VIEWS.forEach(v=>{
     const el=document.getElementById('view-'+v);
-    el.classList.toggle('active', v===view);
+    if(el) el.classList.toggle('active', v===view);
   });
   document.getElementById('navlinks').classList.remove('open');
   if(view==='dashboard') renderDashboard();
+  if(view==='prompts') renderPrompts();
   if(view==='login') renderLogin();
   if(view==='admin') renderAdmin();
   renderNav(view);
@@ -933,6 +962,7 @@ function renderNav(view){
   if(session){
     html += `<button class="link" onclick="go('home')">Home</button>`;
     html += `<button class="link" onclick="go('dashboard')">Dashboard</button>`;
+    html += `<button class="link" onclick="go('prompts')">Prompt Vault</button>`;
     if(session.role==='admin') html += `<button class="link" onclick="go('admin')">Admin</button>`;
     html += `<button class="btn btn-dark btn-sm" onclick="logout()">Logout</button>`;
   } else {
@@ -1001,7 +1031,89 @@ function doLogin(){
 }
 function logout(){ session=null; store.set('vault_session',null); go('home'); toast('Logged out'); }
 
-function renderDashboard(){
+const DEFAULT_PROMPTS = [
+  {id:'p1', cat:'Image', title:'Luxury Skincare Product Shot', prompt:'A luxurious skincare serum bottle placed on a white marble surface with soft natural light streaming from the left. Bokeh background with gold and cream tones. Ultra-realistic, studio quality, 4K.', sampleImg:'', sampleVid:''},
+  {id:'p2', cat:'Image', title:'Food Hero Shot — Filipino Dish', prompt:'Overhead flat lay of sizzling sisig on a cast iron pan, garnished with calamansi and fresh chili. Dark moody background, dramatic lighting, food photography style, ultra-sharp, magazine quality.', sampleImg:'', sampleVid:''},
+  {id:'p3', cat:'Image', title:'E-commerce Fashion Model', prompt:'A confident Filipino woman wearing a white linen dress, standing in a minimalist studio with soft ring light. Clean white background, fashion editorial style, full body shot, 4K realism.', sampleImg:'', sampleVid:''},
+  {id:'p4', cat:'Video', title:'UGC Testimonial Hook', prompt:'A young Filipina woman looking directly at camera with surprised expression saying "Hindi ako makapaniwala na ganito kaganda ang result!" — natural lighting, handheld phone-camera feel, authentic UGC style, no filters.', sampleImg:'', sampleVid:''},
+  {id:'p5', cat:'Video', title:'Product Reveal Cinematic', prompt:'Slow motion cinematic reveal of a perfume bottle on a reflective black surface. Smoke wisps around the bottle, dramatic spotlight from above, dark luxury aesthetic, 4K, 24fps cinematic style.', sampleImg:'', sampleVid:''},
+  {id:'p6', cat:'Avatar', title:'AI Brand Spokesperson — Female', prompt:'A professional AI-generated Filipino female brand ambassador, 25-30 years old, wearing a branded polo shirt, warm confident smile, neutral studio background, photorealistic, 4K portrait.', sampleImg:'', sampleVid:''},
+  {id:'p7', cat:'Avatar', title:'AI Brand Spokesperson — Male', prompt:'A trustworthy AI-generated Filipino male spokesperson, 28-35 years old, business casual attire, clean professional studio background, direct eye contact, photorealistic, ultra-detailed, 4K.', sampleImg:'', sampleVid:''},
+  {id:'p8', cat:'Ads', title:'Facebook Ad — Pain/Solution Hook', prompt:'Split screen ad image: left side shows a tired woman with dark circles under eyes (labeled "Before"), right side shows same woman glowing with radiant skin (labeled "After"). Bold text overlay: "7 days. Real results." Clean, high contrast, mobile-optimized.', sampleImg:'', sampleVid:''},
+  {id:'p9', cat:'Ads', title:'TikTok Ad — Trending Format', prompt:'Vertical 9:16 video of a hand unboxing a skincare product with satisfying sounds, neon-colored packaging, fast cuts at 1-second intervals, trending TikTok music beat, text overlays with bold Gen Z typography, authentic phone camera quality.', sampleImg:'', sampleVid:''},
+  {id:'p10', cat:'Image', title:'AI Background — Premium Lifestyle', prompt:'A modern minimalist living room with floor-to-ceiling windows, golden hour sunlight, neutral beige tones, luxury furniture, empty center space for product placement. Ultra-realistic interior photography, 4K.', sampleImg:'', sampleVid:''},
+];
+
+let prompts = store.get('vault_prompts', null) || JSON.parse(JSON.stringify(DEFAULT_PROMPTS));
+let activePromptCat = 'All';
+
+function persistPrompts(){ store.set('vault_prompts', prompts); }
+
+function renderPrompts(){
+  const cats = ['All', 'Image', 'Video', 'Avatar', 'Ads'];
+  const view = document.getElementById('view-prompts');
+  if(!view) return;
+
+  const filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+
+  view.innerHTML = `
+    <div class="dash-wrap">
+      <div class="dash-top">
+        <div>
+          <h2 style="font-size:1.6rem;font-weight:800">📝 Prompt Vault</h2>
+          <p style="color:var(--muted);font-size:.9rem;margin-top:.3rem">Ready-to-use prompts with sample outputs — copy and launch.</p>
+        </div>
+        <div class="mini-stats">
+          <div class="mini"><div class="n">${prompts.length}</div><div class="t">Prompts</div></div>
+        </div>
+      </div>
+
+      <div class="chip-row" style="margin-bottom:1.5rem">
+        ${cats.map(c=>`<button class="chip ${activePromptCat===c?'active':''}" onclick="setPromptCat('${c}')">${c}</button>`).join('')}
+      </div>
+
+      <div class="agrid" id="prompt-grid">
+        ${filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : '<div class="empty">No prompts in this category yet.</div>'}
+      </div>
+    </div>`;
+}
+
+function renderPromptCard(p){
+  const hasSampleImg = p.sampleImg && p.sampleImg.trim();
+  const hasSampleVid = p.sampleVid && p.sampleVid.trim();
+  const ytEmbed = hasSampleVid ? getYTEmbed(p.sampleVid) : '';
+
+  return `<div class="acard reveal in-view" style="display:flex;flex-direction:column;gap:.8rem">
+    ${hasSampleImg ? `<img src="${esc(p.sampleImg)}" alt="Sample output" style="width:100%;border-radius:12px;object-fit:cover;max-height:180px;border:1px solid var(--line)">` : ''}
+    ${ytEmbed ? `<div style="position:relative;padding-bottom:56.25%;border-radius:12px;overflow:hidden;border:1px solid var(--line)"><iframe src="${ytEmbed}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy"></iframe></div>` : ''}
+    ${!hasSampleImg && !hasSampleVid ? `<div style="width:100%;height:80px;border-radius:12px;background:var(--surface-2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.8rem">No sample yet</div>` : ''}
+    <div>
+      <span class="cat-tag">${esc(p.cat)}</span>
+      <h3 style="margin-top:.5rem;font-size:1rem">${esc(p.title)}</h3>
+    </div>
+    <div style="background:var(--surface-2);border-radius:10px;padding:.8rem;font-size:.8rem;color:var(--muted);line-height:1.6;border:1px solid var(--line);flex:1">${esc(p.prompt)}</div>
+    <button class="btn btn-primary btn-sm" style="width:100%" onclick="copyPrompt('${p.id}',this)">📋 Copy Prompt</button>
+  </div>`;
+}
+
+function getYTEmbed(url){
+  if(!url) return '';
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([a-zA-Z0-9_-]{11})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : '';
+}
+
+function copyPrompt(id, btn){
+  const p = prompts.find(x=>x.id===id);
+  if(!p) return;
+  navigator.clipboard.writeText(p.prompt).then(()=>{
+    const orig = btn.innerHTML;
+    btn.innerHTML='✅ Copied!';
+    btn.style.background='#22c55e';
+    setTimeout(()=>{ btn.innerHTML=orig; btn.style.background=''; },2000);
+  });
+}
+
+function setPromptCat(c){ activePromptCat=c; renderPrompts(); }
   document.getElementById('dash-user').textContent = session ? session.user : 'Creator';
   document.getElementById('dash-plan').innerHTML = session && session.role==='admin' ? '⚙️ Admin Access' : '★ Student Plan';
   const studentAgents = agents.filter(a=>a.access==='Student');
@@ -1108,10 +1220,78 @@ function switchAdminTab(tab){
   document.querySelectorAll('.atab').forEach(t=>t.classList.toggle('active', t.dataset.atab===tab));
   document.getElementById('apanel-agents').classList.toggle('active', tab==='agents');
   document.getElementById('apanel-creds').classList.toggle('active', tab==='creds');
+  document.getElementById('apanel-prompts').classList.toggle('active', tab==='prompts');
   if(tab==='creds') fillCredForm();
+  if(tab==='prompts') renderAdminPrompts();
 }
 
-function renderAdmin(){
+function renderAdminPrompts(){
+  const el = document.getElementById('admin-prompts');
+  if(!el) return;
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem">
+      <h3 style="font-size:1.1rem;font-weight:700">📝 Prompt Templates (${prompts.length})</h3>
+      <button class="btn btn-primary btn-sm" onclick="openPromptModal(null)">+ Add Prompt</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.8rem">
+      ${prompts.map(p=>`
+        <div class="arow" style="align-items:flex-start;gap:1rem">
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:.95rem">${esc(p.title)}</div>
+            <span class="cat" style="font-size:.7rem">${esc(p.cat)}</span>
+            <div style="color:var(--muted);font-size:.8rem;margin-top:.4rem;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.prompt.substring(0,80))}...</div>
+            ${p.sampleImg ? `<div style="font-size:.75rem;color:#6ddc6d;margin-top:.3rem">🖼️ Has image sample</div>` : ''}
+            ${p.sampleVid ? `<div style="font-size:.75rem;color:#6ddc6d;margin-top:.2rem">🎬 Has video sample</div>` : ''}
+          </div>
+          <div class="acts">
+            <button class="icon-btn" onclick="openPromptModal('${p.id}')" title="Edit">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="icon-btn danger" onclick="deletePrompt('${p.id}')" title="Delete">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+            </button>
+          </div>
+        </div>`).join('')}
+    </div>`;
+}
+
+let editingPromptId = null;
+function openPromptModal(id){
+  editingPromptId = id;
+  const p = id ? prompts.find(x=>x.id===id) : null;
+  const cats = ['Image','Video','Avatar','Ads'];
+  document.getElementById('prompt-modal-title').textContent = id ? 'Edit Prompt' : 'Add Prompt';
+  document.getElementById('pm-title').value = p ? p.title : '';
+  document.getElementById('pm-cat').value = p ? p.cat : 'Image';
+  document.getElementById('pm-prompt').value = p ? p.prompt : '';
+  document.getElementById('pm-img').value = p ? p.sampleImg||'' : '';
+  document.getElementById('pm-vid').value = p ? p.sampleVid||'' : '';
+  openModal('prompt-modal');
+}
+
+function savePrompt(){
+  const title = document.getElementById('pm-title').value.trim();
+  const cat   = document.getElementById('pm-cat').value;
+  const prompt= document.getElementById('pm-prompt').value.trim();
+  const sampleImg = document.getElementById('pm-img').value.trim();
+  const sampleVid = document.getElementById('pm-vid').value.trim();
+  if(!title||!prompt){ toast('Title and prompt are required'); return; }
+  if(editingPromptId){
+    const i = prompts.findIndex(x=>x.id===editingPromptId);
+    if(i>-1) prompts[i] = {...prompts[i], title, cat, prompt, sampleImg, sampleVid};
+  } else {
+    prompts.push({id:'p'+Date.now(), cat, title, prompt, sampleImg, sampleVid});
+  }
+  persistPrompts(); closeModal('prompt-modal'); renderAdminPrompts(); toast('Prompt saved!');
+}
+
+function deletePrompt(id){
+  if(!confirm('Delete this prompt?')) return;
+  prompts = prompts.filter(p=>p.id!==id);
+  persistPrompts(); renderAdminPrompts(); toast('Prompt deleted');
+}
+
+
   document.getElementById('admin-agents').innerHTML = agents.map(a=>`
     <div class="arow">
       <div style="display:flex;align-items:center;gap:.7rem">
