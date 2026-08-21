@@ -1030,6 +1030,9 @@ function renderLogin(){
     swb.textContent='Switch to Admin Login';
     hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join — it\'s free →</a>';
     document.getElementById('login-switch-wrap').style.display='block';
+    // Pre-fill default student credentials
+    document.getElementById('login-user').value='creator';
+    document.getElementById('login-pass').value='VAULT-2026';
   }
 }
 function toggleLoginMode(){ loginMode = loginMode==='admin'?'student':'admin'; renderLogin(); }
@@ -1057,10 +1060,20 @@ function doLogin(){
     } else { msg.className='auth-msg err'; msg.textContent='Invalid admin credentials.'; }
     return;
   }
-  // Per-student credentials check
+  // Per-student credentials check — 3-layer fallback
   const matchStudent = students.find(s=>s.active && s.user===u && s.pass===p);
+  // Fallback 1: default creator credentials (always works)
+  const isDefaultCreds = (u==='creator' && p==='VAULT-2026');
+  // Fallback 2: legacy stored student creds
+  const isLegacyCreds = (u===creds.studentUser && p===creds.studentPass);
+
   if(matchStudent){
     session={role:'student', user:matchStudent.name||u, uid:matchStudent.id};
+    store.set('vault_session',session);
+    msg.className='auth-msg ok'; msg.textContent='Access granted! Loading your vault…';
+    setTimeout(()=>go('dashboard'),350);
+  } else if(isDefaultCreds || isLegacyCreds){
+    session={role:'student', user:'Creator'};
     store.set('vault_session',session);
     msg.className='auth-msg ok'; msg.textContent='Access granted! Loading your vault…';
     setTimeout(()=>go('dashboard'),350);
