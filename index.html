@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dell AI Creators Vault — Ready-Made AI Experts</title>
+<title>AI Creative University Vault — Ready-Made AI Experts</title>
 <meta name="description" content="Access Ready-Made AI Experts That Do The Work For You." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,8 +242,8 @@
   .acard .desc{color:var(--muted);font-size:.9rem;flex:1}
   .acard .foot{display:flex;justify-content:space-between;align-items:center;margin-top:1.2rem;gap:.6rem}
   .acard .foot-bottom{margin-top:.6rem}
-  .btn-download{background:rgba(255,193,7,.1);color:#FFC107;border:1px solid rgba(255,193,7,.35);padding:.38rem .85rem;border-radius:999px;font-size:.75rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;transition:.2s;white-space:nowrap}
-  .btn-download:hover{background:rgba(255,193,7,.2);border-color:rgba(255,193,7,.65);transform:translateY(-1px)}
+  .btn-download{background:rgba(255,193,7,.1);color:#FFC107;border:1px solid rgba(255,193,7,.35);padding:.38rem .85rem;border-radius:999px;font-size:.75rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem;transition:.2s;white-space:nowrap;width:100%;justify-content:center}
+  .btn-download:hover{background:rgba(255,193,7,.22);border-color:rgba(255,193,7,.65);transform:translateY(-1px)}
   .access{font-size:.76rem;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:.4rem}
   .access .lock{color:var(--yellow)}
 
@@ -347,7 +347,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <div class="brand" onclick="go('home')">
-        <span class="mark">D</span><span>Dell&nbsp;AI <b>Creators&nbsp;Vault</b></span>
+        <span class="mark">A</span><span>AI Creative <b>University&nbsp;Vault</b></span>
       </div>
       <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -364,7 +364,6 @@
         <p class="sub">Stop spending hours writing prompts from scratch. Launch specialized AI agents built for content creators, freelancers, marketers, agencies, and business owners.</p>
         <div class="hero-cta">
           <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
-          <button class="btn btn-ghost" onclick="go('upgrade')">👑 Upgrade To VIP</button>
         </div>
         <div class="audience-row">
           <span class="pill">Business Owners</span>
@@ -379,8 +378,8 @@
 
     <section class="stats wrap">
       <div class="stats-grid">
-        <div class="stat reveal"><div class="num" data-count="13" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
-        <div class="stat reveal"><div class="num" data-count="100" data-suffix="+">0</div><div class="lbl">VIP Agents Coming Soon</div></div>
+        <div class="stat reveal"><div class="num" data-count="151" data-suffix="+">0</div><div class="lbl">AI Agents Available</div></div>
+        <div class="stat reveal"><div class="num" data-static="100%">100%</div><div class="lbl">Free For All Members</div></div>
         <div class="stat reveal"><div class="num" data-static="∞">∞</div><div class="lbl">Lifetime Updates</div></div>
         <div class="stat reveal"><div class="num" data-static="1">1</div><div class="lbl">Dashboard Access</div></div>
       </div>
@@ -404,14 +403,47 @@
       <div class="bgrid" id="benefits"></div>
     </section>
 
+    <section class="section-pad wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">🤖 Done-For-You Service</span>
+        <h2>Want a Bot Built <span class="hl">For Your Brand?</span></h2>
+        <p>We build custom AI bots tailored specifically to your business — your voice, your products, your workflow. Better prompts, better output, better results.</p>
+      </div>
+      <div class="bgrid reveal" style="margin-bottom:2.5rem">
+        <div class="bcard">
+          <div class="bico" style="font-size:1.3rem">🎯</div>
+          <h3>Built For Your Brand</h3>
+          <p>Your custom bot learns your brand voice, product details, and target audience — outputs that feel 100% you.</p>
+        </div>
+        <div class="bcard">
+          <div class="bico" style="font-size:1.3rem">⚡</div>
+          <h3>Better Output, Faster</h3>
+          <p>No more tweaking generic prompts. Your bot delivers polished, on-brand content in one shot — every time.</p>
+        </div>
+        <div class="bcard">
+          <div class="bico" style="font-size:1.3rem">🔧</div>
+          <h3>Can Do A Lot</h3>
+          <p>Ad copy, scripts, captions, emails, SOPs, chatbots — whatever your business needs, we can build a bot for it.</p>
+        </div>
+      </div>
+      <div style="text-align:center">
+        <div class="up-card reveal" style="max-width:680px;margin:0 auto">
+          <div style="font-size:2rem">💬</div>
+          <h2 style="font-size:1.8rem;margin:.8rem 0 .5rem;position:relative">Let's Build Your Custom Bot</h2>
+          <p style="position:relative">PM us on Facebook and tell us about your brand. We'll take it from there — tailored, tested, and ready to work for you.</p>
+          <a class="btn btn-primary" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="margin-top:1.6rem;font-size:1rem;padding:1rem 2rem">📩 PM Us on Facebook</a>
+          <p style="color:var(--muted-2);font-size:.8rem;margin-top:1rem;position:relative">AI Creative University Vault • Custom Bot Services</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section-pad wrap" style="text-align:center">
       <div class="up-card reveal" style="max-width:760px">
         <span class="eyebrow">Ready to start?</span>
         <h2 style="font-size:2rem;margin:1rem 0 .6rem;position:relative">Your AI Team Is Waiting</h2>
-        <p>Log in to your dashboard and launch 13+ ready-made AI experts — or upgrade to VIP for 100+ premium systems.</p>
+        <p>Log in to your dashboard and launch 151+ ready-made AI experts — 100% free for all members.</p>
         <div class="hero-cta" style="margin-top:1.8rem">
           <button class="btn btn-primary" onclick="launchAgentsCTA()">⚡ Launch Agents</button>
-          <button class="btn btn-ghost" onclick="go('upgrade')">👑 Upgrade To VIP</button>
         </div>
       </div>
     </section>
@@ -419,14 +451,14 @@
     <footer>
       <div class="foot">
         <div class="col" style="max-width:280px">
-          <div class="brand" style="margin-bottom:.8rem"><span class="mark">D</span><span>Dell&nbsp;AI <b>Vault</b></span></div>
+          <div class="brand" style="margin-bottom:.8rem"><span class="mark">A</span><span>AI Creative <b>University Vault</b></span></div>
           <p style="color:var(--muted);font-size:.9rem">Access ready-made AI experts that do the work for you. Built for the modern creator economy.</p>
         </div>
         <div class="col">
           <h4>Vault</h4>
           <a onclick="launchAgentsCTA()">Dashboard</a>
-          <a onclick="go('upgrade')">Upgrade to VIP</a>
           <a onclick="go('login')">Member Login</a>
+          <a onclick="loginMode='admin';go('login')" style="color:var(--muted-2);font-size:.75rem">Admin</a>
         </div>
         <div class="col">
           <h4>Categories</h4>
@@ -438,10 +470,9 @@
         <div class="col">
           <h4>Connect</h4>
           <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">Facebook</a>
-          <a onclick="go('upgrade')">Become VIP</a>
         </div>
       </div>
-      <div class="foot-bottom">© <span id="yr"></span> Dell AI Creators Vault. All rights reserved.</div>
+      <div class="foot-bottom">© <span id="yr"></span> AI Creative University Vault. All rights reserved.</div>
     </footer>
   </div>
 
@@ -461,9 +492,9 @@
         </div>
         <div class="auth-msg" id="login-msg"></div>
         <button class="btn btn-primary btn-block" style="margin-top:.4rem" onclick="doLogin()">Sign In →</button>
-        <div class="auth-switch">
+        <div class="auth-switch" id="login-switch-wrap" style="margin-top:.8rem;text-align:center">
           <span id="login-switch-text">Are you the admin?</span>
-          <button onclick="toggleLoginMode()" id="login-switch-btn">Admin Login</button>
+          <button onclick="toggleLoginMode()" id="login-switch-btn" style="margin-left:.4rem;background:none;border:none;color:var(--yellow);font-weight:700;cursor:pointer;font-size:.85rem;text-decoration:underline">Admin Login</button>
         </div>
         <div class="hint" id="login-hint"></div>
       </div>
@@ -484,7 +515,7 @@
         <div class="panel featured" id="featured-panel"></div>
         <div>
           <div class="mini-stats" style="margin-bottom:1.1rem">
-            <div class="mini"><div class="n" id="ms-count">13</div><div class="t">Agents Available</div></div>
+            <div class="mini"><div class="n" id="ms-count">151</div><div class="t">Agents Available</div></div>
             <div class="mini"><div class="n" id="ms-fav">0</div><div class="t">Your Favorites</div></div>
           </div>
           <div class="panel updates">
@@ -504,25 +535,24 @@
 
       <div class="agrid" id="agent-grid"></div>
 
-      <div class="vip-head">
-        <h2>👑 VIP Vault</h2>
-      </div>
-      <div class="vip-banner">
-        <div>
-          <div class="vt">100+ Premium AI Agents Coming Soon</div>
-          <p>Advanced workflows, exclusive systems, and future releases — reserved for VIP members.</p>
+      <div style="margin:3rem 0 1rem">
+        <div class="vip-banner" style="background:linear-gradient(120deg,#0f1a0f,#0f0f0f);border-color:rgba(100,220,100,.25);gap:1.5rem;align-items:center">
+          <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+            <div style="font-size:2rem">🤖</div>
+            <div>
+              <div class="vt" style="color:#6ddc6d;font-size:1.1rem">Want a Custom Bot Built For Your Brand?</div>
+              <p style="color:var(--muted);font-size:.9rem;margin-top:.3rem">We tailor AI bots to your exact business — your voice, your products, better output. Can do a LOT.</p>
+            </div>
+          </div>
+          <a class="btn btn-sm" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="background:#6ddc6d;color:#0A0A0A;font-weight:800;white-space:nowrap;flex-shrink:0">📩 PM Us Now</a>
         </div>
-        <button class="btn btn-primary" onclick="openUpgradeModal()">Unlock VIP Access</button>
       </div>
-      <div class="agrid" id="vip-grid"></div>
 
-      <div class="vip-head">
-        <h2>📦 Vault Resources</h2>
-        <span class="access"><span class="lock">●</span> Expanding soon</span>
-      </div>
       <div class="rgrid" id="resource-grid"></div>
     </div>
   </div>
+
+  <div class="view" id="view-prompts"></div>
 
   <div class="view" id="view-upgrade">
     <div class="up-wrap wrap">
@@ -555,11 +585,21 @@
       </div>
       <div class="admin-tabs">
         <button class="atab active" data-atab="agents" onclick="switchAdminTab('agents')">🤖 Agents</button>
+        <button class="atab" data-atab="prompts" onclick="switchAdminTab('prompts')">📝 Prompts</button>
+        <button class="atab" data-atab="students" onclick="switchAdminTab('students')">👥 Students</button>
         <button class="atab" data-atab="creds" onclick="switchAdminTab('creds')">🔑 Credentials</button>
       </div>
 
       <div class="apanel active" id="apanel-agents">
         <div id="admin-agents"></div>
+      </div>
+
+      <div class="apanel" id="apanel-prompts">
+        <div id="admin-prompts"></div>
+      </div>
+
+      <div class="apanel" id="apanel-students">
+        <div id="admin-students"></div>
       </div>
 
       <div class="apanel" id="apanel-creds">
@@ -592,14 +632,52 @@
 
 </div>
 
+<div class="modal-overlay" id="student-modal" onclick="if(event.target===this)closeModal('student-modal')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('student-modal')">✕</button>
+    <h3 id="student-modal-title">Add Student</h3>
+    <div class="field"><label>Full Name</label><input class="input" id="sm-name" placeholder="e.g. Juan dela Cruz"/></div>
+    <div class="field"><label>Username</label><input class="input" id="sm-user" placeholder="e.g. juandc (no spaces)"/></div>
+    <div class="field">
+      <label>Password</label>
+      <div style="display:flex;gap:.5rem">
+        <input class="input" id="sm-pass" placeholder="Set a password" style="flex:1"/>
+        <button class="btn btn-sm" onclick="genPass()" style="background:var(--surface-3);color:var(--white);white-space:nowrap">🎲 Generate</button>
+      </div>
+      <div style="color:var(--muted);font-size:.75rem;margin-top:.4rem">Tip: Share this password directly to the student via DM.</div>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="saveStudent()">Save Student</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="prompt-modal" onclick="if(event.target===this)closeModal('prompt-modal')">
+  <div class="modal">
+    <button class="close" onclick="closeModal('prompt-modal')">✕</button>
+    <h3 id="prompt-modal-title">Add Prompt</h3>
+    <div class="field"><label>Title</label><input class="input" id="pm-title" placeholder="e.g. Luxury Product Shot"/></div>
+    <div class="field"><label>Category</label>
+      <select class="input" id="pm-cat">
+        <option value="Image">Image</option>
+        <option value="Video">Video</option>
+        <option value="Avatar">Avatar</option>
+        <option value="Ads">Ads</option>
+      </select>
+    </div>
+    <div class="field"><label>Prompt Text</label><textarea class="input" id="pm-prompt" rows="5" placeholder="Paste your full prompt here..."></textarea></div>
+    <div class="field"><label>Sample Image URL <span style="color:var(--muted);font-size:.8rem">(optional)</span></label><input class="input" id="pm-img" placeholder="https://..."/></div>
+    <div class="field"><label>Sample Video <span style="color:var(--muted);font-size:.8rem">(YouTube URL, optional)</span></label><input class="input" id="pm-vid" placeholder="https://youtube.com/..."/></div>
+    <button class="btn btn-primary btn-block" onclick="savePrompt()">Save Prompt</button>
+  </div>
+</div>
+
 <div class="modal-overlay" id="upgrade-modal" onclick="if(event.target===this)closeModal('upgrade-modal')">
   <div class="modal">
     <button class="close" onclick="closeModal('upgrade-modal')">✕</button>
-    <div class="crown">🔒</div>
-    <h3>VIP Members Only</h3>
-    <p class="mtext">Unlock premium AI systems, advanced workflows, future releases, and exclusive AI agents available only to VIP members.</p>
-    <a class="btn btn-primary btn-block" href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener">👑 Upgrade To VIP</a>
-    <button class="btn btn-dark btn-block" style="margin-top:.7rem" onclick="closeModal('upgrade-modal')">Maybe later</button>
+    <div class="crown">✅</div>
+    <h3>All Agents Are Free!</h3>
+    <p class="mtext">Every AI agent in the vault is 100% free for all members. No upgrades needed — just log in and launch.</p>
+    <button class="btn btn-primary btn-block" onclick="closeModal('upgrade-modal');go('dashboard')">⚡ Launch Agents Now</button>
+    <button class="btn btn-dark btn-block" style="margin-top:.7rem" onclick="closeModal('upgrade-modal')">Close</button>
   </div>
 </div>
 
@@ -655,11 +733,151 @@ const DEFAULT_AGENTS = [
   {id:'a11', name:'Script Writer Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6982f53125588191aacac87862fb76d5-script-writer-bot', desc:'Write magnetic video and reel scripts with proven hooks, story flow, and strong calls-to-action.'},
   {id:'a12', name:'PromptPolish PH', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a0eac6b156081918c90c352fd081caa-promptpolish-ph', desc:'Refine rough ideas into clean, powerful prompts — polished for sharper, more reliable AI output.'},
   {id:'a13', name:'AI Creatives System Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a12e89f8cb0819199c7bda986742f50-ai-creatives-system-bot', desc:'A full creative production system — ideate, script, and assemble winning ad creatives end-to-end.', featured:true},
-  {id:'a14', name:'MindReader — Voice of Customer Decoder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-mindreader', desc:'Decode your customer\'s inner monologue — deep fears, secret desires, and exact phrases to mirror in your copy.'},
+  {id:'a14', name:'Omni Expert Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a5774b77c588191b76ca29d2957cb80-omni-expert-bot', desc:'The all-knowing marketing expert — strategy, copy, creatives, and campaigns in one powerful agent.'},
+  {id:'a15', name:'Veo AI Creative System Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-69f9f1afcf0c8191a52f0f6602da67d0-veo-ai-creative-system-bot', desc:'Build full AI video creative systems using Veo — prompts, storyboards, and production-ready concepts.'},
+  {id:'a16', name:'CloseBot — Sales Conversion Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f52edcc508191ad17f87352959b7c-closebot-sales-conversion-strategist', desc:'Turn leads into buyers with proven closing scripts, objection handlers, and conversion strategies.'},
+  {id:'a17', name:'SparkTok — TikTok Ads Creator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f53fe8510819190d5888b74ac773c-sparktok-tiktok-ads-creator', desc:'Create viral TikTok ads that stop scrolls — hooks, scripts, and concepts built for the FYP.'},
+  {id:'a18', name:'MetaForge — Facebook/Meta Ads Copywriter', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f73898aa081919b6302eb0e961d26-metaforge-facebook-meta-ads-copywriter', desc:'Write high-converting Meta ad copy — primary text, headlines, and CTAs that drive real results.'},
+  {id:'a19', name:'GlowGram — Instagram Ads Creator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f8d4c0b8081919092c57b17c33d21-glowgram-instagram-ads-creator', desc:'Craft Instagram ads that glow — visually compelling copy and concepts for Stories, Reels, and Feed.'},
+  {id:'a20', name:'RankFlow — Google Ads Copywriter', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f8e2f26a4819189d37793bbcc6f0c-rankflow-google-ads-copywriter', desc:'Write search and display ads that rank and convert — keywords, headlines, and descriptions optimized.'},
+  {id:'a21', name:'HookLab — Viral Hook Machine', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a2f8f13298881918d9bd9bb5623b5fb-hooklab-viral-hook-machine', desc:'Generate scroll-stopping hooks for ads, reels, and posts that grab attention in the first 3 seconds.'},
+  {id:'a22', name:'BrandVoice — Brand Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f900b8b98819190fffbb5207f4d93-brandvoice-brand-strategist', desc:'Define and lock in your brand voice, positioning, and messaging — consistent across every platform.'},
+  {id:'a23', name:'MailMint — Email Marketing Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f90d44c908191a28b651c0e8368b2-mailmint-email-marketing-engine', desc:'Write email sequences, broadcasts, and nurture campaigns that open, click, and convert.'},
+  {id:'a24', name:'FunnelForge — Funnel/Landing Page Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f91a6b70881918e1dae680058806b-funnelforge-funnel-landing-page-builder', desc:'Build high-converting funnels and landing pages — copy, structure, and flow from top to bottom.'},
+  {id:'a25', name:'TrendScout — Trend & Competitor Intel', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f926ed4a88191a050ad88d1dcbcf2-trendscout-trend-competitor-intel', desc:'Spy on trends and competitors — find what is working now and turn insights into your next winning campaign.'},
+  {id:'a26', name:'ScriptReel — Video/VSL Script Engine', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2f93d7ad6c8191b97fa5da941b1da5-scriptreel-video-vsl-script-engine', desc:'Write video sales letters and reel scripts with magnetic hooks, story arcs, and powerful closes.'},
+  {id:'a27', name:'ReplyRocket — DM/Comment Closer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f94ff75c88191ad3f23bda3d166e7-replyrocket-dm-comment-closer', desc:'Close sales in DMs and comments with proven reply scripts that feel natural and convert fast.'},
+  {id:'a28', name:'LaunchPad — Launch/Promo Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f95cde4a88191894b4c43143012d1-launchpad-launch-promo-strategist', desc:'Plan and execute product launches and promos — timelines, angles, and campaign structures that sell.'},
+  {id:'a29', name:'LoyalLoop — Retention/Loyalty Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f96ad65a881918068ff6cacb5db99-loyalloop-retention-loyalty-strategist', desc:'Keep customers coming back — loyalty systems, retention tactics, and re-engagement campaigns.'},
+  {id:'a30', name:'PennyWise — Budget/ROI Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f97cd5d1c8191bee9301eccbd11c5-pennywise-budget-roi-strategist', desc:'Maximize every peso — budget allocation, ROI tracking, and spend optimization for smarter ad campaigns.'},
+  {id:'a31', name:'PriceRight — Pricing/Quote Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9956eb40819189faf9101cf98dd1-priceright-pricing-quote-strategist', desc:'Price with confidence — positioning, packaging, and quoting strategies that win deals and protect margins.'},
+  {id:'a32', name:'ContentMill — Repurpose/Calendar Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9cc727a48191911e064e5237ce95-contentmill-repurpose-calendar-engine', desc:'Repurpose one piece of content into 10 — build a full calendar without starting from scratch.'},
+  {id:'a33', name:'BizNamer — Name/Tagline Lab', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9db4e8508191b287c532309ddecc-biznamer-name-tagline-lab', desc:'Find the perfect name and tagline for any brand, product, or offer — memorable, marketable, and on-brand.'},
+  {id:'a34', name:'WinBack — Follow-Up/Reactivation Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2f9e53e8188191adac34abda389e44-winback-follow-up-reactivation-engine', desc:'Reactivate cold leads and lost customers with follow-up sequences that reignite interest and drive action.'},
+  {id:'a35', name:'HookStorm — Caption/Hook Writer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a2f9f8152608191812a014007e6f317-hookstorm-caption-hook-writer', desc:'Storm through captions and hooks in seconds — punchy, platform-native copy for every post.'},
+  {id:'a36', name:'CarouselCraft — Carousel Builder', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2fa64ed85c819196417d56f8631afd-carouselcraft-carousel-builder', desc:'Design slide-by-slide carousel content — structure, copy, and flow for maximum swipes and saves.'},
+  {id:'a37', name:'ReelRecipe — Reel/Short-Form Idea Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2fa6f1dcc0819193bcbfe0568b87b9-reelrecipe-reel-short-form-idea-bot', desc:'Cook up reel ideas that perform — concepts, formats, and scripts built for short-form virality.'},
+  {id:'a38', name:'ThemeMonth — 30-Day Content Planner', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a2fd90efe808191a906c19a29873627-thememonth-30-day-content-planner', desc:'Plan a full month of content in one go — themes, topics, and post ideas mapped out and ready to execute.'},
+  {id:'a39', name:'StoryBoard — Storytelling/Personal Brand Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301c5fd3bc8191ba909b8b52f4b50b-storyboard-storytelling-personal-brand-bot', desc:'Build your personal brand through story — frameworks, narratives, and content that makes people follow you.'},
+  {id:'a40', name:'AdImagine — Ad Creative Concept Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a301cb5f0408191a73c1ca7b70343c9-adimagine-ad-creative-concept-bot', desc:'Conceive scroll-stopping ad visuals — creative direction, concept briefs, and image prompts for any product.'},
+  {id:'a41', name:'PromoPunch — Promo/Offer Copy Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301cf7c8dc8191a941cbd2e95137ca-promopunch-promo-offer-copy-bot', desc:'Write irresistible promo copy — urgency, value stacking, and offer framing that moves product fast.'},
+  {id:'a42', name:'TestiMagic — Testimonial/Proof Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301d32d30481919888530deb7ca0c7-testimagic-testimonial-proof-bot', desc:'Extract and craft powerful testimonials and social proof — turn customer wins into conversion assets.'},
+  {id:'a43', name:'BioBuilder — Bio/Profile Optimizer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301d69f3d88191ab3194bc080285c7-biobuilder-bio-profile-optimizer', desc:'Optimize your bio and social profiles to attract the right audience and convert profile visits to followers.'},
+  {id:'a44', name:'NewsAngle — Newsletter/Long-Form Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301daeca1c8191badeb3bdfcbd5c1f-newsangle-newsletter-long-form-bot', desc:'Write newsletters and long-form content with sharp angles, strong openers, and high readability.'},
+  {id:'a45', name:'PromptForge — AI Prompt Engineer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301de603508191b6a7e2864abed742-promptforge-ai-prompt-engineer', desc:'Engineer precise, powerful prompts for any AI tool — get better outputs faster with structured prompt logic.'},
+  {id:'a46', name:'AutoFlow — Automation/Workflow Designer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301e32c8ac8191b2eac5b672e57db4-autoflow-automation-workflow-designer', desc:'Design smart automation workflows — map your processes and eliminate repetitive tasks with AI.'},
+  {id:'a47', name:'AIStack — AI Tool Advisor', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301e6dc3788191be1cc095c7663ccb-aistack-ai-tool-advisor', desc:'Find the right AI tool for every job — curated recommendations and stack advice for creators and marketers.'},
+  {id:'a48', name:'ChatCraft — Chatbot/Auto-Reply Builder', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a301ea6c3d481918d1dec0431f4f271-chatcraft-chatbot-auto-reply-builder', desc:'Build chatbots and auto-reply systems that handle inquiries, qualify leads, and close sales on autopilot.'},
+  {id:'a49', name:'DataDecode — Analytics/Insights Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301eeec628819198998b9415d7a16c-datadecode-analytics-insights-bot', desc:'Decode your data into clear insights — metrics, performance analysis, and actionable next steps.'},
+  {id:'a50', name:'ListLaunch — Product Listing Optimizer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301f26c4cc81918685b97b9869c776-listlaunch-product-listing-optimizer', desc:'Optimize product listings for maximum visibility and conversions — titles, descriptions, and keywords.'},
+  {id:'a51', name:'PartnerPro — Affiliate/Partnership Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301f5dc6488191b47374279774e728-partnerpro-affiliate-partnership-strategist', desc:'Build affiliate programs and brand partnerships that generate passive revenue and expand your reach.'},
+  {id:'a52', name:'WebinarWin — Webinar/Event Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301f93ca848191ad2b9b9dc0c08ed3-webinarwin-webinar-event-strategist', desc:'Plan and execute webinars and live events that fill seats, engage audiences, and convert attendees.'},
+  {id:'a53', name:'PodPush — Podcast/Audio Marketing Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a301fc8c26881918dd6f84d1389bac1-podpush-podcast-audio-marketing-bot', desc:'Grow and monetize your podcast — episode ideas, show notes, promo copy, and audience growth tactics.'},
+  {id:'a54', name:'TribeBuild — Community/Group Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302000d7f48191be79cf667edd8676-tribebuild-community-group-strategist', desc:'Build and grow an engaged community — onboarding, content rhythms, and member retention systems.'},
+  {id:'a55', name:'ReferRush — Referral/Word-of-Mouth Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a30203fbfec8191baa1f06870067908-referrush-referral-word-of-mouth-engine', desc:'Build referral systems that spread your brand — incentive structures and word-of-mouth campaigns.'},
+  {id:'a56', name:'SeasonSell — Seasonal/Holiday Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302072c29c8191b9f955a4cef685d3-seasonsell-seasonal-holiday-strategist', desc:'Capitalize on every season and holiday — campaign calendars, promo angles, and timely content.'},
+  {id:'a57', name:'OnboardEase — Onboarding/Education Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3020a7d6c081919c1e2557f2e6c1ee-onboardease-onboarding-education-bot', desc:'Create smooth onboarding experiences and educational content that turns new users into loyal fans.'},
+  {id:'a58', name:'EdgeFinder — Positioning/Differentiation Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3020d6c05481918faed9f06d0fe3b1-edgefinder-positioning-differentiation-bot', desc:'Find your competitive edge — positioning angles and differentiation strategies that make you the obvious choice.'},
+  {id:'a59', name:'AuditAce — Marketing Audit Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a30210be17c81919b6e202b86cb06c5-auditace-marketing-audit-bot', desc:'Audit your entire marketing setup — ads, copy, funnel, and profiles — and get a prioritized fix list.'},
+  {id:'a60', name:'PitchDeck — Pitch/Proposal Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302143bb588191a96ea93097ab4d80-pitchdeck-pitch-proposal-builder', desc:'Build winning pitches and proposals — structure, copy, and design direction that closes deals.'},
+  {id:'a61', name:'SEOSmith — SEO Content Engine', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a30217b7ac48191a054d4e9fe382dbf-seosmith-seo-content-engine', desc:'Create SEO content that ranks — keyword strategy, optimized articles, and meta copy for organic growth.'},
+  {id:'a62', name:'CrisisCalm — Reputation/Crisis Manager', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3021a7e9588191ac4013d7c6fcb8d5-crisiscalm-reputation-crisis-manager', desc:'Handle brand crises and reputation issues calmly — response strategies and messaging that protect your image.'},
+  {id:'a63', name:'InfluMatch — Influencer/UGC Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3021d8d6108191bfddd4afc7473126-influmatch-influencer-ugc-strategist', desc:'Find and activate influencers and UGC creators — briefs, outreach scripts, and campaign management.'},
+  {id:'a64', name:'LocalLift — Local Marketing Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a302209bc8c819190d1dea922e2a318-locallift-local-marketing-strategist', desc:'Dominate your local market — geo-targeted campaigns, local SEO, and community marketing strategies.'},
+  {id:'a65', name:'AvatarScript — AI Avatar Video Scriptwriter', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338e1319a88191b9f3a0a6a465eb39-avatarscript-ai-avatar-video-scriptwriter', desc:'Write scripts specifically for AI avatar videos — natural delivery, clear beats, and on-brand messaging.'},
+  {id:'a66', name:'VoiceOver — AI Voiceover Script/Delivery Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338e545e488191987d45154f36cd4d-voiceover-ai-voiceover-script-delivery-bot', desc:'Write and direct voiceover scripts — tone, pacing, and delivery notes for professional-sounding AI audio.'},
+  {id:'a67', name:'ImagePromptPro — AI Image Prompt Builder', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338eaa15a881918322ca909ac4c7c2-imagepromptpro-ai-image-prompt-builder', desc:'Build precise image prompts for any AI generator — style, lighting, composition, and subject all locked in.'},
+  {id:'a68', name:'VideoPromptPro — AI Video Prompt Builder', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338efc1a348191b867a477731f7913-videopromptpro-ai-video-prompt-builder', desc:'Engineer powerful video prompts for Veo, Kling, and more — motion, scene, and style perfectly described.'},
+  {id:'a69', name:'ThumbnailAI — Thumbnail Concept/Prompt Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338f3a1ee881918323d973a77bbde9-thumbnailai-thumbnail-concept-prompt-bot', desc:'Create click-worthy thumbnail concepts and prompts — composition, text, and visual hierarchy that gets clicks.'},
+  {id:'a70', name:'Faceless — No-Camera Content System', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338f81b5588191874572a4979eeca6-faceless-no-camera-content-system', desc:'Build a faceless content channel — scripts, visuals, and systems for growing without showing your face.'},
+  {id:'a71', name:'ProductShot — AI Product Photography Prompt Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a338fc718bc8191bc27b83ec20ee3d8-productshot-ai-product-photography-prompt-bot', desc:'Create studio-quality product photography prompts — lighting, angles, and styling for any product.'},
+  {id:'a72', name:'AIPersona — AI Brand Spokesperson Builder', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33900d1fc8819188c60d58aa2ae5a3-aipersona-ai-brand-spokesperson-builder', desc:'Design your AI brand spokesperson — appearance, personality, voice, and visual consistency across content.'},
+  {id:'a73', name:'StyleMatch — Brand Voice Lock-In Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33904ee40881918c3fe1611a381645-stylematch-brand-voice-lock-in-bot', desc:'Lock in your brand voice and style — tone guides, writing rules, and consistency checks across all content.'},
+  {id:'a74', name:'ThreadWeaver — Thread/Long Post Writer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33908e22888191a1b30e0a7ac469c0-threadweaver-thread-long-post-writer', desc:'Write viral threads and long-form posts — structure, hooks, and momentum that keeps readers engaged.'},
+  {id:'a75', name:'QuoteCard — Quote Card Shareable Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a3390cc66408191835577c2f0c035dc-quotecard-quote-card-shareable-bot', desc:'Create shareable quote cards — compelling quotes, visual direction, and brand-consistent design prompts.'},
+  {id:'a76', name:'MemeMarketer — Meme/Trend-Jack Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a339104ea748191978896d0373c020c-mememarketer-meme-trend-jack-bot', desc:'Hijack trends and memes for your brand — timely, on-brand content that rides viral moments.'},
+  {id:'a77', name:'BlogToSocial — Long-Form to Social Repurposer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33915418ec8191a332b17f961a7fbf-blogtosocial-long-form-to-social-repurposer', desc:'Turn blog posts and long-form content into social media gold — captions, carousels, and clips.'},
+  {id:'a78', name:'SlideDeck — Educational Carousel/Deck Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33919212f88191abbfe6d731c619c6-slidedeck-educational-carousel-deck-bot', desc:'Build educational carousels and slide decks — structure, content, and design direction for teaching content.'},
+  {id:'a79', name:'ContentRemix — Winning Post Multiplier', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3391d31b6081919729ab6b3181ac44-contentremix-winning-post-multiplier', desc:'Take your best-performing posts and remix them into 10 more — maximize winners without extra effort.'},
+  {id:'a80', name:'AIWorkflow — AI Content Pipeline Builder', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33921710908191a9c5082068d19f11-aiworkflow-ai-content-pipeline-builder', desc:'Build end-to-end AI content pipelines — connect tools, automate steps, and ship content at scale.'},
+  {id:'a81', name:'OfferArchitect — Irresistible Offer Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33925c103c8191860655cff180cfe7-offerarchitect-irresistible-offer-builder', desc:'Build offers people cannot refuse — value stacking, bonuses, guarantees, and pricing that converts.'},
+  {id:'a82', name:'ToneTwister — Voice/Tone Rewriter', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33929713688191ab7ecce66c905573-tonetwister-voice-tone-rewriter', desc:'Rewrite any content in a new tone or voice — formal, casual, bold, playful — instantly on demand.'},
+  {id:'a83', name:'CTAForge — Call-to-Action Specialist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3392d70ce08191b8e0c170a29aa7a7-ctaforge-call-to-action-specialist', desc:'Forge CTAs that convert — button copy, closing lines, and action triggers for every stage of the funnel.'},
+  {id:'a84', name:'TrendSpark — Trend-to-Content Converter', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33931b07e48191b7f0020d8209255e-trendspark-trend-to-content-converter', desc:'Convert trending topics into branded content — timely angles and post ideas while the trend is hot.'},
+  {id:'a85', name:'SalesPage — Long-Form Sales Page Writer', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3393601ac48191b022461a71b619da-salespage-long-form-sales-page-writer', desc:'Write full-length sales pages that convert — headline to close, every section crafted to sell.'},
+  {id:'a86', name:'EmailBlast — Broadcast/Promo Email Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33939b289c8191ac5bb1f57407c54b-emailblast-broadcast-promo-email-bot', desc:'Write promo email blasts that get opened and clicked — subject lines, preview text, and body copy.'},
+  {id:'a87', name:'HeadlineLab — Headline/Hook Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a3393d608f08191887dd8886329cc98-headlinelab-headline-hook-headline-bot', desc:'Lab-test your headlines and hooks — generate variations and identify the strongest angle for your offer.'},
+  {id:'a88', name:'ProofStack — Credibility/Trust Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33941709f48191902c6c157a594cff-proofstack-credibility-trust-builder', desc:'Stack social proof and credibility signals — testimonials, case studies, and trust-building content.'},
+  {id:'a89', name:'UpsellCraft — Upsell/Cross-Sell Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a3394580e4c8191883222b73225079c-upsellcraft-upsell-cross-sell-bot', desc:'Craft upsell and cross-sell sequences that increase order value — timing, framing, and offer positioning.'},
+  {id:'a90', name:'RestyleAI — Image Restyle/Edit Prompt Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a3396a3867081919f13c8ea4c63cf7a-restyleai-image-restyle-edit-prompt-bot', desc:'Restyle and edit existing images with AI prompts — transform visuals into any style, mood, or aesthetic.'},
+  {id:'a91', name:'MotionPrompt — Animation/Motion Prompt Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a3397143a248191b99c42757e7e2dc0-motionprompt-animation-motion-prompt-bot', desc:'Create animation and motion design prompts — movement, transitions, and visual effects described precisely.'},
+  {id:'a92', name:'MusicMood — Audio/Music Direction Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a339758626c8191a341bf4eddad8a0c-musicmood-audio-music-direction-bot', desc:'Direct the audio and music for your videos — mood, genre, tempo, and cue descriptions for perfect sound.'},
+  {id:'a93', name:'CarouselAI — AI-Designed Carousel Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a339798f940819194d628b5c017310e-carouselai-ai-designed-carousel-bot', desc:'Design AI-powered carousels — visual layout, slide content, and design prompts for stunning multi-slides.'},
+  {id:'a94', name:'HookBank — Short-Form Hook Vault', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a3397dc64288191abbab501c45e2131-hookbank-short-form-hook-vault', desc:'Access a vault of proven short-form hooks — swipe, adapt, and deploy attention-grabbing openers instantly.'},
+  {id:'a95', name:'RetentionDoc — Watch-Time Retention Fixer', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33b87d259c8191834891f64de89fd4-retentiondoc-watch-time-retention-fixer', desc:'Fix your video watch time — pacing, re-engagement moments, and structure tweaks to keep viewers watching.'},
+  {id:'a96', name:'SeriesPlanner — Content Series Architect', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b8bc13d88191b540422bac994a4b-seriesplanner-content-series-architect', desc:'Architect multi-part content series — themes, episode structure, and release strategy for sustained growth.'},
+  {id:'a97', name:'ICPFinder — Ideal Customer Profile Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b8fd8bd08191a298dc01fb431847-icpfinder-ideal-customer-profile-builder', desc:'Define your ideal customer precisely — demographics, psychographics, pain points, and buying triggers.'},
+  {id:'a98', name:'FunnelMap — Customer Journey Mapper', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b9358ba081919bc0cf7a28d607cd-funnelmap-customer-journey-mapper', desc:'Map your customer journey from awareness to purchase — touchpoints, content, and conversion triggers.'},
+  {id:'a99', name:'ChannelPicker — Marketing Channel Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b96e570481918b7a6cdeed01381a-channelpicker-marketing-channel-strategist', desc:'Pick the right marketing channels for your offer and audience — focus your efforts where they convert most.'},
+  {id:'a100', name:'KPIBoard — Metrics/KPI Advisor', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b9af69c88191a6e38b83db04c437-kpiboard-metrics-kpi-advisor', desc:'Set and track the right KPIs for your campaigns — metrics that matter and dashboards that drive decisions.'},
+  {id:'a101', name:'CompetitorSwipe — Competitor Ad/Content Decoder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33b9e9c9f48191b0380cc8f9e4ed35-competitorswipe-competitor-ad-content-decoder', desc:'Decode competitor ads and content — find what is working for them and adapt it for your brand.'},
+  {id:'a102', name:'PollPrompt — Engagement/Interaction Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33ba208ba4819197e5d12201fee0d2-pollprompt-engagement-interaction-bot', desc:'Create polls, quizzes, and interactive content that boosts engagement and learns from your audience.'},
+  {id:'a103', name:'GiveawayPlan — Contest/Giveaway Strategist', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33ba532618819186b458d7217aad7c-giveawayplan-contest-giveaway-strategist', desc:'Plan giveaways and contests that grow your audience — mechanics, prizes, and promo copy that drives entries.'},
+  {id:'a104', name:'StorySeller — Stories/Status Selling Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33ba885ca88191aa8de8703c7e1768-storyseller-stories-status-selling-bot', desc:'Sell through Stories and status updates — casual, native content that converts without feeling like an ad.'},
+  {id:'a105', name:'UGCBrief — UGC Creator Brief Builder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33baeb93d48191ab4cb40a3a4d61f5-ugcbrief-ugc-creator-brief-builder', desc:'Build detailed UGC creator briefs — clear direction, do\'s and don\'ts, and deliverables for authentic content.'},
+  {id:'a106', name:'SOPWriter — Standard Operating Procedure Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33bb2eb1a881919b8529b8f7512814-sopwriter-standard-operating-procedure-bot', desc:'Write clear SOPs for your team — step-by-step systems that make your processes repeatable and scalable.'},
+  {id:'a107', name:'BriefBuilder — Creative Brief Translator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bb668a208191b7d12cf35eeb28e2-briefbuilder-creative-brief-translator', desc:'Translate client info into clear creative briefs — aligned direction for designers, writers, and video teams.'},
+  {id:'a108', name:'BatchPlan — Content Batching Planner', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bb9f75dc8191b0561749a95ea4fc-batchplan-content-batching-planner', desc:'Plan content batching sessions that maximize output — shoot lists, scripts, and schedules for bulk creation.'},
+  {id:'a109', name:'RepurposeMatrix — Cross-Platform Repurpose Planner', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bbd128f881919f91f9001bd00fd5-repurposematrix-cross-platform-repurpose-planner', desc:'Repurpose one content piece across every platform — adapted formats and copy for maximum reach.'},
+  {id:'a110', name:'BrandKit — Brand Identity Starter Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a33bc0997cc81918e2904bae38470bb-brandkit-brand-identity-starter-bot', desc:'Build a complete brand identity kit — colors, fonts, logo direction, and visual guidelines from scratch.'},
+  {id:'a111', name:'AdTestPlan — Ad Testing/Iteration Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bc42e6988191888e76f35b219f44-adtestplan-ad-testing-iteration-bot', desc:'Plan structured ad tests — hypothesis, variables, and iteration strategy to find winning creatives fast.'},
+  {id:'a112', name:'NicheFinder — Niche Validation Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bc8282308191b59b7ddd627e07f6-nichefinder-niche-validation-bot', desc:'Validate your niche before you commit — demand signals, competition analysis, and go-to-market fit.'},
+  {id:'a113', name:'GrowthPlan90 — 90-Day Marketing Roadmap Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bcb28514819187fa5d4c37bab8d4-growthplan90-90-day-marketing-roadmap-bot', desc:'Build a 90-day marketing roadmap — prioritized actions, milestones, and weekly focus areas for real growth.'},
+  {id:'a114', name:'ContentAudit — Content Performance Auditor', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bcfb282c8191bdb86acf26153da0-contentaudit-content-performance-auditor', desc:'Audit your content library — identify top performers, gaps, and opportunities to improve your strategy.'},
+  {id:'a115', name:'DevilsAdvocate — Pre-Launch Stress Tester', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bdf97bfc81919e58d38e30807779-devilsadvocate-pre-launch-stress-tester', desc:'Stress test your offer before launch — find the holes in your strategy before your audience does.'},
+  {id:'a116', name:'AngleHijack — Radical Positioning/Angle Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33be3487808191a2098a8393365add-anglehijack-radical-positioning-angle-bot', desc:'Find radical angles your competitors are missing — bold positioning that makes your brand impossible to ignore.'},
+  {id:'a117', name:'PriceWar — Competitive Pricing Tactician', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33be6c7c5881919de5f09742d115c4-pricewar-competitive-pricing-tactician', desc:'Win pricing battles strategically — competitive analysis and pricing tactics that protect value and market share.'},
+  {id:'a118', name:'MoatBuilder — Competitive Advantage Architect', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bea588c881919363f08f09d1b69b-moatbuilder-competitive-advantage-architect', desc:'Build defensible competitive advantages — identify and deepen the moats that protect your business long-term.'},
+  {id:'a119', name:'ObjectionKiller — Objection Pre-Emption Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bedd9a2081918b454529e626fcc2-objectionkiller-objection-pre-emption-bot', desc:'Kill objections before they kill the sale — anticipate, address, and neutralize every hesitation in your copy.'},
+  {id:'a120', name:'MindReader — Voice of Customer Decoder', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bf3c8b448191beb21dc5d92ac7d9-mindreader-voice-of-customer-decoder', desc:'Decode your customer\'s exact language — extract VOC insights that make your copy feel like mind reading.'},
+  {id:'a121', name:'TriggerStack — Persuasion Trigger Layer Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33bffc752081918d859fb2c53c7931-triggerstack-persuasion-trigger-layer-bot', desc:'Layer psychological persuasion triggers into your copy — scarcity, authority, reciprocity, and more.'},
+  {id:'a122', name:'PromptChain — Multi-Step Prompt System Builder', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c0378d90819182c91e83ff49e972-promptchain-multi-step-prompt-system-builder', desc:'Build multi-step prompt chains for complex AI tasks — sequential logic that produces consistent results.'},
+  {id:'a123', name:'GPTBuilder — Custom Bot Architect', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c06d8a288191ac945032b9dee09a-gptbuilder-custom-bot-architect', desc:'Design and build custom GPT bots from scratch — system prompts, personas, and instructions that work.'},
+  {id:'a124', name:'AIDetectorBeat — Natural Writing Humanizer', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c0ad8374819182203115dc623595-aidetectorbeat-natural-writing-humanizer', desc:'Humanize AI-written content — natural phrasing, varied rhythm, and style that passes any AI detector.'},
+  {id:'a125', name:'OneClickCampaign — Instant Full Campaign Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c0e7706c8191a820c4a7c8493e4b-oneclickcampaign-instant-full-campaign-bot', desc:'Generate a complete marketing campaign in one go — strategy, copy, creative direction, and schedule.'},
+  {id:'a126', name:'SwipeVault — Proven Copy Framework Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c16c7d5c81919bc96df685b6f3da-swipevault-proven-copy-framework-bot', desc:'Access proven copy frameworks — AIDA, PAS, FAB, and more — applied to your specific offer instantly.'},
+  {id:'a127', name:'RapidResponse — Real-Time Reply Generator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c1aa8f848191bf6af5068736f934-rapidresponse-real-time-reply-generator', desc:'Generate fast, on-brand replies for comments, DMs, and reviews — maintain presence without burning time.'},
+  {id:'a128', name:'WhyItFlopped — Marketing Post-Mortem Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c1f3fa30819186f815ac4d640234-whyitflopped-marketing-post-mortem-bot', desc:'Analyze failed campaigns and content — find exactly why it flopped and what to do differently next time.'},
+  {id:'a129', name:'ScaleReady — Scaling Readiness Checker', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c23a726481919928e9189f51768a-scaleready-scaling-readiness-checker', desc:'Check if your business is ready to scale — systems, offers, and operations assessed before you go big.'},
+  {id:'a130', name:'HighTicket — Premium High-Ticket Sales Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c2a2dc5c8191963766297aafcfe2-highticket-premium-high-ticket-sales-bot', desc:'Close high-ticket deals with confidence — premium positioning, consultative scripts, and value communication.'},
+  {id:'a131', name:'FounderVoice — Thought Leadership Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c38b9088819182b506168f53166d-foundervoice-thought-leadership-bot', desc:'Build your founder thought leadership — opinions, insights, and content that positions you as the expert.'},
+  {id:'a132', name:'CommunityHooks — Membership/Retention Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c3c96dd48191b1ddcb576ba034ce-communityhooks-membership-retention-bot', desc:'Hook and retain community members — engagement content, re-activation triggers, and member milestones.'},
+  {id:'a133', name:'OfferLadder — Product Ecosystem Architect', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a33c40091f08191b83ac860b564c53a-offerladder-product-ecosystem-architect', desc:'Build a full product ladder — free to premium offers structured to maximize customer lifetime value.'},
+  {id:'a134', name:'BotStacker — AI Bot Workflow Orchestrator', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a33c43ec5bc81918a76f61e55b0e224-botstacker-ai-bot-workflow-orchestrator', desc:'Orchestrate multiple AI bots into a single workflow — stack tools and agents for full production pipelines.'},
+  {id:'a135', name:'Eleven Labs Expert', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-699bf011bf2c819191ca49aa762f75e8-eleven-labs-expert', desc:'Master ElevenLabs AI voice generation — voice selection, cloning tips, and scripts optimized for ultra-realistic audio output.'},
+  {id:'a136', name:'Brand Visual Designer Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-69c673786a98819189081bf7f617a7ba-brand-visual-designer-bot', desc:'Design stunning brand visuals — logos, color palettes, layout concepts, and prompts for a cohesive brand identity.'},
+  {id:'a137', name:'PH UGC Storyboard Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-69c64ce2b87881919ede39224017a51a-ph-ugc-storyboard-bot', desc:'Build UGC storyboards built for the Philippine market — local hooks, relatable scenes, and culturally on-point scripts.'},
+  {id:'a138', name:'PH Local Competitor Intelligence AI', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-699bbd40c18c8191aedf7b97ef6e723d-ph-local-competitor-intelligence-ai', desc:'Spy on local PH competitors — decode their ads, content, and positioning to find your winning edge.'},
+  {id:'a139', name:'Grand Slam Offer Dominator', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6981d5675ab48191bf810156cd394341-grand-slam-offer-dominator', desc:'Build grand slam offers that sell themselves — value stacking, bonuses, risk reversals, and irresistible positioning.'},
+  {id:'a140', name:'AI Video Model Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a2a4c0d85408191a205654952caa9e7-ai-video-model-bot', desc:'Generate AI video model concepts and prompts — virtual talent, poses, and scene direction for faceless product videos.'},
+  {id:'a141', name:'CapCut Ads Director AI Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a6190ffef1081918a9dafdc10093ea6-capcut-ads-director-ai-bot', desc:'Direct scroll-stopping CapCut ad videos — templates, transitions, text overlays, and editing flow for high-converting short-form ads.'},
+  {id:'a142', name:'Image Generator Bot', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-69819a15739c81919c3d3099b7e5072e-image-generator-bot', desc:'Generate stunning AI images on demand — product shots, ad creatives, backgrounds, and visual content for any niche.'},
+  {id:'a143', name:'Adflow AI Bot', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a66e08c60108191a18a37cdf3ee1df7-adflow-ai-bot', desc:'Streamline your ad workflow from concept to launch — strategy, copy, creative direction, and campaign flow all in one bot.'},
+  {id:'a144', name:'Omni Ads Creative Director', cat:'Marketing', access:'Student', url:'https://chatgpt.com/g/g-6a753ded78308191b32fa08e2104e9dd-omni-ads-creative-director', desc:'Your all-in-one ad creative director — concepting, copywriting, visual direction, and campaign strategy across every platform.'},
+  {id:'a145', name:'Seedance Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a77232cd4388191a2c39d15eeec65e6-seedance-bot', desc:'Master Seedance AI video generation — prompts, scene direction, and motion concepts for cinematic AI video output.'},
+  {id:'a146', name:'Kling Custom Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a7723bca1308191af2d95a389d6a8af-kling-bot', desc:'Unlock the full power of Kling AI — tailored prompts, motion styles, and creative direction for stunning video generation.'},
+  {id:'a147', name:'Grok Custom Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a77244fbc448191b46b3d8134afea57-grok-custom-bot', desc:'Harness Grok AI for marketing and content — custom workflows, prompts, and strategies built around Grok\'s unique capabilities.'},
+  {id:'a148', name:'Flow Bot', cat:'Video Creation', access:'Student', url:'https://chatgpt.com/g/g-6a7724c4188c8191839a1857635781b6-flow-bot', desc:'Create seamless AI video flows — smooth transitions, scene sequencing, and motion prompts for professional video production.'},
+  {id:'a149', name:'Omni Flash Bot', cat:'Prompt Tools', access:'Student', url:'https://chatgpt.com/g/g-6a7727580604819192f976af10cc6f47-omni-flash-bot', desc:'Lightning-fast AI outputs across any task — copy, strategy, scripts, and ideas delivered instantly on demand.'},
+  {id:'a150', name:'Concept Sheet Generator', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a772a3c78b881919bd5f823d1a1f292-reference-sheet-studio', desc:'Generate detailed concept and reference sheets for AI characters, products, and brand visuals — consistent style across every output.'},
+  {id:'a151', name:'AI Influencer Studio Pro', cat:'Image Creation', access:'Student', url:'https://chatgpt.com/g/g-6a7add0cf98c8191a8e1fda27ce5ae37-ai-influencer-studio-pro', desc:'Build and direct AI influencer models — appearance, personality, content style, and visual consistency for your brand persona.'},
 ];
 
-// Bot instructions for downloadable DIY recreation
-// Key = normalized agent name (lowercase, trimmed)
+const DEFAULT_STUDENTS = [
+  {id:'s1', name:'Student 1', user:'creator', pass:'VAULT-2026', active:true},
+];
+
+/* ── BOT DOWNLOAD INSTRUCTIONS ─────────────────────────────────────── */
 const BOT_INSTRUCTIONS = {
   'mindreader — voice of customer decoder': {
     name: 'MindReader — Voice of Customer Decoder',
@@ -779,10 +997,13 @@ Retention > completing the acronym.
 Never force one framework.
 
 # ESTABLISHED PAGE RULE
-For long-running pages, avoid repeating basic intro ads. Assume parts of the market already know the brand, offer, benefits, and common hooks. Explore deeper angles: hidden objections, delayed buying, alternatives, misconceptions, use cases, proof, FAQs, cost of inaction, convenience, process transparency, differentiation, and awareness stages. GPAISACA can be especially useful. Do not rewrite the same ad with different words.
+For long-running pages, avoid repeating basic intro ads. Assume parts of the market already know the brand, offer, benefits, and common hooks.
+Explore deeper angles: hidden objections, delayed buying, alternatives, misconceptions, use cases, proof, FAQs, cost of inaction, convenience, process transparency, differentiation, and awareness stages.
+GPAISACA can be especially useful. Do not rewrite the same ad with different words.
 
 # ANGLE DIVERSITY
-When generating multiple strategies, do not create versions of one idea. Example:
+When generating multiple strategies, do not create versions of one idea.
+Example:
 * Problem Aware: daily frustration
 * Solution Aware: easier/better approach
 * Product Aware/GPAISACA: differentiation + objection + proof + CTA
@@ -793,7 +1014,8 @@ Silently complete: "After watching this, the audience should believe that ___."
 Every line supports that belief. Do not overload short scripts with too many benefits, messages, or CTAs.
 
 # CUSTOMER-FIRST INTRO
-Do not start with the business name unless brand recognition is the strategy. Start with the audience's situation, problem, desire, hesitation, question, or goal; introduce the brand naturally as the solution.
+Do not start with the business name unless brand recognition is the strategy.
+Start with the audience's situation, problem, desire, hesitation, question, or goal; introduce the brand naturally as the solution.
 
 # BENEFIT TRANSLATION
 Use: Feature → Practical Benefit → Real-Life Outcome.
@@ -804,10 +1026,12 @@ Identify the strongest blocker: price, effectiveness, difficulty, poor fit, trus
 Address only the strongest one using reassurance, proof, transparency, explanation, demonstration, or a low-friction next step.
 
 # ANTI-GENERIC
-Do not rely only on vague claims like high quality, affordable, trusted, reliable, best, sulit, convenient, hassle-free, perfect solution, excellent service. Use them only with a specific reason the offer is more practical, easier, faster, safer, valuable, or audience-fit.
+Do not rely only on vague claims like high quality, affordable, trusted, reliable, best, sulit, convenient, hassle-free, perfect solution, excellent service.
+Use them only with a specific reason the offer is more practical, easier, faster, safer, valuable, or audience-fit.
 
 # RELATABILITY
-Every script must include at least one audience-specific detail: daily situation, frustration, buying hesitation, disliked task, past experience, delayed decision, goal, or concern about time, budget, quality, risk, or trust. Avoid broad statements that fit everyone. Never invent unsupported experiences.
+Every script must include at least one audience-specific detail: daily situation, frustration, buying hesitation, disliked task, past experience, delayed decision, goal, or concern about time, budget, quality, risk, or trust.
+Avoid broad statements that fit everyone. Never invent unsupported experiences.
 
 # HOOK RULE
 Do not repeatedly default to: "Alam mo ba…", "Looking for…", "Ito ang dahilan…", "Kung naghahanap ka…", "Are you tired of…", "Stop scrolling…"
@@ -845,18 +1069,9 @@ Silently score 1–10:
 13. Conversion potential
 14. Ease of execution
 15. Platform compliance
-
 If any critical category is below 9, revise first.
 Ready only when: audience recognizes themselves early; awareness, desire, problem, and offer align; hook is specific; speech is natural; value is clear; trust is believable; CTA matches readiness; execution is easy; claims are safe/supported; writing is not generic.
-
-Final viewer reaction:
-"Relate ako dito."
-"Gets nila situation ko."
-"May sense yung solution."
-"Bagay ito sa needs ko."
-"May reason akong magtiwala."
-"Malinaw ang next step."
-
+Final viewer reaction: "Relate ako dito." / "Gets nila situation ko." / "May sense yung solution." / "Bagay ito sa needs ko." / "May reason akong magtiwala." / "Malinaw ang next step."
 Do not submit the first acceptable draft. Submit the strongest version.`
   }
 };
@@ -865,49 +1080,25 @@ function getBotInstructions(agentName){
   return BOT_INSTRUCTIONS[agentName.toLowerCase().trim()] || null;
 }
 
-function downloadBotInstructions(agentName){
+async function downloadBotInstructions(agentName){
   const bot = getBotInstructions(agentName);
-  if(!bot) return;
-  const header = `================================================================
-AI CREATIVE UNIVERSITY VAULT
-Bot Instructions — DIY Recreation Guide
-================================================================
-Bot Name   : ${bot.name}
-Category   : ${bot.category}
-Generated  : ${new Date().toLocaleDateString('en-PH',{year:'numeric',month:'long',day:'numeric'})}
-Source     : AI Creative University Vault (ugc-vault-two.vercel.app)
-================================================================
-
-HOW TO USE THIS FILE
---------------------
-Since ChatGPT custom GPT sharing ends December 11, use these
-instructions to recreate this bot yourself:
-
-1. Go to chatgpt.com → Explore GPTs → Create
-2. Click "Configure"
-3. Paste the INSTRUCTIONS section below into the "Instructions" field
-4. Name your GPT: "${bot.name}"
-5. Click "Create" or "Update"
-
-================================================================
-
-`;
-  const content = header + bot.instructions + `
-
-================================================================
-AI Creative University Vault — ugc-vault-two.vercel.app
-© ${new Date().getFullYear()} AI Creative University. All rights reserved.
-================================================================`;
-
-  const blob = new Blob([content], {type:'text/plain'});
+  if(!bot){ alert('No instructions available for this bot yet.'); return; }
+  const header = `================================================================\nAI CREATIVE UNIVERSITY — BOT INSTRUCTIONS\n================================================================\nBot Name : ${bot.name}\nCategory : ${bot.category}\nExported : ${new Date().toLocaleDateString('en-PH',{year:'numeric',month:'long',day:'numeric'})}\n================================================================\n\nHOW TO DIY THIS BOT (after December 11, 2025):\n1. Go to ChatGPT > Explore GPTs > Create\n2. Click "Configure" tab\n3. Paste the bot name as the Name\n4. Paste the full INSTRUCTION below into the Instructions field\n5. Save and start using your own version!\n\n================================================================\n\n`;
+  const content = header + bot.instructions;
+  const filename = bot.name.replace(/[^a-zA-Z0-9\s\-]/g,'').trim().replace(/\s+/g,'_') + '_Instructions.txt';
+  try {
+    const downloads = await window.claude?.use?.('downloads');
+    if(downloads){ await downloads.save({ filename, data: content }); return; }
+  } catch(e){}
+  // Blob fallback for Vercel deploy
+  const blob = new Blob([content],{type:'text/plain'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = url;
-  a.download = bot.name.replace(/[^a-zA-Z0-9\s\-]/g,'').trim().replace(/\s+/g,'_') + '_Instructions.txt';
-  document.body.appendChild(a);
-  a.click();
-  setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 500);
+  a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); },500);
 }
+/* ───────────────────────────────────────────────────────────────────── */
 
 const DEFAULT_CREDS = {
   studentUser:'creator',
@@ -918,10 +1109,10 @@ const DEFAULT_CREDS = {
 };
 
 const UPDATES = [
-  {t:'AI Creatives System Bot added to the vault', w:'New'},
-  {t:'PromptPolish PH now live for all members', w:'New'},
-  {t:'VIP Vault unlocked — 100+ agents incoming', w:'Soon'},
-  {t:'Dashboard redesign & faster launch', w:'Update'},
+  {t:'151+ AI agents now live — all 100% free for members', w:'New'},
+  {t:'Eleven Labs Expert added to the vault', w:'New'},
+  {t:'All agents now unlocked — no VIP required', w:'Update'},
+  {t:'More agents dropping soon — stay tuned', w:'Soon'},
 ];
 
 const RESOURCES = [
@@ -947,7 +1138,7 @@ const BENEFITS = [
   {i:'🎯', h:'Built For Your Niche', p:'Specialized experts for video, images, marketing, and prompts — not generic chatbots.'},
   {i:'🗂️', h:'One Dashboard', p:'Every AI agent organized, searchable, and favoritable in a single premium hub.'},
   {i:'🔄', h:'Lifetime Updates', p:'New agents and systems added continuously — your vault keeps growing.'},
-  {i:'👑', h:'VIP Expansion', p:'100+ premium agents, workflows, and exclusive systems on the way.'},
+  {i:'🆓', h:'Totally Free', p:'Every single agent is 100% free for all members — no tiers, no paywalls, no limits.'},
   {i:'📦', h:'More Than Agents', p:'Prompt packs, templates, swipe files, and SOPs — all coming to your vault.'},
 ];
 
@@ -979,6 +1170,7 @@ const LOCK_ICON = svgWrap('<rect x="5" y="11" width="14" height="9" rx="2"/><pat
 
 let agents = store.get('vault_agents', null) || JSON.parse(JSON.stringify(DEFAULT_AGENTS));
 let creds  = Object.assign({}, DEFAULT_CREDS, store.get('vault_creds', {}));
+let students = store.get('vault_students', null) || JSON.parse(JSON.stringify(DEFAULT_STUDENTS));
 let favs   = store.get('vault_favs', []);
 let session= store.get('vault_session', null);
 let activeCat = 'All';
@@ -986,19 +1178,21 @@ let loginMode = 'student';
 let editingId = null;
 
 function persist(){ store.set('vault_agents', agents); store.set('vault_creds', creds); store.set('vault_favs', favs); }
+function persistStudents(){ store.set('vault_students', students); }
 
-const VIEWS = ['home','login','dashboard','upgrade','admin'];
+const VIEWS = ['home','login','dashboard','prompts','upgrade','admin'];
 function go(view){
-  if(view==='dashboard' && !session){ loginMode='student'; renderLogin(); view='login'; }
-  if(view==='dashboard' && session && isExpired()){ view='upgrade'; }
+  if((view==='dashboard'||view==='prompts') && !session){ loginMode='student'; renderLogin(); view='login'; }
+  if((view==='dashboard'||view==='prompts') && session && isExpired()){ view='upgrade'; }
   if(view==='admin' && (!session || session.role!=='admin')){ loginMode='admin'; renderLogin(); view='login'; }
 
   VIEWS.forEach(v=>{
     const el=document.getElementById('view-'+v);
-    el.classList.toggle('active', v===view);
+    if(el) el.classList.toggle('active', v===view);
   });
   document.getElementById('navlinks').classList.remove('open');
   if(view==='dashboard') renderDashboard();
+  if(view==='prompts') renderPrompts();
   if(view==='login') renderLogin();
   if(view==='admin') renderAdmin();
   renderNav(view);
@@ -1010,6 +1204,11 @@ function launchAgentsCTA(){
   else if(session && isExpired()) go('upgrade');
   else { loginMode='student'; go('login'); }
 }
+
+// Check URL hash for admin access on page load
+window.addEventListener('DOMContentLoaded', ()=>{
+  if(window.location.hash === '#admin'){ loginMode='admin'; go('login'); }
+});
 
 function isExpired(){
   if(!creds.expiry) return false;
@@ -1024,12 +1223,11 @@ function renderNav(view){
   if(session){
     html += `<button class="link" onclick="go('home')">Home</button>`;
     html += `<button class="link" onclick="go('dashboard')">Dashboard</button>`;
+    html += `<button class="link" onclick="go('prompts')">Prompt Vault</button>`;
     if(session.role==='admin') html += `<button class="link" onclick="go('admin')">Admin</button>`;
-    html += `<button class="link" onclick="go('upgrade')">VIP</button>`;
     html += `<button class="btn btn-dark btn-sm" onclick="logout()">Logout</button>`;
   } else {
     html += `<button class="link" onclick="go('home')">Home</button>`;
-    html += `<button class="link" onclick="go('upgrade')">Upgrade</button>`;
     html += `<button class="btn btn-primary btn-sm" onclick="loginMode='student';go('login')">Member Login</button>`;
   }
   el.innerHTML=html;
@@ -1048,17 +1246,26 @@ function renderLogin(){
     title.textContent='Admin Console';
     lead.textContent='Sign in to manage agents and credentials.';
     sw.textContent='Not the admin?';
-    swb.textContent='Member Login';
+    swb.textContent='Switch to Member Login';
     hint.innerHTML='🔑 Admin access only. Use your private admin credentials.';
+    document.getElementById('login-switch-wrap').style.display='block';
   } else {
     title.textContent='Welcome Back';
     lead.textContent='Sign in with the credentials provided by your admin.';
     sw.textContent='Are you the admin?';
-    swb.textContent='Admin Login';
-    hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join →</a>';
+    swb.textContent='Switch to Admin Login';
+    hint.innerHTML='Need access? <a href="https://www.facebook.com/dell.basalan" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">Message Dell to join — it\'s free →</a>';
+    document.getElementById('login-switch-wrap').style.display='block';
   }
 }
 function toggleLoginMode(){ loginMode = loginMode==='admin'?'student':'admin'; renderLogin(); }
+let _adminTaps=0, _adminTimer;
+function handleAdminTap(){
+  _adminTaps++;
+  clearTimeout(_adminTimer);
+  _adminTimer=setTimeout(()=>_adminTaps=0,2000);
+  if(_adminTaps>=3){ _adminTaps=0; loginMode='admin'; renderLogin(); document.getElementById('login-switch-wrap').style.display='block'; }
+}
 
 function doLogin(){
   const u=document.getElementById('login-user').value.trim();
@@ -1066,24 +1273,1059 @@ function doLogin(){
   const msg=document.getElementById('login-msg');
   msg.className='auth-msg';
   if(loginMode==='admin'){
-    if(u===creds.adminUser && p===creds.adminPass){
+    // Check both stored creds AND hardcoded fallback
+    const adminOk = (u===creds.adminUser && p===creds.adminPass) ||
+                    (u==='admin' && p==='dellvault2026');
+    if(adminOk){
       session={role:'admin', user:u}; store.set('vault_session',session);
       msg.className='auth-msg ok'; msg.textContent='Welcome, admin!';
       setTimeout(()=>go('admin'),350);
     } else { msg.className='auth-msg err'; msg.textContent='Invalid admin credentials.'; }
     return;
   }
-  if(u===creds.studentUser && p===creds.studentPass){
-    if(isExpired()){
-      msg.className='auth-msg err'; msg.textContent='Your access has expired. Redirecting to upgrade…';
-      setTimeout(()=>go('upgrade'),900); return;
-    }
-    session={role:'student', user:u}; store.set('vault_session',session);
+  // Per-student credentials check
+  const matchStudent = students.find(s=>s.active && s.user===u && s.pass===p);
+  if(matchStudent){
+    session={role:'student', user:matchStudent.name||u, uid:matchStudent.id};
+    store.set('vault_session',session);
     msg.className='auth-msg ok'; msg.textContent='Access granted! Loading your vault…';
     setTimeout(()=>go('dashboard'),350);
   } else { msg.className='auth-msg err'; msg.textContent='Incorrect username or password.'; }
 }
 function logout(){ session=null; store.set('vault_session',null); go('home'); toast('Logged out'); }
+
+const DEFAULT_PROMPTS = [
+  {id:'p1', cat:'Ads', title:'Checking Data Prompt — 30 vs 14 Days', prompt:`Act as a Meta Ads performance strategist and analyst.
+Analyze our CURRENT ad account using real-time data.
+Main goal:
+Compare the last 30 days vs the last 14 days and identify:
+- winning campaigns
+- winning creatives
+- weak performers
+- scaling opportunities
+- the best next strategy for 7-day and 30-day campaign setups
+Focus only on practical, data-based insights. Avoid generic advice.
+Check these metrics when available:
+- Spend
+- Impressions
+- CPM
+- CTR
+- CPC
+- Link Clicks
+- Landing Page Views
+- Add to Cart
+- Initiate Checkout
+- Purchases or Leads
+- Messages
+- Cost per Message
+- Cost per Result / CPA
+- ROAS
+- Frequency
+Tasks:
+1. Compare last 30 days vs last 14 days
+2. Identify top campaigns and explain briefly why they are working
+3. Identify top creatives and explain briefly why they are working
+4. Identify weak campaigns and creatives, with likely reasons
+5. Decide what to keep, scale, pause, retest, or replace
+6. Recommend a practical 7-day campaign plan
+7. Recommend a practical 30-day campaign plan
+8. Recommend the highest win-rate campaign setup based on current data
+Return only this format:
+1. Executive Summary
+- overall account trend
+- key changes from 30 days vs 14 days
+2. Top Campaigns
+- best campaigns
+- supporting performance signals
+3. Top Creatives
+- best creatives
+- supporting performance signals
+- winning angle/message if visible
+4. Weak Areas
+- weak campaigns
+- weak creatives
+- likely reasons for underperformance
+5. Decisions
+- Keep Running
+- Scale
+- Pause
+- Retest
+- Replace
+6. 7-Day Campaign Plan
+Include:
+- campaign objective
+- campaign structure
+- ad set setup
+- audience direction
+- creative testing direction
+- budget suggestion
+- scaling logic
+- kill rules
+- success benchmark
+7. 30-Day Campaign Plan
+Include:
+- testing phase
+- optimization phase
+- scaling phase
+- campaign structure
+- audience expansion direction
+- creative rotation direction
+- budget allocation logic
+- scaling rules
+8. Best High Win-Rate Setup
+Give the most recommended setup based on current data:
+- objective
+- campaign type
+- ad set structure
+- audience type
+- number of creatives
+- budget approach
+- scaling approach
+9. Immediate Action Steps
+Give a simple step-by-step action plan the team can follow now.
+Rules:
+- Use actual current account data only
+- Be concise, direct, and practical
+- No generic advice
+- Base every recommendation on performance signals
+- If some data is missing, mention it briefly and continue with the best recommendation possible
+- Prioritize bullets, short tables, and direct decisions over long explanations`, sampleImg:'', sampleVid:''},
+
+  {id:'p2', cat:'Ads', title:'Audit Clients Prompt — 6 Month Full Audit', prompt:`Act as a Meta Ads performance auditor and strategist.
+Analyze our ad account using real data from the past 6 months.
+Main goal:
+Identify long-term winners, main winner creatives, consistent underperformers, performance patterns, wasted spend, benchmark ranges, and the best actionable next steps to improve future campaigns.
+Focus only on practical, data-based insights. Avoid generic advice.
+Check these metrics when available:
+- Spend
+- Impressions
+- CPM
+- CTR
+- CPC
+- Link Clicks
+- Landing Page Views
+- Add to Cart
+- Initiate Checkout
+- Purchases or Leads
+- Messages
+- Cost per Message
+- Cost per Result / CPA
+- ROAS
+- Frequency
+Tasks:
+1. Identify top-performing campaigns across the last 6 months
+2. Identify consistently underperforming campaigns
+3. Identify best-performing creatives
+4. Identify MAIN WINNER CREATIVES (core creatives strongest for scaling)
+5. Identify weak creatives and common failure patterns
+6. Detect trends over time, including improving performance, decline, fatigue, or seasonality if visible
+7. Identify audience patterns if visible, including broad, interest, lookalike, or retargeting
+8. Extract realistic benchmark ranges based on actual account data
+9. Identify scaling opportunities
+10. Identify wasted spend and where budget was inefficient
+11. Recommend what to continue, stop, retest, duplicate, or scale
+Return only this format:
+1. Executive Summary
+- overall 6-month account trend
+- key patterns observed
+- biggest opportunities
+- biggest risks
+2. Top Campaigns
+- best campaigns
+- supporting performance signals
+- short reason why they worked
+3. Main Winner Creatives
+- top 3 to 5 strongest creatives
+- key performance signals
+- why they are winning
+- winning hook, angle, message, or format if visible
+- recommendation: keep running, duplicate, expand, or scale
+4. Weak Performers
+- weak campaigns
+- weak creatives
+- common reasons for underperformance
+5. Patterns & Insights
+- winning hooks
+- winning angles
+- winning creative formats
+- losing patterns
+- fatigue signals
+- timing or seasonal trends if visible
+6. Benchmarks (Based on Our Data)
+Provide realistic good vs bad ranges for:
+- CTR
+- CPC
+- Cost per Result / CPA
+- Cost per Message
+- ROAS
+- Frequency
+7. Audience Insights
+- best audience types
+- weak audience types
+- audience patterns that should be repeated or avoided
+8. Scaling Opportunities
+- what to double down on
+- what to duplicate
+- what to expand
+- what has the highest chance to scale
+9. Wasted Spend
+- where budget was inefficient
+- what should have been stopped earlier
+- what setup or creative type wasted the most spend
+10. Actionable Recommendations
+- Continue
+- Stop
+- Retest
+- Duplicate
+- Scale
+- Test Next
+Rules:
+- Use actual account data only
+- Be concise, direct, and practical
+- No generic advice
+- Base all recommendations on performance signals and repeatable patterns
+- Prioritize bullets, short tables, and direct decisions over long explanations
+- If data is missing, mention it briefly and continue with the best recommendation possible
+- Focus on insights that improve decision-making, creative testing, and scaling`, sampleImg:'', sampleVid:''},
+
+  {id:'p3', cat:'Ads', title:'Competitor & Brand Audit Prompt', prompt:`Act as a direct response marketing strategist and competitor research analyst.
+Analyze our brand and competitors using available data, ads, creatives, messaging, and positioning.
+Main goal:
+Identify what is working in the market, what competitors are doing well or poorly, and how we can position our brand to win using better creatives, messaging, and strategy.
+Focus on practical, actionable insights. Avoid generic advice.
+Tasks:
+1. Own Brand Analysis
+- identify our current positioning
+- identify strengths and weaknesses
+- identify current messaging, offers, and angles
+- identify gaps or missed opportunities
+2. Competitor Analysis
+- identify top competitors in the same niche
+- analyze their ads, creatives, hooks, messaging, and offers
+- identify what they are doing well
+- identify what they are doing poorly
+- identify patterns across multiple competitors
+3. Creative Analysis (Market Level)
+- identify common winning hooks
+- identify common messaging angles
+- identify common visual styles and formats
+- identify overused or saturated approaches
+- identify opportunities for differentiation
+4. Offer & Positioning Analysis
+- compare our offer vs competitors
+- identify stronger offers in the market
+- identify weaknesses in competitor offers
+- identify gaps we can dominate
+5. Audience Targeting Insights (if visible)
+- identify who competitors are targeting
+- identify emotional triggers used
+- identify pain points being addressed
+6. Market Gaps & Opportunities
+- identify underserved angles
+- identify ignored audiences or segments
+- identify new creative directions we can test
+7. Winning Strategy Recommendations
+- how we should position our brand
+- what angles we should focus on
+- what creatives we should produce next
+- what offers we should improve or test
+- how we can outperform competitors
+Return only this format:
+1. Executive Summary
+- key insights about the market
+- biggest opportunities to win
+2. Own Brand Insights
+- strengths
+- weaknesses
+- missed opportunities
+3. Competitor Insights
+- what competitors are doing well
+- what competitors are doing poorly
+- key patterns across competitors
+4. Creative Insights (Market)
+- winning hooks
+- winning angles
+- winning formats
+- saturated patterns to avoid
+5. Offer & Positioning Insights
+- competitor offer strengths
+- competitor offer weaknesses
+- gaps we can dominate
+6. Audience Insights
+- target audience patterns
+- emotional triggers
+- key pain points used in messaging
+7. Market Gaps
+- underserved angles
+- new opportunities
+- differentiation ideas
+8. Action Plan
+- what to test next (creatives, angles, offers)
+- how to position our brand better
+- how to beat competitors
+Rules:
+- Be concise and practical
+- No generic advice
+- Focus on real patterns and strategic insights
+- Prioritize actionable recommendations over long explanations
+- Use bullets and short structured answers
+- If data is limited, use best logical inference based on market patterns`, sampleImg:'', sampleVid:''},
+
+  {id:'p4', cat:'Ads', title:'Market Research Prompt', prompt:`Act as a direct response marketing strategist and market research analyst.
+Analyze our target market to identify high-converting angles, creative directions, messaging, and offer improvements.
+Main goal:
+Understand the market deeply so we can create better ads, stronger angles, more effective creatives, and higher-converting offers.
+Focus on practical, actionable insights. Avoid generic advice.
+Tasks:
+1. Market Understanding
+- identify target audience segments
+- identify their goals, desires, and motivations
+- identify their main problems, frustrations, and pain points
+2. Emotional Drivers
+- identify key emotions driving buying decisions (fear, insecurity, desire, convenience, status, etc.)
+- identify triggers that push them to take action
+3. Current Market Messaging
+- identify common claims and promises in the market
+- identify common angles competitors are using
+- identify overused or saturated messaging
+4. Angle Discovery
+- identify high-potential angles we can use
+- identify unique or underused angles
+- identify angles that can differentiate us
+5. Creative Strategy
+- suggest types of creatives to produce (UGC, testimonial, POV, demo, before/after, story-based)
+- suggest hooks that can stop scrolling
+- suggest messaging style (soft sell, hard sell, educational, emotional)
+- suggest content formats that match the audience behavior
+6. Offer Improvement
+- identify what makes an offer attractive in this market
+- suggest ways to improve our offer (pricing, bundles, guarantees, bonuses)
+- identify risk-reversal or trust-building elements
+7. Objections & Barriers
+- identify common objections
+- suggest how to overcome them in ads and messaging
+8. Market Gaps
+- identify underserved segments or angles
+- identify opportunities competitors are missing
+Return only this format:
+1. Market Overview
+- target audience summary
+- key desires and problems
+2. Emotional Drivers
+- top emotions and triggers
+3. Market Messaging Insights
+- common angles
+- saturated messaging to avoid
+4. High-Potential Angles
+- list of angles we should test
+- short explanation for each
+5. Creative Strategy
+- recommended creative types
+- hook ideas
+- messaging style
+- content direction
+6. Offer Strategy
+- what makes offers work in this market
+- suggested improvements for our offer
+7. Objections & Solutions
+- common objections
+- how to address them in ads
+8. Market Gaps
+- opportunities to stand out
+9. Action Plan
+- what to test next (angles, creatives, offers)
+- how to position our brand for higher conversion
+Rules:
+- Be concise and practical
+- No generic advice
+- Focus on real market behavior and psychology
+- Prioritize actionable insights over long explanations
+- Use bullets and short structured answers
+- If data is limited, use best logical inference based on market patterns`, sampleImg:'', sampleVid:''},
+
+  {id:'p5', cat:'Ads', title:'7-30 Days Strategy Audit & Implementation', prompt:`Act as a Meta Ads performance strategist.
+Analyze our CURRENT ad account using real-time data.
+Main goal:
+Compare the last 7 days vs the last 30 days to identify:
+- current winners
+- declining or improving performance
+- weak campaigns and creatives
+- immediate scaling opportunities
+- best short-term strategy for the next 7–30 days
+Focus only on actionable, data-based insights.
+Check when available:
+- Spend
+- CPM
+- CTR
+- CPC
+- Link Clicks / LPV
+- Add to Cart
+- Initiate Checkout
+- Purchases or Leads
+- Messages
+- Cost per Message
+- CPA
+- ROAS
+- Frequency
+Tasks:
+1. Compare last 7 days vs last 30 days
+2. Identify current winning campaigns (recent performance)
+3. Identify current winning creatives (recent performance)
+4. Identify declining or fatigued campaigns/creatives
+5. Identify weak performers wasting budget
+6. Decide what to keep, scale, pause, or replace
+7. Recommend immediate next strategy for 7-day and 30-day execution
+Return only this format:
+1. Executive Summary
+- short-term trend (7d vs 30d)
+- key changes (improving, declining, stable)
+2. Current Winners
+- campaigns and creatives performing best in last 7 days
+- supporting signals
+3. Declining / Fatigue Signals
+- campaigns or creatives losing performance
+- possible reasons (frequency, drop in CTR, rising CPA)
+4. Weak Performers
+- campaigns or creatives wasting budget
+- likely issues
+5. Decisions
+- Keep
+- Scale
+- Pause
+- Replace
+6. 7-Day Action Plan
+- what to test now
+- what to scale now
+- creative direction
+- budget suggestion
+- kill rules
+- success benchmark
+7. 30-Day Direction
+- how to stabilize and scale
+- what to expand
+- creative rotation plan
+- audience expansion direction
+8. Best Current Win-Rate Setup
+- most effective setup based on recent data
+9. Immediate Action Steps
+- step-by-step actions to execute now
+Rules:
+- Use current data only
+- Be concise and direct
+- No generic advice
+- Base decisions on recent performance signals
+- Prioritize short-term optimization and scaling
+- Mention missing data briefly if needed`, sampleImg:'', sampleVid:''},
+
+  {id:'p6', cat:'Video', title:'UGC AI Prompt 1 — Scene Breakdown (Image)', prompt:`Act as a professional prompt engineer and Veo 3 expert.
+===========================
+SCRIPT INPUT
+============
+[PASTE FULL SCRIPT HERE]
+===========================
+Based on the SCRIPT INPUT above, break the script into 8-second scenes.
+Before generating the scenes, apply the selected UGC AI Video Strategy.
+UGC AI VIDEO STRATEGY (SELECT ONE)
+• Problem → Realization → Solution
+• Before vs After
+• Day-in-the-Life
+• Green Screen
+• Podcast
+• Testimonials
+• Product Review
+• Content Creator Style
+===========================
+OUTPUT FORMAT
+=============
+# SCENE 1
+🎯 Role:
+(Problem / Hook / Realization / Solution / Proof / CTA)
+🗣️ Script:
+(Exact script line assigned to this scene)
+📸 Image Prompt:
+(Create ONE complete image prompt only.)
+# SCENE 2
+🎯 Role:
+🗣️ Script:
+📸 Image Prompt:
+(Continue until script is completed.)
+===========================
+IMAGE PROMPT RULES
+==================
+Every Image Prompt should automatically include:
+• Same reference model throughout
+• Consistent appearance and outfit unless script requires changes
+• Ultra realistic
+• Natural lighting
+• Authentic UGC feel
+• Real-world environment
+• Cinematic composition
+• Natural facial expressions
+• Realistic body language
+• Smartphone photography realism
+• No AI look
+• Ad-ready quality
+Do NOT separately explain:
+• Subject
+• Environment
+• Action
+• Camera
+• Mood
+Instead, combine everything into ONE clean production-ready image prompt.
+===========================
+IMPORTANT RULES
+===============
+• No JSON
+• No code blocks
+• No unnecessary explanations
+• No repeated descriptions
+• Keep outputs concise but detailed
+• Maintain visual continuity across scenes
+• Every scene must feel connected
+• Every image prompt must be ready to paste directly into Flux, Seedream, Midjourney, Grok, ChatGPT Image, or other image generators`, sampleImg:'', sampleVid:''},
+
+  {id:'p7', cat:'Video', title:'UGC Prompt 2 — Veo 3 Cinematic Scene Breakdown', prompt:`Act as a professional prompt engineer and Veo 3 expert.
+=================================
+SCRIPT INPUT
+============
+[PASTE FULL SCRIPT HERE]
+=================================
+Based on the SCRIPT INPUT and reference image, break the script into 8-second scenes.
+Before generating the scenes, apply the selected UGC AI Framework.
+UGC AI FRAMEWORK (SELECT ONE)
+• Problem → Realization → Solution
+• Before vs After
+• Day-in-the-Life
+• Green Screen
+• Podcast
+• Testimonials
+• Product Review
+• Content Creator Style
+=================================
+GLOBAL RULES
+============
+• Same reference model throughout
+• Same face, hairstyle, age, and body type
+• Consistent outfit unless script requires changes
+• Consistent voice and personality
+• Natural UGC realism
+• Cinematic commercial quality
+• Natural lighting
+• Real-world environments
+• No subtitles
+• No captions
+• No on-screen text
+• No AI look
+• No visual inconsistencies
+=================================
+OUTPUT FORMAT
+=============
+# SCENE [NUMBER]
+🎯 Role:
+(Hook, Problem, Realization, Solution, Proof, CTA, etc.)
+🗣️ Script:
+(Exact script line for this scene)
+🎥 Veo 3 Video Prompt:
+(Create ONE complete Veo 3-ready video prompt that includes character, environment, action, camera movement, emotion, lighting, audio, and cinematic direction.)
+---
+# SCENE [NUMBER]
+🎯 Role:
+🗣️ Script:
+🎥 Veo 3 Video Prompt:
+=================================
+VIDEO PROMPT REQUIREMENTS
+=========================
+Every Veo 3 Video Prompt should automatically include:
+• Same reference model consistency
+• Environment and background
+• Character actions and behavior
+• Natural body language
+• Camera movement
+• Shot composition
+• Lighting direction
+• Emotional tone
+• Ambient sounds
+• Background music style
+• Cinematic realism
+• Authentic UGC feel
+• Commercial ad quality
+• Smooth motion
+• Natural facial expressions
+• RAW 4K realism
+=================================
+IMPORTANT RULES
+===============
+• No JSON
+• No code blocks
+• No long explanations
+• No repeated sections
+• No separate Subject / Camera / Mood / Lighting breakdowns
+• Output only Scene Role, Script, and Final Veo 3 Video Prompt
+• Keep prompts concise but highly detailed
+• Every prompt must be ready to paste directly into Veo 3`, sampleImg:'', sampleVid:''},
+
+  {id:'p8', cat:'Image', title:'UGC Model Holding Product — Realistic Edit', prompt:`Adjust the provided image while keeping the original model's face, identity, and overall appearance unchanged.
+
+The woman model should be naturally holding the product in a realistic way — either at chest level or slightly angled toward the camera, as if presenting or using it.
+
+Ensure her hand placement looks natural and anatomically correct (no distorted fingers). The grip should feel relaxed and believable, like a real product shoot.
+
+Maintain photorealistic quality with natural skin texture, proper lighting, and accurate shadows between the hand and the product.
+
+The product must remain unchanged (no alterations to shape, label, branding, or proportions).
+
+Match the lighting and color grading of the product with the environment so it blends seamlessly into the scene.
+
+Style: ultra-realistic, high-end commercial look, clean composition, shallow depth of field.
+
+Camera: eye-level or slight close-up framing, sharp focus on both the model and the product.
+
+Mood: confident, natural, and professional — like a premium ad.
+
+Negative instructions:
+no AI-looking hands, no extra fingers, no warped product, no label distortion, no floating objects, no unrealistic grip, no over-smoothing skin, no text overlays, no filters.`, sampleImg:'https://drive.google.com/uc?export=view&id=14-zU7xW9Torr-ZbcyQz-oR4xLQUdAJZ9', sampleVid:''},
+
+  {id:'p9', cat:'Image', title:'Affiliate Shot 1 — Front Standing Hero Shot', prompt:`front-facing standing pose, upper body to mid-body framing, model looking naturally at the camera, relaxed shoulders and neutral posture, wearing the exact uploaded shirt, shirt fully visible from collar to hem, detailed tropical print clearly shown, realistic cotton fabric texture, visible stitching and natural folds, clean indoor lifestyle setting, soft natural window light, balanced shadows on face and clothing, authentic smartphone camera look, social-native affiliate framing, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p10', cat:'Image', title:'Affiliate Shot 2 — 45-Degree Fashion Affiliate Shot', prompt:`45-degree body angle, model slightly turned to the side while keeping the shirt front mostly visible, natural relaxed expression, casual creator posture, chest to thigh framing, exact uploaded shirt visible with realistic drape across the torso, detailed black-and-white tropical print, visible button placket, collar structure and sleeve fall, soft indoor daylight, realistic highlights on the fabric, natural skin tone and facial texture, subtle depth from the background, premium lifestyle composition, handheld smartphone-style realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p11', cat:'Image', title:'Affiliate Shot 3 — Mirror Selfie UGC Shot', prompt:`mirror selfie shot, model holding phone naturally in front of the mirror, authentic bathroom setup, realistic indoor ambient light, slight reflections on the mirror, casual real-life creator vibe, exact uploaded shirt clearly visible from shoulders to waist, realistic print alignment, detailed collar and sleeves, natural wrinkles around the torso and arms, true-to-life skin texture, realistic arm tattoo details if present in the reference, everyday social-native framing, handheld phone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p12', cat:'Image', title:'Affiliate Shot 4 — Looking Away Candid Shot', prompt:`candid standing pose, model looking slightly away from the camera, relaxed jaw and calm expression, natural body angle, upper body framing, exact uploaded shirt fully visible in a soft-sell lifestyle composition, realistic fabric folds around the chest and sleeves, sharp print details, natural indoor light from one side, soft shadows on the face and shirt, realistic skin texture without AI smoothing, authentic creator-style image, premium but natural affiliate content look, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p13', cat:'Image', title:'Affiliate Shot 5 — Hands-in-Pocket Lifestyle Shot', prompt:`standing lifestyle pose with one or both hands in pockets, relaxed masculine posture, natural body balance, mid-body framing, exact uploaded shirt clearly visible and naturally draped over the torso, realistic sleeve shape and hem fall, sharp tropical print detail, subtle indoor background blur, soft natural daylight, realistic shadows under the arms and along the shirt folds, clean creator-style affiliate image, handheld smartphone realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic clothing folds, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p14', cat:'Image', title:'Affiliate Shot 6 — Sitting Pose Shot', prompt:`model sitting naturally on a chair or bed edge, relaxed posture, casual UGC creator vibe, torso and lap area visible, exact uploaded shirt clearly shown across the chest and waist, realistic folds forming naturally while seated, visible collar shape, sleeve drape and print consistency, natural indoor light from a nearby window, soft room shadows, realistic skin texture and body proportions, premium but relatable affiliate lifestyle feel, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p15', cat:'Image', title:'Affiliate Shot 7 — Fixing Collar Detail Shot', prompt:`mid-close fashion shot, model naturally adjusting the collar of the exact uploaded shirt, realistic finger placement, focus on collar structure, button placket, upper chest print and fabric quality, subtle creator-style expression, soft directional natural light, clear texture on the shirt material, realistic skin pores and hand details, clean premium social ad composition, handheld phone realism with sharp detail, ultra-realistic, photoreal, highly detailed, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p16', cat:'Image', title:'Affiliate Shot 8 — Sleeve Detail Close-Up', prompt:`close-up shot focused on the sleeve and upper arm area of the exact uploaded shirt, realistic stitching, clean print detail, visible natural fabric texture, realistic skin tone and arm detail, soft natural light with gentle falloff shadows, sharp macro-like clarity, premium product-focused affiliate composition, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p17', cat:'Image', title:'Affiliate Shot 9 — Fabric Texture Macro Shot', prompt:`macro close-up of the exact uploaded shirt fabric, highly detailed print texture, visible weave pattern, realistic stitching, natural folds and fabric depth, true-to-life shadows, premium material-focused composition, clean sharp macro detail, ultra-realistic, photoreal, highly detailed, premium 4K-quality look. Use the uploaded product/clothing image exactly if provided. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p18', cat:'Image', title:'Affiliate Shot 10 — Bird\'s-Eye Flat Lay Shot', prompt:`bird's-eye / top-down overhead shot, handheld phone feel, natural indoor light, realistic shadows, exact uploaded shirt neatly laid flat on a clean neutral surface, front design fully visible, detailed tropical print, realistic fabric folds, collar and sleeves arranged naturally, ecommerce-meets-UGC styling, crisp product visibility, ultra-realistic, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded product/clothing image exactly if provided. Maintain exact product design, print, stitching, shape, colorway, and branding. 100% ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, natural lighting, true-to-life shadows, premium 4K-quality look. No subtitles, no captions, no on-screen text.
+
+Negative add-on: impossible overhead perspective, floating product, warped hands, distorted labels.`, sampleImg:'', sampleVid:''},
+
+  {id:'p19', cat:'Image', title:'Affiliate Shot 11 — Mirror Selfie 45-Degree Shot', prompt:`45-degree mirror selfie shot, model slightly turned to one side while holding the phone naturally, relaxed shoulders, casual authentic creator pose, upper body to thigh framing, exact uploaded shirt clearly visible from collar to hem, detailed black-and-white tropical print shown with realistic alignment, natural fabric folds around the torso and sleeve area, bathroom or bedroom mirror setup with clean realistic reflections, soft indoor ambient lighting with natural shadow falloff, realistic skin texture, true-to-life facial proportions, authentic smartphone camera realism, social-native affiliate composition, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.`, sampleImg:'', sampleVid:''},
+
+  {id:'p20', cat:'Image', title:'Affiliate Shot 12 — Mirror Selfie Sitting Shot', prompt:`mirror selfie while seated naturally on a chair, stool, or bed edge, relaxed posture with a casual creator vibe, phone held naturally in one hand, torso and lap visible in frame, exact uploaded shirt clearly visible across the chest, waist, and sleeve area, realistic seated fabric folds and natural drape around the stomach and lap, detailed print and collar structure preserved, realistic indoor setting with mirror reflections that look natural and not overly polished, soft ambient indoor light, subtle natural shadows, authentic smartphone camera feel, realistic skin pores and body proportions, premium UGC-style affiliate image, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, plastic skin, beautify filter, unrealistic seated pose, stiff body posture, warped knees, broken legs, extra fingers, distorted phone, unrealistic mirror reflection, wrong shirt design, altered collar, fake fabric wrinkles, floating body, low-detail skin, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p21', cat:'Image', title:'Affiliate Shot 13 — Mirror Selfie Looking Down Shot', prompt:`mirror selfie shot with the model looking slightly downward toward the phone screen, relaxed jaw, natural candid expression, one shoulder slightly lowered for a casual non-posed look, upper body framing, exact uploaded shirt clearly visible with realistic collar shape, sleeve structure, and front print details, natural shirt folds forming around the chest and abdomen, real bathroom or bedroom mirror environment, soft indoor lighting with balanced highlights and shadows, realistic facial contours and skin texture without beauty filter effect, handheld smartphone realism, authentic creator-style affiliate framing, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, AI smoothing, beautify filter, fake chin angle, awkward neck bend, distorted mirror reflection, broken hands, extra fingers, duplicated phone, wrong shirt design, warped print, incorrect branding, blurry details, low realism, fake bathroom lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p22', cat:'Image', title:'Affiliate Shot 14 — Mirror Selfie Looking Away Shot', prompt:`mirror selfie composition, model holding phone naturally while looking slightly away from the mirror, relaxed and candid expression, natural creator posture, chest to thigh framing, exact uploaded shirt clearly visible with realistic front print placement and accurate button placket details, soft natural indoor lighting reflecting across the shirt fabric, realistic sleeve drape and hem line, true-to-life skin texture and facial structure, clean real-life UGC setup with believable mirror reflection and natural perspective, handheld phone camera realism, authentic affiliate content feel, ultra-realistic, photoreal, highly detailed, sharp focus, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face morphing, face swap artifacts, uncanny face, beautify filter, plastic skin, unrealistic head turn, broken shoulders, mirrored distortion, extra hands, wrong phone position, shirt redesign, wrong colorway, fake print alignment, product inconsistency, floating reflection, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p23', cat:'Image', title:'Affiliate Shot 15 — Mirror Selfie Phone Half-Face Shot', prompt:`mirror selfie shot with the phone partially covering half of the face, natural one-hand phone hold, aesthetic creator-style composition, relaxed posture, exact uploaded shirt visible from neckline to mid-body, clear emphasis on shirt print, collar, and front silhouette, realistic natural fabric folds, subtle indoor light with realistic reflections on the mirror surface, believable smartphone camera perspective, clean but authentic UGC visual style, detailed skin texture on visible facial areas, realistic hair texture, premium affiliate composition, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, face morphing, distorted visible eye, asymmetrical face, unrealistic phone size, broken fingers, fake mirror reflection, duplicate phone, wrong shirt design, wrong print, altered collar, low-detail skin, plastic texture, over-sharpened image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p24', cat:'Image', title:'Affiliate Shot 16 — Mirror Selfie Bathroom Setup Shot', prompt:`authentic bathroom mirror selfie, model standing naturally in front of the bathroom mirror, phone held at chest level, casual real-life creator vibe, upper body to mid-body framing, exact uploaded shirt clearly visible with accurate tropical print, collar shape, sleeve cut, and realistic cotton drape, bathroom tiles and background kept realistic and slightly soft to keep focus on the clothing, indoor ambient bathroom light balanced with natural tones, slight mirror imperfections and believable reflections, realistic skin texture and arm details, smartphone camera realism, social-native affiliate look, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face swap artifacts, uncanny face, beautify filter, plastic skin, fake tile reflections, incorrect mirror perspective, duplicate sink or wall details, broken arm anatomy, extra fingers, wrong clothing print, product redesign, wrong sleeve length, fake shadows, overexposed bathroom light, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p25', cat:'Image', title:'Affiliate Shot 17 — Mirror Selfie Bedroom Setup Shot', prompt:`mirror selfie in a bedroom setting, model standing casually near a full-length mirror, relaxed creator pose, phone held naturally, exact uploaded shirt clearly visible from shoulders to waist or thighs, realistic front print placement, natural collar fall, visible stitching and soft cotton texture, bedroom background kept simple and believable with natural daylight entering from a window, soft warm indoor tones, realistic floor and furniture elements, authentic lifestyle UGC feel, smartphone camera realism, skin texture and facial details kept natural and unretouched, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, beautify filter, AI smoothing, unrealistic bedroom layout, fake mirror angle, broken hands, extra fingers, warped furniture, wrong product details, altered pattern, inaccurate print scale, fake lighting, soft blurry image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p26', cat:'Image', title:'Affiliate Shot 18 — Mirror Selfie Hallway Setup Shot', prompt:`mirror selfie in a clean hallway or condo corridor, model standing naturally with relaxed posture, phone held naturally in front of the chest, exact uploaded shirt clearly shown from collar to lower hem, accurate black-and-white print detail, realistic sleeve and shoulder fit, minimal modern hallway background with soft depth, balanced indoor lighting with natural falloff, believable reflection and perspective, realistic skin tone, hair texture, and body proportions, authentic creator-style affiliate aesthetic, handheld smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, realistic shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, uncanny face, face morphing, beautify filter, plastic skin, unrealistic hallway geometry, warped walls, distorted mirror perspective, broken anatomy, extra fingers, duplicate limbs, wrong clothing design, wrong print density, fake folds, incorrect branding, floating body, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p27', cat:'Image', title:'Affiliate Shot 19 — Mirror Selfie One Hand in Pocket Shot', prompt:`mirror selfie shot with one hand holding the phone and the other hand casually placed inside the pocket, relaxed confident posture, slight weight shift on one leg, natural masculine creator vibe, chest to thigh framing, exact uploaded shirt clearly visible with realistic drape and front print, detailed collar, sleeves, and hem line preserved, natural indoor light with balanced highlights on the face and shirt, believable mirror reflection and realistic room depth, authentic UGC affiliate feel, true-to-life skin texture and proportions, sharp smartphone-style realism, ultra-realistic, photoreal, highly detailed, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, face swap artifacts, uncanny face, fake skin texture, unnatural body twist, broken elbow, extra fingers, distorted pocket hand, warped mirror reflection, wrong clothing fit, altered print, incorrect branding, floating shadows, blurred image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p28', cat:'Image', title:'Affiliate Shot 20 — Walking Forward Shot', prompt:`model walking naturally toward the camera, realistic mid-step body movement, relaxed face and confident casual expression, exact uploaded shirt clearly visible as the hero piece, realistic motion in the fabric with natural folds forming around the chest, shoulders, and lower hem, sharp print details still preserved during movement, upper body to knee framing or full-body framing depending on composition, realistic indoor or outdoor lifestyle setting, natural daylight or soft indoor light, believable motion without looking overly cinematic, authentic creator-style affiliate visual, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric movement, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, uncanny face, beautify filter, plastic skin, stiff walking pose, broken legs, unnatural stride, floating feet, motion blur covering product details, warped arms, extra fingers, wrong shirt print, altered design, unrealistic fabric movement, fake shadows, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p29', cat:'Image', title:'Affiliate Shot 21 — Walking Side Shot', prompt:`side-view walking shot, model captured mid-step from the left or right side, natural body movement and realistic stride, relaxed facial expression, exact uploaded shirt clearly visible from the side profile with accurate sleeve length, shoulder fit, and fabric drape, realistic motion folds forming around the torso and arms, clean lifestyle setting with natural daylight or soft indoor light, believable movement without excessive blur, realistic shadows under the arms and along the shirt hem, authentic creator-style affiliate composition, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, face swap artifacts, uncanny face, beautify filter, plastic skin, stiff walking pose, broken legs, floating feet, unrealistic side stride, warped arms, extra fingers, blurry clothing print, wrong sleeve cut, altered design, fake shadows, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p30', cat:'Image', title:'Affiliate Shot 22 — Walking Past Camera Shot', prompt:`candid walking past the camera shot, model moving naturally across the frame with relaxed posture and effortless creator energy, exact uploaded shirt visible as the main focus while the body is slightly angled during motion, realistic fabric movement around the chest, sleeves, and lower hem, accurate print alignment preserved even in motion, natural lifestyle background with realistic depth, soft daylight or indoor ambient light, subtle motion feel while keeping product details sharp and readable, smartphone camera realism, authentic affiliate visual style, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic clothing folds, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, uncanny face, face swap artifacts, beautify filter, AI smoothing, frozen unnatural movement, broken legs, unrealistic body angle, floating feet, excessive motion blur, wrong shirt print, altered pattern scale, distorted hem, fake lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p31', cat:'Image', title:'Affiliate Shot 23 — Looking Down Candid Shot', prompt:`natural candid standing pose, model looking slightly downward with a calm relaxed expression, shoulders relaxed and posture soft, chest to thigh framing, exact uploaded shirt fully visible with realistic front print, detailed collar structure, sleeve fit, and natural fabric drape across the torso, soft natural window light or balanced indoor ambient light, true-to-life shadows around the neck and under the sleeves, realistic skin pores and facial contours without retouching, authentic creator-style affiliate composition, handheld smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, uncanny face, fake skin smoothing, unrealistic chin angle, awkward neck bend, broken shoulders, warped hands, extra fingers, wrong shirt design, altered print placement, unrealistic folds, overexposed light, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p32', cat:'Image', title:'Affiliate Shot 24 — Looking Away Candid Shot', prompt:`standing candid pose, model looking off-camera naturally with a relaxed jaw and neutral creator expression, body slightly angled for a soft-sell lifestyle feel, exact uploaded shirt clearly visible from collar to hem, realistic cotton texture, visible stitching, natural folds around the chest and underarm area, clean indoor or outdoor environment with believable depth and balanced lighting, subtle natural highlights across the face and shirt, realistic skin texture and hair detail, authentic social-native affiliate framing, handheld smartphone realism, ultra-realistic, photoreal, highly detailed, sharp focus, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face morphing, uncanny face, beautify filter, plastic skin, unnatural head turn, broken neck proportions, extra arms, warped hands, wrong print density, altered collar shape, fake background depth, floating shadows, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p33', cat:'Image', title:'Affiliate Shot 28 — One Hand in Pocket Pose', prompt:`standing lifestyle pose with one hand inside the pocket and the other relaxed at the side or lightly positioned near the shirt, natural confident creator vibe, exact uploaded shirt clearly visible from collar to hem, realistic print detail, visible button placket, clean sleeve drape, balanced natural posture with slight body angle, soft indoor daylight or natural outdoor light, realistic shadows under the arm and along the side seams, true-to-life skin texture, hair detail, and body proportions, social-native affiliate framing with smartphone realism, ultra-realistic, photoreal, highly detailed, sharp focus, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, uncanny face, beautify filter, AI smoothing, broken elbow, warped hand, extra fingers, awkward stance, wrong clothing design, changed pattern scale, fake fabric texture, floating body, fake light direction, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p34', cat:'Image', title:'Affiliate Shot 29 — Leaning Slightly on One Leg Pose', prompt:`casual standing pose with the model leaning slightly on one leg, relaxed asymmetrical posture, shoulders soft and natural, exact uploaded shirt clearly shown with realistic drape following the body angle, detailed print alignment, realistic fabric folds near the waist and underarm area, natural collar fall and sleeve shape, clean lifestyle environment with soft depth in the background, natural daylight or indoor ambient light, realistic skin tone and facial texture, authentic creator-style affiliate framing, handheld smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face swap artifacts, uncanny face, beautify filter, plastic skin, exaggerated hip tilt, broken legs, awkward balance, warped arms, extra fingers, wrong shirt fit, distorted print lines, unrealistic folds, poor lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p35', cat:'Image', title:'Affiliate Shot 31 — One Hand Touching Chest Pose', prompt:`standing pose with one hand lightly touching the chest area of the shirt, natural relaxed expression, body facing slightly toward the camera, exact uploaded shirt clearly visible with strong emphasis on the front print, collar structure, and chest area details, realistic finger placement gently pressing the fabric, natural folds forming around the hand contact point, visible stitching and true-to-life cotton texture, soft indoor daylight or natural window light, realistic shadows across the torso, authentic creator-style affiliate framing, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic skin texture, realistic fabric texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, uncanny face, beautify filter, plastic skin, broken fingers, warped hand placement, unnatural chest touch, wrong shirt print, altered collar, fake folds, incorrect branding, blurry image, overexposed light, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p36', cat:'Image', title:'Affiliate Shot 32 — Fixing Collar Pose', prompt:`mid-close fashion affiliate shot, model naturally adjusting the collar of the exact uploaded shirt, relaxed confident expression, realistic finger placement near the collar edge, strong focus on collar structure, neckline, upper chest print, and button placket, realistic tension in the fabric where the hand touches, visible stitching and natural material texture, soft directional natural light creating depth across the face and shirt, clean premium lifestyle background kept slightly soft, realistic skin pores and hand detail, social-native smartphone camera feel, ultra-realistic, photoreal, highly detailed, sharp focus, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, face swap artifacts, uncanny face, beautify filter, plastic skin, broken fingers, warped collar, wrong button placement, altered print, fake shirt tension, unrealistic hand pose, low-detail skin, fake lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p37', cat:'Image', title:'Affiliate Shot 33 — Fixing Sleeve Pose', prompt:`lifestyle fashion shot, model adjusting one sleeve of the exact uploaded shirt naturally, casual creator expression, body slightly angled for a dynamic affiliate look, sleeve area and stitching clearly visible, realistic hand placement pulling or straightening the cuff area, natural fabric bunching and folds where the sleeve is being adjusted, accurate print continuity across the sleeve and upper arm, soft natural indoor light or shaded daylight, believable shadows along the arm and torso, realistic skin texture and arm proportions, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic clothing texture, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, uncanny face, face morphing, plastic skin, beautify filter, broken wrist, warped fingers, unrealistic sleeve pull, wrong sleeve length, altered print alignment, fake fabric tension, extra fingers, stiff pose, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p38', cat:'Image', title:'Affiliate Shot 34 — Holding Shirt Hem Pose', prompt:`standing pose with one or both hands lightly holding the lower hem of the exact uploaded shirt, relaxed expression, natural creator-style posture, shirt front fully visible with emphasis on hem line, print continuity, and fabric fall, realistic fingers gently gripping the hem, natural folds forming downward from the grip points, visible stitching and realistic cotton drape, soft natural indoor lighting or outdoor shade light, true-to-life shadows near the waist and hands, realistic body proportions and skin texture, authentic affiliate fashion composition, smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric detail, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity inconsistency, uncanny face, fake skin smoothing, broken fingers, unrealistic grip, warped hem, wrong shirt length, distorted print, altered stitching, floating fabric, fake wrinkles, flat lighting, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p39', cat:'Image', title:'Affiliate Shot 38 — Sitting Elbow-on-Knee Pose', prompt:`model seated naturally with one elbow resting on one knee, relaxed masculine creator posture, calm and relatable expression, exact uploaded shirt clearly visible across the chest, waist, and sleeve area, realistic seated fabric folds forming around the abdomen and lap, accurate collar structure and front print maintained, indoor lifestyle setup such as a chair, sofa, or bed edge, soft natural window light or balanced indoor ambient light, realistic shadows under the arms and across the torso, true-to-life skin texture and body proportions, authentic affiliate content style with smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric detail, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, uncanny face, beautify filter, fake skin texture, broken seated anatomy, warped knee, unrealistic elbow placement, wrong shirt print, distorted folds, floating body, low-detail image, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p40', cat:'Image', title:'Affiliate Shot 41 — Sitting Casual Slouch Pose', prompt:`model sitting in a relaxed casual slouch on a chair, sofa, or bed edge, natural everyday creator posture, calm candid expression, exact uploaded shirt clearly visible across the chest, waist, and lap area, realistic seated fabric folds forming naturally around the stomach, sides, and sleeves, accurate collar structure, button placket, and print alignment preserved, soft indoor ambient light or natural window light, realistic depth in the room with a clean lifestyle background, believable skin texture, hair detail, and body proportions, authentic trust-building affiliate composition with handheld smartphone camera realism, ultra-realistic, photoreal, highly detailed, sharp focus, realistic fabric texture, true-to-life shadows, premium 4K-quality look. Use the uploaded model photo as the exact identity reference (same person) if provided. Do not change the face. Copy the uploaded product/clothing image exactly if provided. Preserve the same facial features, skin tone, hairstyle, body build, and overall look. Maintain exact product design, print, stitching, shape, colorway, and branding. No subtitles, no captions, no on-screen text.
+
+Negative prompt: different face, identity change, face morphing, uncanny face, beautify filter, plastic skin, broken seated anatomy, warped back posture, floating body, extra fingers, distorted lap folds, wrong shirt print, altered collar, unrealistic chair angle, subtitles, captions, on-screen text, text overlay, watermark, logo overlay.`, sampleImg:'', sampleVid:''},
+
+  {id:'p41', cat:'Ads', title:'HCSI — Top 15 Static Ad Creative Strategies (PH Market)', prompt:`Act as a senior graphic designer, creative strategist, direct-response copywriter, and performance marketer for the Philippine market in 2026.
+`, sampleImg:'', sampleVid:''},
+
+  {id:'p42', cat:'Ads', title:'eCom Product — 15 High-Converting Static Image Ad Strategies', prompt:`Act as a Senior Graphic Designer + Creative Strategist + Performance Marketer focused on PH eCommerce (Meta FB/IG), 2026. Your output must be agency-grade (10/10): specific, product-led, proof-driven, non-generic, Meta-safe, and immediately usable by a designer/editor.
+
+---
+
+INPUT (paste your details below)
+
+Product:
+Category: (beauty / home / fashion / gadgets / food / etc.)
+Price range:
+Primary buyer in PH: (age, gender, city/province, lifestyle)
+Main use case:
+Top 3 buyer pains:
+Top 3 desires:
+Top 3 proof assets available: (reviews, UGC, screenshots, ratings, certifications, before-after, demo video frames)
+Offer: (discount/bundle/freebie/free shipping/COD)
+Platform destination: (Shopify / Shopee / Lazada / IG DM)
+Brand assets: (colors, fonts, logo, product shots)
+Claims limits: (e.g., no medical claims)
+
+If missing, infer PH defaults: value-conscious, COD preference, proof-first buyers, skepticism, "tipid + legit" mindset.
+
+---
+
+10/10 QUALITY CONTROL (NON-NEGOTIABLE)
+
+For every strategy, you MUST:
+• Be ecom-specific (purchase friction + checkout intent)
+• Contain 1 clear hero message readable in 1–2 seconds
+• Include at least 1 proof element (rating, quote, UGC cue, guarantee, demo result, authenticity marker)
+• Include at least 1 objection handler (COD, returns, size/fit, safety, durability, delivery speed, authenticity)
+• Specify exact layout (what goes top/mid/bottom, left/right, overlays, hierarchy)
+• Use Taglish-friendly microcopy (not corny, not hype)
+• Include Cold / Warm / Retargeting placement fit
+• Remain Meta-safe (no personal attribute targeting, no prohibited claims)
+• Avoid repetition: each concept must feel like a different winning ad
+
+---
+
+OUTPUT: 15 High-Converting STATIC IMAGE Ad Creative Strategies (1080x1080)
+
+For each of the 15, output EXACTLY this structure:
+
+1. Creative Name
+2. Best For (Cold / Warm / Retargeting) + Objective (CTR / Add-to-Cart / Purchase)
+3. Visual Concept (shot list + composition + exact placement rules)
+4. Product Display Rule (hero/in-use/macro/bundle/scale reference)
+5. Headline Text Overlay (max 7 words)
+6. Support Line (max 12 words)
+7. Benefit Bullets (3–5 bullets; buyer-language; no fluff)
+8. Proof Element (exact: "4.8★ (2,314 reviews)" format if available; or "UGC screenshot-style quote")
+9. Objection Crusher (1–2 lines: COD/returns/authenticity/sizing/etc.)
+10. CTA Microcopy (button-style: "Shop Now", "Check Variants", "COD Available")
+11. Emotional Trigger (relief / tipid / confidence / convenience / etc.)
+12. Color Style (background, accent, contrast rule; PH mobile readability)
+13. Font Style (type hierarchy: H1 bold, bullets medium, proof small)
+14. Meta Safety Note (why it's compliant)
+15. Production Notes (do/don't, spacing, safe margins, how to avoid "AI look")
+
+---
+
+REQUIRED CREATIVE TYPES (include all):
+
+• Us vs Them (real comparison: price-per-use, durability, ingredients, warranty)
+• Before & After (safe framing; "typical results may vary"; avoid unrealistic)
+• Benefit Callout (one benefit = one visual proof cue)
+• Headline Text Overlay (message-first hierarchy)
+• Split Screen (problem vs solution / old way vs new way)
+• Pointed Benefits (pain-to-benefit mapping)
+• Review (screenshot aesthetic + rating)
+• Testimonial (UGC still look + quote)
+• Problem–Solution (PAPS structure)
+• Price Anchor Ladder (regular vs bundle vs best value; tipid math)
+• Bundle Builder (variant stack + "pang-" use cases)
+• COD + Risk Reversal (COD, returns, warranty, "no hassle")
+• 3-Step How It Works (instant clarity)
+• Feature Macro Proof (texture/material/ports/stitching/ingredient macro)
+• Retargeting "Still thinking?" (reminder + proof + offer)
+
+---
+
+DESIGN RULES (Meta performance)
+
+• Use Z/F reading pattern and high contrast
+• One hero message only; everything supports it
+• Keep logo small
+• Use real PH lifestyle context (home, commute, office, small condo)
+• Avoid heavy filters; natural light; real imperfections okay
+• Text safe margins for IG/FB crops
+
+---
+
+ENDING REQUIREMENT
+
+After the 15 strategies, ask 2–4 OPTIONAL questions to improve iteration (offer, best-seller variant, proof assets, target city, objections).`, sampleImg:'', sampleVid:''},
+
+  {id:'p43', cat:'Ads', title:'Real Estate — 15 High-Converting Static Image Ad Strategies', prompt:`Act as a Senior Graphic Designer + Creative Strategist + Performance Marketer focused on PH Real Estate (Meta FB/IG), 2026.
+Your output must be agency-grade (10/10): specific, property-led, proof-driven, non-generic, Meta-safe, and immediately usable by a designer/editor.
+
+---
+
+INPUT (paste your details below)
+
+Project/Property Name:
+Category: (condo / house & lot / lot only / commercial / RFO / pre-selling)
+Price range:
+Primary buyer in PH: (age, gender, city/province, OFW / local, lifestyle)
+Main use case: (own home / investment / rental income / retirement)
+Top 3 buyer pains:
+Top 3 desires:
+Top 3 proof assets available: (unit photos, drone shots, reviews, testimonials, turnover photos, amenity shots, developer reputation)
+Offer: (flexible terms / low DP / free site tripping / free processing)
+Platform destination: (FB Lead Ads / Messenger / viber / site visit booking)
+Brand assets: (colors, fonts, logo, property shots)
+Claims limits: (no guaranteed ROI, no misleading price)
+
+If missing, infer PH buyer defaults: OFW buyers, young professionals, value-for-money seekers, cautious about scams, prestige and security driven.
+
+---
+
+10/10 QUALITY CONTROL (NON-NEGOTIABLE)
+
+For every strategy, you MUST:
+• Be real estate-specific (inquiry friction + site visit intent + lead gen)
+• Contain 1 clear hero message readable in 1–2 seconds
+• Include at least 1 proof element (developer reputation, turnover photos, amenities, reviews)
+• Include at least 1 objection handler (flexible terms, low DP, legit developer, COD/easy payment)
+• Specify exact layout (top/mid/bottom, left/right, overlays, hierarchy)
+• Use Taglish-friendly microcopy (natural, not corny)
+• Include Cold / Warm / Retargeting placement fit
+• Remain Meta-safe (no income guarantees, no misleading pricing)
+• Avoid repetition — each concept must feel like a different winning ad
+
+INTERNAL FRAMEWORK: Use PAPS + Proof Stack
+Problem → Agitate → Promise → Solution + Proof + Risk Reversal
+
+---
+
+MODEL / VISUAL EXECUTION — ULTRA REALISM ENGINE
+
+⚠️ APPLY when strategy uses PEOPLE / LIFESTYLE / UGC STYLE
+
+CAPTURE STYLE:
+• Real iPhone photo look (NOT studio, NOT CGI)
+• Natural lighting only (window / sunlight / ambient)
+• Casual framing (slight tilt, imperfect composition)
+• Candid lifestyle moment (family, couple, young professional)
+
+SKIN & HUMAN DETAIL:
+• Natural skin texture (RAW), visible pores, slight imperfections
+• No beauty filters / no retouching
+
+LIGHTING:
+• Natural falloff, real shadows, no artificial glow
+
+CAMERA FEEL:
+• 35mm / 50mm lens feel, slight grain optional, shallow depth of field
+
+ANTI-AI LOOK — Avoid:
+• CGI look, over-smooth skin, perfect symmetry, plastic skin, overly posed models, fake lighting
+
+---
+
+DESIGN RULES (META PERFORMANCE)
+• Z/F reading pattern
+• One hero message only — tagline dominates
+• Logo small only
+• High contrast for mobile
+• Real PH lifestyle context (condo living, OFW family, young couple, subdivision life)
+• Safe margins for IG/FB crops
+
+---
+
+OUTPUT: 15 HIGH-CONVERTING STATIC IMAGE AD STRATEGIES (1080x1080)
+
+For each of the 15, output EXACTLY:
+
+1. Creative Name
+2. Best For (Cold / Warm / Retargeting) + Objective (CTR / Lead / Site Visit)
+3. Visual Concept — shot + composition + placement + realism notes if with people
+4. Property Display Rule — exterior / interior / amenity / aerial / lifestyle
+5. Headline Text Overlay (max 7 words)
+6. Support Line (max 12 words)
+7. Benefit Bullets (3–5 bullets, buyer language)
+8. Proof Element — developer track record, turnover photos, review quote, amenity shot
+9. Objection Crusher — flexible terms / legit developer / low DP / free site trip
+10. CTA Microcopy — "Inquire Now" / "Book Free Site Trip" / "Check Available Units"
+11. Emotional Trigger — security / pride / investment / family / OFW dream
+12. Color Style — background + contrast rule
+13. Font Style — H1 bold, bullets medium, proof small
+14. Meta Safety Note
+15. Production Notes — spacing, layout tips, how to avoid AI look if applicable
+
+---
+
+REQUIRED STRATEGY TYPES:
+• Us vs Them (developer vs developer / location advantage)
+• Lifestyle Dream (family / couple / OFW in new home)
+• Price Anchor (monthly amortization highlight / DP breakdown)
+• Amenity Hero (pool / gym / security / playground)
+• Location Advantage (near schools / malls / workplace)
+• Investment Angle (rental income / property appreciation — Meta-safe framing)
+• Low DP / Flexible Terms (barrier crusher)
+• Testimonial UGC (buyer story, move-in moment)
+• Before Site Trip vs After (safe framing)
+• 3-Step How To Own (inquiry → site trip → reservation)
+• OFW Special (remittance + easy payment)
+• Ready For Occupancy Hero (RFO — move in agad)
+• Trust & Legitimacy (developer creds, HLURB/DHSUD, years in business)
+• Retargeting "Still Looking?" (reminder + offer + urgency)
+• Split Screen (renting forever vs owning now)
+
+---
+
+FINAL RULES
+• No repetition
+• Performance over design
+• Clear kahit walang caption
+• Must feel like a WINNING AD
+• Message-first ALWAYS
+• Tagline dominates
+• Logo minimal
+• If may model → MUST follow REALISM ENGINE
+• No guaranteed ROI claims
+• No misleading price or income promises`, sampleImg:'', sampleVid:''},
+];
+let prompts = store.get('vault_prompts', null) || JSON.parse(JSON.stringify(DEFAULT_PROMPTS));
+let activePromptCat = 'All';
+let promptSearchQ = '';
+
+function persistPrompts(){ store.set('vault_prompts', prompts); }
+
+function renderPrompts(){
+  const cats = ['All', 'Image', 'Video', 'Avatar', 'Ads'];
+  const view = document.getElementById('view-prompts');
+  if(!view) return;
+
+  // When searching, always search ALL categories for full coverage
+  let filtered;
+  if(promptSearchQ){
+    filtered = prompts.filter(p=>
+      p.title.toLowerCase().includes(promptSearchQ) ||
+      p.prompt.toLowerCase().includes(promptSearchQ) ||
+      p.cat.toLowerCase().includes(promptSearchQ)
+    );
+  } else {
+    filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  }
+
+  view.innerHTML = `
+    <div class="dash-wrap">
+      <div class="dash-top">
+        <div>
+          <h2 style="font-size:1.6rem;font-weight:800">📝 Prompt Vault</h2>
+          <p style="color:var(--muted);font-size:.9rem;margin-top:.3rem">Ready-to-use prompts with sample outputs — copy and launch.</p>
+        </div>
+        <div class="mini-stats">
+          <div class="mini"><div class="n">${prompts.length}</div><div class="t">Prompts</div></div>
+        </div>
+      </div>
+
+      <div class="search-bar" style="margin-bottom:1rem;position:relative">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input class="input" id="prompt-search" placeholder="Search prompts..." value="${esc(promptSearchQ)}"
+          style="padding-left:2.4rem;width:100%;background:var(--surface-2);border:1px solid var(--line)"
+          oninput="promptSearchQ=this.value.toLowerCase().trim();renderPromptGrid()">
+      </div>
+
+      <div class="chip-row" style="margin-bottom:1.5rem">
+        ${cats.map(c=>`<button class="chip ${activePromptCat===c?'active':''}" onclick="setPromptCat('${c}')">${c}</button>`).join('')}
+      </div>
+
+      <div class="agrid" id="prompt-grid">
+        ${filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : `<div class="empty">No prompts found. Try a different keyword or category.</div>`}
+      </div>
+    </div>`;
+}
+
+function renderPromptGrid(){
+  // When searching, search across ALL categories regardless of active tab
+  let filtered;
+  if(promptSearchQ){
+    filtered = prompts.filter(p=>
+      p.title.toLowerCase().includes(promptSearchQ) ||
+      p.prompt.toLowerCase().includes(promptSearchQ) ||
+      p.cat.toLowerCase().includes(promptSearchQ)
+    );
+  } else {
+    filtered = activePromptCat==='All' ? prompts : prompts.filter(p=>p.cat===activePromptCat);
+  }
+  const grid = document.getElementById('prompt-grid');
+  if(!grid) return;
+  grid.innerHTML = filtered.length ? filtered.map(p=>renderPromptCard(p)).join('') : `<div class="empty">No prompts found for "${esc(promptSearchQ)}" — try another keyword or clear the search.</div>`;
+}
+
+function renderPromptCard(p){
+  const hasSampleImg = p.sampleImg && p.sampleImg.trim();
+  const hasSampleVid = p.sampleVid && p.sampleVid.trim();
+  const ytEmbed = hasSampleVid ? getYTEmbed(p.sampleVid) : '';
+
+  return `<div class="acard reveal in-view" style="display:flex;flex-direction:column;gap:.8rem">
+    ${hasSampleImg ? `<img src="${esc(p.sampleImg)}" alt="Sample output" style="width:100%;border-radius:12px;object-fit:cover;max-height:180px;border:1px solid var(--line)">` : ''}
+    ${ytEmbed ? `<div style="position:relative;padding-bottom:56.25%;border-radius:12px;overflow:hidden;border:1px solid var(--line)"><iframe src="${ytEmbed}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy"></iframe></div>` : ''}
+    ${!hasSampleImg && !hasSampleVid ? `<div style="width:100%;height:80px;border-radius:12px;background:var(--surface-2);border:1px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.8rem">No sample yet</div>` : ''}
+    <div>
+      <span class="cat-tag">${esc(p.cat)}</span>
+      <h3 style="margin-top:.5rem;font-size:1rem">${esc(p.title)}</h3>
+    </div>
+    <div style="background:var(--surface-2);border-radius:10px;padding:.8rem;font-size:.8rem;color:var(--muted);line-height:1.6;border:1px solid var(--line);flex:1">${esc(p.prompt)}</div>
+    <button class="btn btn-primary btn-sm" style="width:100%" onclick="copyPrompt('${p.id}',this)">📋 Copy Prompt</button>
+  </div>`;
+}
+
+function getYTEmbed(url){
+  if(!url) return '';
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([a-zA-Z0-9_-]{11})/);
+  return m ? `https://www.youtube.com/embed/${m[1]}` : '';
+}
+
+function copyPrompt(id, btn){
+  const p = prompts.find(x=>x.id===id);
+  if(!p) return;
+  navigator.clipboard.writeText(p.prompt).then(()=>{
+    const orig = btn.innerHTML;
+    btn.innerHTML='✅ Copied!';
+    btn.style.background='#22c55e';
+    setTimeout(()=>{ btn.innerHTML=orig; btn.style.background=''; },2000);
+  });
+}
+
+function setPromptCat(c){ activePromptCat=c; renderPrompts(); }
 
 function renderDashboard(){
   document.getElementById('dash-user').textContent = session ? session.user : 'Creator';
@@ -1134,7 +2376,8 @@ function renderAgents(){
   const grid=document.getElementById('agent-grid');
   if(!list.length){ grid.innerHTML=`<div class="empty">No agents match your filter${q?' "'+esc(q)+'"':''}. Try another category or search.</div>`; return; }
   grid.innerHTML=list.map(a=>{
-    const hasInstr = !!getBotInstructions(a.name);
+    const hasInstr=!!getBotInstructions(a.name);
+    const safeName=a.name.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     return `
     <div class="acard reveal in-view">
       <div class="top">
@@ -1149,10 +2392,8 @@ function renderAgents(){
       <div class="foot">
         <span class="access"><span class="lock">●</span> ${esc(a.access)}</span>
         <a class="btn btn-primary btn-sm" href="${esc(a.url)}" target="_blank" rel="noopener">Launch →</a>
-      </div>
-      ${hasInstr ? `<div class="foot-bottom">
-        <button class="btn-download" onclick="downloadBotInstructions('${a.name.replace(/'/g,"\\'")}')">📥 Download Instructions</button>
-      </div>` : ''}
+      </div>${hasInstr?`
+      <div class="foot-bottom"><button class="btn-download" onclick="downloadBotInstructions('${safeName}')">📥 Download Instructions</button></div>`:''}
     </div>`;
   }).join('');
 }
@@ -1198,7 +2439,161 @@ function switchAdminTab(tab){
   document.querySelectorAll('.atab').forEach(t=>t.classList.toggle('active', t.dataset.atab===tab));
   document.getElementById('apanel-agents').classList.toggle('active', tab==='agents');
   document.getElementById('apanel-creds').classList.toggle('active', tab==='creds');
+  document.getElementById('apanel-prompts').classList.toggle('active', tab==='prompts');
+  document.getElementById('apanel-students').classList.toggle('active', tab==='students');
   if(tab==='creds') fillCredForm();
+  if(tab==='prompts') renderAdminPrompts();
+  if(tab==='students') renderAdminStudents();
+}
+
+function renderAdminStudents(){
+  const el = document.getElementById('admin-students');
+  if(!el) return;
+  const active = students.filter(s=>s.active).length;
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700">👥 Students (${students.length} total · ${active} active)</h3>
+        <p style="color:var(--muted);font-size:.8rem;margin-top:.2rem">Each student has their own login. Revoke access anytime.</p>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="openStudentModal(null)">+ Add Student</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.6rem">
+      ${students.length ? students.map(s=>`
+        <div class="arow" style="align-items:center;gap:1rem">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--surface-3);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--yellow);font-size:.9rem;flex-shrink:0">${esc((s.name||s.user).charAt(0).toUpperCase())}</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:.95rem">${esc(s.name||s.user)}</div>
+            <div style="color:var(--muted);font-size:.8rem">@${esc(s.user)} · <span style="color:${s.active?'#22c55e':'#ef4444'}">${s.active?'● Active':'○ Revoked'}</span></div>
+          </div>
+          <div class="acts" style="gap:.4rem">
+            <button class="icon-btn" onclick="openStudentModal('${s.id}')" title="Edit">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="icon-btn ${s.active?'':'danger'}" onclick="toggleStudent('${s.id}')" title="${s.active?'Revoke':'Restore'}">
+              ${s.active?'&#9864;':'&#10003;'}
+            </button>
+            <button class="icon-btn danger" onclick="deleteStudent('${s.id}')" title="Delete">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+            </button>
+          </div>
+        </div>`).join('') : '<div class="empty">No students yet. Add your first student above.</div>'}
+    </div>`;
+}
+
+let editingStudentId = null;
+function openStudentModal(id){
+  editingStudentId = id;
+  const s = id ? students.find(x=>x.id===id) : null;
+  document.getElementById('student-modal-title').textContent = id ? 'Edit Student' : 'Add Student';
+  document.getElementById('sm-name').value = s ? s.name||'' : '';
+  document.getElementById('sm-user').value = s ? s.user||'' : '';
+  document.getElementById('sm-pass').value = s ? s.pass||'' : '';
+  openModal('student-modal');
+}
+
+function saveStudent(){
+  const name = document.getElementById('sm-name').value.trim();
+  const user = document.getElementById('sm-user').value.trim().toLowerCase().replace(/\s+/g,'');
+  const pass = document.getElementById('sm-pass').value.trim();
+  if(!name||!user||!pass){ toast('All fields required'); return; }
+  // Check duplicate username
+  const dupe = students.find(s=>s.user===user && s.id!==editingStudentId);
+  if(dupe){ toast('Username already taken — choose another'); return; }
+  if(editingStudentId){
+    const i = students.findIndex(s=>s.id===editingStudentId);
+    if(i>-1) students[i] = {...students[i], name, user, pass};
+  } else {
+    students.push({id:'s'+Date.now(), name, user, pass, active:true});
+  }
+  persistStudents(); closeModal('student-modal'); renderAdminStudents(); toast('Student saved!');
+}
+
+function toggleStudent(id){
+  const s = students.find(x=>x.id===id);
+  if(!s) return;
+  s.active = !s.active;
+  persistStudents(); renderAdminStudents();
+  toast(s.active ? 'Access restored' : 'Access revoked');
+}
+
+function deleteStudent(id){
+  if(!confirm('Delete this student? They will lose access immediately.')) return;
+  students = students.filter(s=>s.id!==id);
+  persistStudents(); renderAdminStudents(); toast('Student deleted');
+}
+
+function genPass(){
+  const chars='ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+  let p='ACU-';
+  for(let i=0;i<8;i++) p+=chars[Math.floor(Math.random()*chars.length)];
+  document.getElementById('sm-pass').value=p;
+}
+
+function renderAdminPrompts(){
+  const el = document.getElementById('admin-prompts');
+  if(!el) return;
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:1rem">
+      <h3 style="font-size:1.1rem;font-weight:700">📝 Prompt Templates (${prompts.length})</h3>
+      <button class="btn btn-primary btn-sm" onclick="openPromptModal(null)">+ Add Prompt</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:.8rem">
+      ${prompts.map(p=>`
+        <div class="arow" style="align-items:flex-start;gap:1rem">
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:.95rem">${esc(p.title)}</div>
+            <span class="cat" style="font-size:.7rem">${esc(p.cat)}</span>
+            <div style="color:var(--muted);font-size:.8rem;margin-top:.4rem;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(p.prompt.substring(0,80))}...</div>
+            ${p.sampleImg ? `<div style="font-size:.75rem;color:#6ddc6d;margin-top:.3rem">🖼️ Has image sample</div>` : ''}
+            ${p.sampleVid ? `<div style="font-size:.75rem;color:#6ddc6d;margin-top:.2rem">🎬 Has video sample</div>` : ''}
+          </div>
+          <div class="acts">
+            <button class="icon-btn" onclick="openPromptModal('${p.id}')" title="Edit">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+            <button class="icon-btn danger" onclick="deletePrompt('${p.id}')" title="Delete">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+            </button>
+          </div>
+        </div>`).join('')}
+    </div>`;
+}
+
+let editingPromptId = null;
+function openPromptModal(id){
+  editingPromptId = id;
+  const p = id ? prompts.find(x=>x.id===id) : null;
+  const cats = ['Image','Video','Avatar','Ads'];
+  document.getElementById('prompt-modal-title').textContent = id ? 'Edit Prompt' : 'Add Prompt';
+  document.getElementById('pm-title').value = p ? p.title : '';
+  document.getElementById('pm-cat').value = p ? p.cat : 'Image';
+  document.getElementById('pm-prompt').value = p ? p.prompt : '';
+  document.getElementById('pm-img').value = p ? p.sampleImg||'' : '';
+  document.getElementById('pm-vid').value = p ? p.sampleVid||'' : '';
+  openModal('prompt-modal');
+}
+
+function savePrompt(){
+  const title = document.getElementById('pm-title').value.trim();
+  const cat   = document.getElementById('pm-cat').value;
+  const prompt= document.getElementById('pm-prompt').value.trim();
+  const sampleImg = document.getElementById('pm-img').value.trim();
+  const sampleVid = document.getElementById('pm-vid').value.trim();
+  if(!title||!prompt){ toast('Title and prompt are required'); return; }
+  if(editingPromptId){
+    const i = prompts.findIndex(x=>x.id===editingPromptId);
+    if(i>-1) prompts[i] = {...prompts[i], title, cat, prompt, sampleImg, sampleVid};
+  } else {
+    prompts.push({id:'p'+Date.now(), cat, title, prompt, sampleImg, sampleVid});
+  }
+  persistPrompts(); closeModal('prompt-modal'); renderAdminPrompts(); toast('Prompt saved!');
+}
+
+function deletePrompt(id){
+  if(!confirm('Delete this prompt?')) return;
+  prompts = prompts.filter(p=>p.id!==id);
+  persistPrompts(); renderAdminPrompts(); toast('Prompt deleted');
 }
 
 function renderAdmin(){
